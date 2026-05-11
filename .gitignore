@@ -7,3 +7,7 @@ index.html
 
 # Archivos temporales de Excel
 ~$*.xlsx
+
+# Cache generada por Python
+__pycache__/
+*.py[cod]

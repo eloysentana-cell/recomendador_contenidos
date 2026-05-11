@@ -1,0 +1,14 @@
+Titulo: Software as a Service (SAAS)
+URL: https://ceeielche.emprenemjunts.es/?op=13&n=14837
+
+Software as a Service (SAAS)
+Software as a Service (SAAS)
+viernes, 20 de diciembre de 2019
+Descargar archivo (.pdf 1.435Kb)
+, nos referimos a un cambio fundamental en el modo de comercializar un software. Tradicionalmente, y desde que Microsoft popularizara sus famosas cajas de software, con sus conocidos programas de Office, el software bajo licencia y como un programa residente en un servidor local, ha evolucionado a un sistema localizado en un servidor externo ajeno a la empresa. Existe una infraestructura compuesta por el middleware, el software y los datos de las aplicaciones que se localizan en el centro de datos de la empresa proveedora.
+Por lo tanto, el software que utiliza la empresa no se encontraría en sus instalaciones, sino que un proveedor le proporcionaría el hosting de dicho software en la nube y, por supuesto, el mantenimiento y el soporte del mismo.
+Descarga el archivo para obtener toda la información sobre este modelo de negocio.
+Visitas: 15.455 Descargas: 314
+https://www.emprenemjunts.es/?op=13&n=14837
+Más contenidos en Emprenemjunts
+Más contenidos recientes en EmprenemJunts
