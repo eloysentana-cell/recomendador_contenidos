@@ -1,4 +1,4 @@
-# TFM Recomendador Documental materiales emprendedores
+# TFC Recomendador Documental materiales emprendedores
 
 Este repositorio contiene el trabajo inicial para construir un sistema de recomendacion documental a partir de recursos publicos del CEEI Elche y de la red EmprenemJunts.
 
