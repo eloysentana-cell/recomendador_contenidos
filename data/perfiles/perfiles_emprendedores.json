@@ -1,0 +1,307 @@
+[
+  {
+    "id": "perfil_001_investigador_ebt_ebc",
+    "nombre": "Investigador académico en fase de spin-off EBT/EBC",
+    "fase_emprendedora": "Transferencia tecnológica y creación de empresa de base científica",
+    "nivel_madurez": {
+      "cientifica": "alta",
+      "empresarial": "baja",
+      "tecnologica": "TRL 3-5"
+    },
+    "perfil_funcional": "Investigador o investigadora con resultados científicos avanzados que necesita convertir conocimiento académico en una empresa de base tecnológica o empresa de base de conocimiento. Tiene fortaleza técnica, pero requiere apoyo en gestión empresarial, propiedad intelectual, transferencia universitaria y financiación inicial.",
+    "necesidades_prioritarias": [
+      "Entender protocolos de transferencia de resultados de investigación",
+      "Proteger propiedad intelectual, patentes y activos científicos",
+      "Constituir una EBT o EBC",
+      "Identificar ayudas públicas para investigación, innovación y capital semilla",
+      "Validar la tecnología antes de iniciar el escalado comercial"
+    ],
+    "intenciones_busqueda": [
+      "Buscar guías de constitución de EBT o EBC",
+      "Buscar información sobre propiedad intelectual y patentes",
+      "Buscar programas Plan GenT, RIS3 CV y ayudas a la transferencia",
+      "Buscar manuales de fiscalidad de la innovación",
+      "Buscar recursos para validar tecnología en fases TRL intermedias"
+    ],
+    "palabras_clave_semanticas": [
+      "TRL",
+      "propiedad intelectual",
+      "patente",
+      "capital semilla",
+      "EBT",
+      "EBC",
+      "Plan GenT",
+      "RIS3 CV",
+      "validación científica",
+      "transferencia universitaria",
+      "empresa de base tecnológica",
+      "empresa de base de conocimiento"
+    ],
+    "descripcion_embedding": "Investigador académico en fase de spin-off EBT EBC deep tech. Alta madurez científica y baja madurez empresarial. Busca transferencia tecnológica, propiedad intelectual, patente, constitución de empresa de base tecnológica, empresa de base de conocimiento, capital semilla, Plan GenT, RIS3 CV, validación científica, fiscalidad de la innovación y protocolos universitarios de transferencia de resultados de investigación."
+  },
+  {
+    "id": "perfil_002_ceo_scaling_internacional",
+    "nombre": "CEO de startup en fase de escalado internacional",
+    "fase_emprendedora": "Escalado, crecimiento e internacionalización",
+    "nivel_madurez": {
+      "cientifica": "media",
+      "empresarial": "alta",
+      "tecnologica": "TRL 7-9"
+    },
+    "perfil_funcional": "CEO o fundador de startup con producto validado, métricas iniciales de tracción y necesidad de crecimiento. Su prioridad es captar financiación privada, optimizar procesos, entrar en nuevos mercados y ampliar el equipo.",
+    "necesidades_prioritarias": [
+      "Cerrar financiación Serie A o inversión de venture capital",
+      "Preparar expansión internacional y softlanding",
+      "Optimizar KPIs y métricas de tracción",
+      "Automatizar procesos de crecimiento",
+      "Captar talento global"
+    ],
+    "intenciones_busqueda": [
+      "Buscar informes de capital riesgo y venture capital",
+      "Buscar programas de internacionalización",
+      "Buscar recursos de softlanding en mercados exteriores",
+      "Buscar documentación sobre escalado de startups",
+      "Buscar estrategias industriales y programas de crecimiento"
+    ],
+    "palabras_clave_semanticas": [
+      "KPIs",
+      "Venture Capital",
+      "Product-Market Fit",
+      "Market Fit",
+      "Softlanding",
+      "Serie A",
+      "escalado internacional",
+      "startup growth",
+      "talento global",
+      "Estrategia Visió 2020"
+    ],
+    "descripcion_embedding": "CEO de startup en fase de escalado internacional. Producto validado, Product-Market Fit, Market Fit, KPIs, Venture Capital, Serie A, softlanding, expansión global, internacionalización, mercado estadounidense, captación de talento global, automatización de procesos, crecimiento comercial y estrategia industrial Visió 2020."
+  },
+  {
+    "id": "perfil_003_consultor_silver",
+    "nombre": "Consultor senior Silver en transición",
+    "fase_emprendedora": "Creación de servicios profesionales especializados",
+    "nivel_madurez": {
+      "cientifica": "baja",
+      "empresarial": "media",
+      "tecnologica": "media"
+    },
+    "perfil_funcional": "Profesional senior que quiere transformar décadas de experiencia y una red de contactos consolidada en una actividad emprendedora de consultoría, asesoramiento o servicios especializados. Busca autonomía laboral y modelos de negocio prudentes.",
+    "necesidades_prioritarias": [
+      "Definir un modelo de negocio de consultoría boutique",
+      "Digitalizar servicios profesionales",
+      "Aprovechar red de contactos existente",
+      "Identificar nichos de mercado basados en experiencia sectorial",
+      "Reducir riesgo mediante planificación prudente"
+    ],
+    "intenciones_busqueda": [
+      "Buscar guías de modelos de negocio de consultoría",
+      "Buscar manuales de digitalización para perfiles senior",
+      "Buscar recursos de economía silver",
+      "Buscar programas de mentoría empresarial",
+      "Buscar herramientas para profesionalizar servicios de nicho"
+    ],
+    "palabras_clave_semanticas": [
+      "Economía Silver",
+      "economía del cuidado",
+      "tecnología de nicho",
+      "consultora boutique",
+      "bienestar",
+      "educación ejecutiva",
+      "mentoría empresarial",
+      "resiliencia",
+      "supervivencia empresarial",
+      "red de contactos",
+      "servicios profesionales"
+    ],
+    "descripcion_embedding": "Consultor senior Silver en transición. Profesional con décadas de experiencia, red de contactos consolidada y perfil prudente. Quiere crear una consultora boutique o servicio profesional especializado con tecnología de nicho, bienestar, educación ejecutiva, mentoría empresarial, economía silver, economía del cuidado, digitalización para seniors, resiliencia y supervivencia empresarial."
+  },
+  {
+    "id": "perfil_004_mentor_negocios_tradicionales",
+    "nombre": "Mentor de negocios tradicionales",
+    "fase_emprendedora": "Monetización de experiencia profesional",
+    "nivel_madurez": {
+      "cientifica": "baja",
+      "empresarial": "alta",
+      "tecnologica": "baja-media"
+    },
+    "perfil_funcional": "Profesional con experiencia directiva o sectorial que busca convertir conocimiento acumulado en servicios de mentoría, acompañamiento y asesoramiento para negocios tradicionales. Su ventaja está en la experiencia, la confianza y la red profesional.",
+    "necesidades_prioritarias": [
+      "Diseñar servicios de mentoría empresarial",
+      "Formalizar una propuesta de valor basada en experiencia",
+      "Organizar conocimiento práctico para terceros",
+      "Captar clientes mediante redes profesionales consolidadas",
+      "Mantener estabilidad financiera inicial"
+    ],
+    "intenciones_busqueda": [
+      "Buscar guías de mentoría empresarial",
+      "Buscar recursos de gestión del conocimiento",
+      "Buscar modelos de servicios profesionales especializados",
+      "Buscar documentación para negocios tradicionales",
+      "Buscar herramientas de planificación financiera básica"
+    ],
+    "palabras_clave_semanticas": [
+      "redes profesionales consolidadas",
+      "estabilidad financiera inicial",
+      "servicios profesionales especializados",
+      "gestión del conocimiento",
+      "mentoría",
+      "negocios tradicionales",
+      "planificación prudente",
+      "asesoramiento empresarial"
+    ],
+    "descripcion_embedding": "Mentor de negocios tradicionales. Profesional con experiencia directiva, gestión del conocimiento, redes profesionales consolidadas, estabilidad financiera inicial y servicios profesionales especializados. Busca mentoría empresarial, asesoramiento a pequeñas empresas, negocios tradicionales, planificación prudente, mejora comercial y acompañamiento empresarial."
+  },
+  {
+    "id": "perfil_005_emprendedora_rural_agroalimentaria",
+    "nombre": "Emprendedora rural en el sector agroalimentario",
+    "fase_emprendedora": "Autoempleo o pyme rural con impacto territorial",
+    "nivel_madurez": {
+      "cientifica": "baja",
+      "empresarial": "media",
+      "territorial": "alta"
+    },
+    "perfil_funcional": "Emprendedora que impulsa un proyecto agroalimentario o rural vinculado a la fijación de población, la economía circular, el desarrollo local y el empoderamiento femenino fuera de áreas metropolitanas.",
+    "necesidades_prioritarias": [
+      "Identificar ayudas rurales y programas territoriales",
+      "Conectar con Agentes de Desarrollo Local",
+      "Acceder a programas GAL y GALP",
+      "Diseñar un proyecto viable en el sector agroalimentario",
+      "Alinear el proyecto con economía circular y cohesión territorial"
+    ],
+    "intenciones_busqueda": [
+      "Buscar ayudas GAL y GALP",
+      "Buscar programas de desarrollo rural de la Generalitat",
+      "Buscar Pactos Locales por el Empleo",
+      "Buscar recursos de autoempleo rural",
+      "Buscar documentación sobre economía circular agroalimentaria"
+    ],
+    "palabras_clave_semanticas": [
+      "cohesión territorial",
+      "economía circular",
+      "ayudas GAL",
+      "ayudas GALP",
+      "ADL",
+      "Agentes de Desarrollo Local",
+      "Pactos Locales por el Empleo",
+      "autoempleo rural",
+      "desarrollo rural",
+      "agroalimentario",
+      "empoderamiento femenino"
+    ],
+    "descripcion_embedding": "Emprendedora rural en el sector agroalimentario. Proyecto rural, autoempleo rural, desarrollo rural, agroalimentario, fijación de población, empoderamiento femenino, cohesión territorial, economía circular, ayudas GAL, ayudas GALP, Agentes de Desarrollo Local, ADL, Pactos Locales por el Empleo, programas de la Generalitat y sostenibilidad territorial."
+  },
+  {
+    "id": "perfil_006_fundador_cooperativa_impacto",
+    "nombre": "Fundador de cooperativa de impacto social",
+    "fase_emprendedora": "Constitución de entidad de economía social",
+    "nivel_madurez": {
+      "cientifica": "baja",
+      "empresarial": "media",
+      "impacto_social": "alta"
+    },
+    "perfil_funcional": "Promotor de una iniciativa de economía social orientada a impacto social, ODS, gobernanza democrática y modelos cooperativos. Busca recursos para constituir la entidad, medir impacto y acceder a programas específicos.",
+    "necesidades_prioritarias": [
+      "Constituir una cooperativa o entidad de economía social",
+      "Alinear el proyecto con ODS e impacto social",
+      "Entender cláusulas sociales y responsabilidad social",
+      "Diseñar gobernanza democrática",
+      "Identificar ayudas del Plan Fent Cooperatives"
+    ],
+    "intenciones_busqueda": [
+      "Buscar guías de constitución de cooperativas",
+      "Buscar Plan Fent Cooperatives",
+      "Buscar documentación sobre cláusulas sociales",
+      "Buscar recursos de RSE e impacto social",
+      "Buscar programas de economía social"
+    ],
+    "palabras_clave_semanticas": [
+      "Responsabilidad Social Empresarial",
+      "RSE",
+      "bonos de impacto social",
+      "cláusulas sociales",
+      "Plan Fent Cooperatives",
+      "gobernanza democrática",
+      "ODS",
+      "economía social",
+      "cooperativa",
+      "impacto social"
+    ],
+    "descripcion_embedding": "Fundador de cooperativa de impacto social. Economía social, cooperativa, ODS, impacto social medible, Responsabilidad Social Empresarial, RSE, bonos de impacto social, cláusulas sociales, Plan Fent Cooperatives, gobernanza democrática, constitución de cooperativas y programas de economía social."
+  },
+  {
+    "id": "perfil_007_estudiante_presemilla",
+    "nombre": "Estudiante universitario en fase pre-semilla",
+    "fase_emprendedora": "Idea, validación inicial y pre-semilla",
+    "nivel_madurez": {
+      "cientifica": "media",
+      "empresarial": "baja",
+      "administrativa": "baja"
+    },
+    "perfil_funcional": "Estudiante universitario con capacidad técnica e intención emprendedora temprana. Necesita transformar una idea inicial en un proyecto validado, aprender metodología emprendedora y acceder a programas de apoyo universitario.",
+    "necesidades_prioritarias": [
+      "Validar una idea de negocio",
+      "Aprender metodología lean startup",
+      "Desarrollar competencias emprendedoras",
+      "Encontrar becas y programas universitarios",
+      "Definir un modelo de negocio inicial"
+    ],
+    "intenciones_busqueda": [
+      "Buscar guías de validación de idea",
+      "Buscar recursos de lean startup",
+      "Buscar becas de emprendimiento",
+      "Buscar programas de cultura emprendedora universitaria",
+      "Buscar plantillas de modelo de negocio"
+    ],
+    "palabras_clave_semanticas": [
+      "competencias emprendedoras",
+      "validación de idea",
+      "lean startup",
+      "becas de emprendimiento",
+      "cultura emprendedora",
+      "pre-semilla",
+      "universidad",
+      "modelo de negocio",
+      "talento joven"
+    ],
+    "descripcion_embedding": "Estudiante universitario en fase pre-semilla. Talento joven, idea de negocio, validación de idea, competencias emprendedoras, lean startup, becas de emprendimiento, cultura emprendedora, universidad, programas universitarios, modelo de negocio, formación inicial y baja madurez administrativa."
+  },
+  {
+    "id": "perfil_008_autoempleo_necesidad",
+    "nombre": "Emprendedor por necesidad en fase de autoempleo",
+    "fase_emprendedora": "Autoempleo e inserción laboral rápida",
+    "nivel_madurez": {
+      "cientifica": "baja",
+      "empresarial": "baja-media",
+      "administrativa": "baja"
+    },
+    "perfil_funcional": "Persona que emprende por necesidad y busca una vía rápida, viable y administrativamente clara para crear una actividad económica. Prioriza trámites, plan de viabilidad, financiación inicial y recursos prácticos.",
+    "necesidades_prioritarias": [
+      "Preparar un plan de viabilidad",
+      "Entender trámites administrativos de autoempleo",
+      "Acceder al pago único de prestación",
+      "Recibir orientación de LABORA o IVF",
+      "Aprender marketing digital básico"
+    ],
+    "intenciones_busqueda": [
+      "Buscar guías de pago único de prestación",
+      "Buscar planes de LABORA e IVF",
+      "Buscar plantillas de plan de viabilidad",
+      "Buscar manuales de trámites administrativos",
+      "Buscar recursos de marketing digital básico"
+    ],
+    "palabras_clave_semanticas": [
+      "plan de viabilidad",
+      "pago único de prestación",
+      "trámites administrativos",
+      "LABORA",
+      "IVF",
+      "inserción laboral rápida",
+      "marketing digital básico",
+      "autoempleo",
+      "emprendimiento por necesidad",
+      "microempresa"
+    ],
+    "descripcion_embedding": "Emprendedor por necesidad en fase de autoempleo. Necesita inserción laboral rápida, plan de viabilidad, pago único de prestación, trámites administrativos, LABORA, IVF, marketing digital básico, financiación inicial, microempresa, servicios locales, orientación administrativa y recursos prácticos para autoempleo."
+  }
+]
