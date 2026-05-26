@@ -1,31 +1,26 @@
-# TFC Recomendador Documental materiales emprendedores
+# Recomendador de contenidos para emprendedores
 
-Este repositorio contiene el trabajo inicial para construir un sistema de recomendacion documental a partir de recursos publicos del CEEI Elche y de la red EmprenemJunts.
+Este repositorio contiene la construccion inicial de un sistema recomendador documental para perfiles de emprendedores. El trabajo se organiza en etapas, empezando por la captacion y preparacion de documentos publicos de CEEI Elche y CEEI Valencia.
 
-El objetivo practico de esta fase ha sido crear una base documental descargable y ordenada: primero localizando recursos mediante scraping, despues descargando PDFs, y finalmente extrayendo texto de paginas que no tenian PDF disponible.
+La idea del proyecto es sencilla y defendible para el TFM:
 
-## Objetivo del Proyecto
+1. Captar documentos publicos de interes para emprendedores.
+2. Ordenarlos y dejar trazabilidad de su origen.
+3. Preparar perfiles de emprendedores en formato estructurado.
+4. Construir un primer recomendador content-based con TF-IDF y similitud coseno.
+5. Comparar despues con embeddings, sin usar collaborative filtering hasta disponer de historico de usuarios.
 
-El proyecto busca preparar un corpus documental que pueda alimentar despues un sistema de recomendacion. El flujo seguido hasta ahora es:
-
-1. Explorar las paginas publicas de recursos del CEEI.
-2. Extraer enlaces a documentos y fichas.
-3. Descargar los documentos disponibles en PDF.
-4. Clasificar los documentos por seccion.
-5. Crear indices CSV para saber que se ha descargado.
-6. Evitar duplicados entre ejecuciones.
-7. Extraer texto de paginas utiles que no ofrecen PDF.
-8. Versionar el codigo y los resultados en GitHub.
-
-## Estructura Principal
+## Estructura del repositorio
 
 ```text
 .
+|-- 2_scraper_ceei_seguro.py
+|-- extraer_modelos_negocio_texto.py
+|-- build_corpus.py
+|-- text_processing.py
 |-- scraper.py
 |-- scraper_multinivel.py
 |-- scraper_playwright.py
-|-- 2_scraper_ceei_seguro.py
-|-- extraer_modelos_negocio_texto.py
 |-- documentos_ceei_elche/
 |-- documentos_ceei_elche_PDF/
 |   |-- Fichas/
@@ -34,44 +29,57 @@ El proyecto busca preparar un corpus documental que pueda alimentar despues un s
 |   |-- Modelos_de_Negocio/
 |   |-- Modelos_de_Negocio_texto/
 |   `-- INDEX_DOCUMENTOS.csv
+|-- documentos_ceei_valencia/
+|-- scraping_valencia/
+|   |-- scrapy.cfg
+|   `-- scraping_valencia/
+|       `-- spiders/
+|           `-- ceei_valencia.py
 |-- data/
+|   |-- perfiles/
+|   |   |-- catalogo_perfiles.md
+|   |   `-- perfiles_emprendedores.json
+|   `-- processed/
+|       |-- corpus_documental.csv
+|       |-- documentos_ceei_valencia.json
+|       `-- enlaces_ceei_valencia.json
 |-- outputs/
 |-- requirements.txt
 `-- README.md
 ```
 
-## Entorno de Trabajo
+## Entorno de trabajo
 
 El proyecto se ha trabajado en Windows con PowerShell y un entorno virtual de Python.
 
-Para ejecutar los scripts desde la raiz del proyecto:
+Activacion habitual del entorno:
+
+```powershell
+.\.venv\Scripts\activate
+```
+
+Ejecucion de scripts desde la raiz del repositorio:
 
 ```powershell
 .\.venv\Scripts\python.exe 2_scraper_ceei_seguro.py
 ```
 
-Y para el extractor de texto de modelos de negocio:
+Ejecucion del spider de Valencia desde su proyecto Scrapy:
 
 ```powershell
-.\.venv\Scripts\python.exe extraer_modelos_negocio_texto.py
+cd scraping_valencia
+..\.venv\Scripts\python.exe -m scrapy crawl ceei_valencia
 ```
 
-Las dependencias principales usadas en esta fase son:
+Si el entorno virtual esta en otra ruta, usar la ruta completa al ejecutable de Python del entorno.
 
-```python
-import requests
-from bs4 import BeautifulSoup
-import csv
-import os
-import time
-from urllib.parse import urljoin
-```
+## Etapa 1: Scraping y corpus documental
 
-`requests` descarga el HTML y los archivos. `BeautifulSoup` interpreta las paginas. `csv` permite mantener indices reutilizables. `os` organiza carpetas y rutas. `time` introduce pausas para no saturar el servidor.
+La primera etapa del TFM se centra en construir una base documental util. Todo el scraping realizado hasta ahora pertenece a esta misma etapa, aunque se hayan probado varias tecnicas.
 
-## Fase 1: Scraping Inicial
+### 1.1 Exploracion inicial
 
-Se crearon varios scripts de exploracion:
+Se crearon varios scripts para entender la estructura de EmprenemJunts y validar como localizar recursos:
 
 ```text
 scraper.py
@@ -79,71 +87,46 @@ scraper_multinivel.py
 scraper_playwright.py
 ```
 
-El primer enfoque (`scraper.py`) sirvio para validar que se podian localizar recursos publicos.
+El aprendizaje de esta fase fue:
 
-Despues se probo un scraper multinivel (`scraper_multinivel.py`) para recorrer mas enlaces y ampliar el numero de documentos detectados.
+- Las paginas de listado contienen enlaces a fichas internas.
+- Las fichas internas suelen tener URLs con el patron `?op=13&n=...`.
+- El documento real no siempre esta enlazado directamente como `.pdf`; a menudo aparece detras de rutas tipo `contando2.php`.
+- Playwright se probo, pero se descarto como via principal porque podia activar controles o verificaciones de la web. Para este caso se priorizo un scraping mas simple, reproducible y explicable.
 
-Tambien se probo Playwright:
+### 1.2 Scraping de CEEI Elche
 
-```text
-scraper_playwright.py
-```
-
-Esta via se descarto como metodo principal porque podia activar verificaciones de Cloudflare. Por eso se priorizo un enfoque con `requests` y `BeautifulSoup`, mas simple y estable para este caso.
-
-Durante la depuracion se corrigio un error en `scraper_multinivel.py`:
-
-```python
-import pandas as pd
-from urllib.parse import urljoin, urlparse, parse_qs
-```
-
-Habia quedado roto como `import pandas as` y `parse_qspd`, lo que impedia ejecutar el archivo correctamente.
-
-## Fase 2: Renombrado de Archivos
-
-Uno de los primeros scripts tenia espacios en el nombre:
-
-```text
-2 intento scrapping CEEI import requests.py
-```
-
-Se creo una version sin espacios:
-
-```text
-2_intento_scrapping_CEEI_import_requests.py
-```
-
-Esto facilita ejecutar scripts desde terminal y reduce errores al escribir rutas.
-
-## Fase 3: Descarga Inicial de Documentos
-
-El primer script de descarga usaba una carpeta simple:
-
-```python
-DOWNLOAD_FOLDER = "documentos_ceei_elche"
-```
-
-Eso guardaba archivos en:
-
-```text
-documentos_ceei_elche/
-```
-
-Posteriormente se creo un scraper mas seguro y estructurado:
+Para CEEI Elche se trabajo principalmente con:
 
 ```text
 2_scraper_ceei_seguro.py
 ```
 
-Este script guarda PDFs en:
+Este script usa:
 
-```python
-CARPETA_RAIZ = "documentos_ceei_elche_PDF"
-INDEX_PATH = os.path.join(CARPETA_RAIZ, "INDEX_DOCUMENTOS.csv")
+- `requests` para descargar HTML y archivos.
+- `BeautifulSoup` para analizar las paginas.
+- `csv` para mantener indices.
+- `os` y rutas locales para organizar carpetas.
+- `time.sleep` para introducir pausas entre peticiones.
+
+El scraper recorre secciones configuradas como:
+
+```text
+Fichas
+Modelos_de_Negocio
+Infografias
+Informes_y_Publicaciones
+Manuales
 ```
 
-La carpeta final de PDFs queda asi:
+Cada seccion tiene una URL base y una carpeta local asociada. La salida principal de esta parte queda en:
+
+```text
+documentos_ceei_elche_PDF/
+```
+
+con subcarpetas por tipo de contenido:
 
 ```text
 documentos_ceei_elche_PDF/
@@ -151,316 +134,61 @@ documentos_ceei_elche_PDF/
 |-- Infografias/
 |-- Informes_y_Publicaciones/
 |-- Modelos_de_Negocio/
--- INDEX_DOCUMENTOS.csv
+`-- INDEX_DOCUMENTOS.csv
 ```
 
-## Fase 4: Configuracion de Secciones
+El indice `INDEX_DOCUMENTOS.csv` permite:
 
-El scraper define las secciones que se pueden recorrer:
+- Saber que documentos se han descargado.
+- Conservar la URL de origen.
+- Evitar duplicados entre ejecuciones.
+- Reanudar el proceso sin empezar desde cero.
 
-```python
-SECCIONES = [
-    {
-        "nombre": "Fichas",
-        "url_base": "https://ceeielche.emprenemjunts.es/?op=35&buscar=1&quebusco=3&cuantos=15&bbtipofic=1&bgcarga=1&estado=3&bgcanal=-1",
-    },
-    {
-        "nombre": "Modelos_de_Negocio",
-        "url_base": "https://ceeielche.emprenemjunts.es/?op=35&quebusco=3&bgcanal=-1&bbtipofic=26&estado=3&orlis=1&fmto=3&buscar=1",
-    },
-    {
-        "nombre": "Infografias",
-        "url_base": "https://ceeielche.emprenemjunts.es/?op=35&quebusco=20&bbtipoagru=991",
-    },
-    {
-        "nombre": "Informes_y_Publicaciones",
-        "url_base": "https://ceeielche.emprenemjunts.es/?op=35&buscar=1&quebusco=20&bbtipoagru=667",
-    },
-    {
-        "nombre": "Manuales",
-        "url_base": "https://ceeielche.emprenemjunts.es/?op=35&quebusco=20&bbtipoagru=673",
-    },
-]
-```
+### 1.3 Paginacion y segundo nivel
 
-Cada seccion tiene un nombre local y una URL base. El nombre local se usa para crear subcarpetas. La URL base se usa como punto de partida para buscar fichas.
+El scraper de Elche no se queda en la pagina de listado. Primero extrae fichas y luego entra en cada ficha para buscar el archivo real.
 
-Para limitar una ejecucion a una seccion concreta se usa:
-
-```python
-SECCIONES_OBJETIVO = ["Modelos_de_Negocio"]
-```
-
-Si se quiere recorrer todo, se puede dejar vacio:
-
-```python
-SECCIONES_OBJETIVO = []
-```
-
-## Fase 5: Control de Limites
-
-El script permite controlar cuantos documentos nuevos se intentan descargar:
-
-```python
-MAX_NUEVOS = 40
-MAX_ENLACES_POR_SECCION = 200
-```
-
-`MAX_NUEVOS` indica cuantos PDFs nuevos se descargan como maximo en una ejecucion.
-
-`MAX_ENLACES_POR_SECCION` indica cuantas fichas se exploran por seccion antes de parar.
-
-Esto permitio hacer varias rondas:
+La paginacion se controla con parametros como:
 
 ```text
-Primera ronda amplia: 95 documentos descargados.
-Segunda ronda: 90 PDFs nuevos adicionales.
-Tercera ronda en secciones distintas de Fichas: 17 PDFs nuevos.
+empieza=15
+cuantos=15
 ```
 
-## Fase 6: Limpieza de Nombres de Archivo
-
-Los titulos de las paginas pueden contener signos no validos para nombres de archivo. Por eso se anadio:
-
-```python
-def limpiar_nombre_archivo(titulo):
-    """Convierte un titulo web en un nombre de archivo valido para Windows."""
-    nombre = "".join(c if c.isalnum() or c in " -_" else "_" for c in titulo)
-    return nombre[:120].strip() or "documento"
-```
-
-Esta funcion conserva letras, numeros, espacios, guiones y guiones bajos. El resto lo cambia por `_`.
-
-Tambien limita el nombre a 120 caracteres para evitar rutas demasiado largas en Windows.
-
-## Fase 7: Creacion de Rutas
-
-Cada PDF se guarda dentro de la seccion correspondiente:
-
-```python
-def ruta_pdf(titulo, seccion):
-    nombre_limpio = limpiar_nombre_archivo(titulo)
-    return os.path.join(CARPETA_RAIZ, seccion, f"{nombre_limpio}.pdf")
-```
-
-Por ejemplo, un documento de infografias se guarda en:
+El segundo nivel se reconoce mediante:
 
 ```text
-documentos_ceei_elche_PDF/Infografias/nombre_del_documento.pdf
+?op=13&n=...
 ```
 
-## Fase 8: Indice CSV y Reanudacion
-
-Para poder ejecutar el scraper varias veces sin repetir trabajo, se creo un indice:
+Dentro de cada ficha se busca el enlace de descarga real. En muchos casos el enlace no termina en `.pdf`, sino que pasa por:
 
 ```text
-documentos_ceei_elche_PDF/INDEX_DOCUMENTOS.csv
+contando2.php
 ```
 
-El codigo que lo carga es:
+Esta decision es importante para el TFM: se documenta que el scraping no solo descarga enlaces visibles, sino que resuelve la ficha intermedia antes de localizar el documento.
 
-```python
-def cargar_index_existente():
-    """Carga el indice y crea claves por seccion para evitar duplicados."""
-    if not os.path.exists(INDEX_PATH):
-        return [], set()
+### 1.4 Validacion de PDFs
 
-    with open(INDEX_PATH, newline="", encoding="utf-8") as f:
-        filas = list(csv.DictReader(f))
+Antes de guardar un archivo, el scraper comprueba que realmente sea un PDF.
 
-    claves = {
-        (fila.get("seccion"), fila.get("url"))
-        for fila in filas
-        if fila.get("seccion") and fila.get("url")
-    }
-    return filas, claves
-```
+Criterios usados:
 
-La clave usada es:
+- Cabecera magica del archivo: `%PDF`.
+- Tipo de contenido HTTP compatible con PDF.
+- Descarte de respuestas HTML guardadas por error.
 
-```python
-(seccion, url)
-```
+Esto evita contaminar el corpus con paginas HTML renombradas como PDF.
 
-Esto es importante porque una misma URL o contenido puede aparecer en varias secciones. Con esta clave se controla el duplicado dentro de cada seccion.
+### 1.5 Extraccion de paginas sin PDF
 
-## Fase 9: Paginacion
+En la seccion de modelos de negocio se detecto un caso especial: muchas fichas no ofrecian PDF descargable, pero si contenian texto util en HTML.
 
-El sitio lista documentos por paginas. Para recorrer varias paginas se usa el parametro `empieza`:
-
-```python
-def extraer_enlaces_paginados(url_base, max_total=MAX_ENLACES_POR_SECCION):
-    """Recorre la paginacion y recoge enlaces a fichas de documentos."""
-    enlaces = []
-    pagina = 0
-    cuantos = 15
-
-    while len(enlaces) < max_total:
-        url = (
-            f"{url_base}&empieza={pagina * cuantos}&cuantos={cuantos}"
-            if pagina > 0
-            else url_base
-        )
-```
-
-La primera pagina usa la URL original. Las siguientes anaden:
-
-```text
-&empieza=15&cuantos=15
-&empieza=30&cuantos=15
-&empieza=45&cuantos=15
-```
-
-Dentro de cada pagina se buscan enlaces a fichas:
-
-```python
-for a in soup.find_all("a", href=True):
-    href = a["href"]
-    titulo = a.get_text(strip=True)
-    if "?op=13&n=" not in href or not titulo or len(titulo) <= 5:
-        continue
-```
-
-El patron `?op=13&n=` identifica fichas de documentos dentro de EmprenemJunts.
-
-## Fase 10: Localizacion del PDF Real
-
-No basta con encontrar la ficha del documento. Hay que entrar en esa ficha y localizar el enlace de descarga real:
-
-```python
-def localizar_enlace_descarga(soup):
-    """Encuentra el enlace interno que entrega el PDF real."""
-    for a in soup.find_all("a", href=True):
-        href = a["href"].lower()
-        if "contando2.php" in href or href.endswith(".pdf"):
-            return urljoin(BASE_URL, a["href"])
-    return None
-```
-
-En muchas fichas el PDF aparece como:
-
-```text
-contando2.php?q=10&n=...
-```
-
-Por eso el scraper busca tanto `contando2.php` como enlaces directos terminados en `.pdf`.
-
-## Fase 11: Validacion de PDFs
-
-Antes de guardar un archivo se comprueba que realmente parece un PDF:
-
-```python
-def es_pdf_valido(response):
-    """Comprueba el tipo MIME y la cabecera magica del archivo."""
-    content_type = response.headers.get("content-type", "").lower()
-    return "pdf" in content_type or response.content[:4] == b"%PDF"
-```
-
-Esto evita guardar paginas HTML con extension `.pdf` cuando el servidor no devuelve un documento real.
-
-## Fase 12: Descarga del PDF
-
-La descarga final se hace por bloques:
-
-```python
-with open(ruta, "wb") as f:
-    for chunk in pdf_response.iter_content(8192):
-        f.write(chunk)
-```
-
-Esto permite descargar archivos grandes sin cargar todo el contenido de golpe en memoria.
-
-El flujo completo de una descarga es:
-
-```python
-def descargar_pdf(url_doc, titulo, seccion):
-    ruta = ruta_pdf(titulo, seccion)
-    if os.path.exists(ruta):
-        print(f"      Ya existe: {os.path.basename(ruta)[:75]}...")
-        return False
-
-    response = requests.get(url_doc, headers=HEADERS, timeout=10)
-    response.raise_for_status()
-    soup = BeautifulSoup(response.text, "html.parser")
-
-    link_descarga = localizar_enlace_descarga(soup)
-    if not link_descarga:
-        return False
-```
-
-Primero calcula la ruta, despues evita repetir un archivo que ya existe, entra en la ficha, busca el enlace real y solo entonces descarga.
-
-## Fase 13: Pausas Entre Peticiones
-
-Para no saturar el servidor se anadieron pausas:
-
-```python
-time.sleep(1.5)
-```
-
-durante la paginacion, y:
-
-```python
-time.sleep(1.7)
-```
-
-entre descargas.
-
-Estas pausas hacen el proceso mas lento, pero reducen el riesgo de bloqueos y son una practica mas respetuosa con el servidor.
-
-## Fase 14: Resultado de PDFs
-
-Despues de las rondas realizadas, el corpus de PDFs quedo organizado asi:
-
-```text
-documentos_ceei_elche_PDF/
-|-- Fichas/                    121 PDFs
-|-- Infografias/                48 PDFs
-|-- Informes_y_Publicaciones/   27 PDFs
-|-- Modelos_de_Negocio/          5 PDFs
--- INDEX_DOCUMENTOS.csv
-```
-
-Total fisico de PDFs:
-
-```text
-201 PDFs
-```
-
-El indice contiene un registro adicional respecto al total fisico porque se conserva la trazabilidad de las ejecuciones:
-
-```text
-INDEX_DOCUMENTOS.csv: 202 registros
-```
-
-## Fase 15: Caso Especial de Modelos de Negocio
-
-Al intentar descargar 40 documentos mas de `Modelos_de_Negocio`, se detecto que la seccion tenia 49 entradas, pero solo 5 ofrecian PDF descargable.
-
-Las 5 con PDF ya estaban guardadas en:
-
-```text
-documentos_ceei_elche_PDF/Modelos_de_Negocio/
-```
-
-Las otras 44 entradas eran paginas web sin enlace de PDF. Para aprovecharlas, se creo:
+Para aprovechar ese contenido se creo:
 
 ```text
 extraer_modelos_negocio_texto.py
-```
-
-Este script no descarga PDFs. Extrae texto limpio desde las paginas web y lo guarda como `.txt`.
-
-## Fase 16: Extraccion de Texto de Modelos de Negocio
-
-La configuracion principal del extractor es:
-
-```python
-BASE_URL = "https://ceeielche.emprenemjunts.es"
-URL_MODELOS = "https://ceeielche.emprenemjunts.es/?op=35&quebusco=3&bgcanal=-1&bbtipofic=26&estado=3&orlis=1&fmto=3&buscar=1"
-CARPETA_SALIDA = os.path.join("documentos_ceei_elche_PDF", "Modelos_de_Negocio_texto")
-INDEX_PATH = os.path.join(CARPETA_SALIDA, "INDEX_MODELOS_TEXTO.csv")
-MAX_DOCUMENTOS = 40
 ```
 
 La salida se guarda en:
@@ -469,202 +197,27 @@ La salida se guarda en:
 documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/
 ```
 
-El indice especifico se guarda en:
+Cada `.txt` conserva:
 
-```text
-documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/INDEX_MODELOS_TEXTO.csv
-```
+- Titulo.
+- URL de origen.
+- Texto limpio extraido de la pagina.
 
-## Fase 17: Deteccion de Paginas Sin PDF
+Esto permite ampliar el corpus sin forzar a que todo tenga que ser PDF.
 
-El extractor evita procesar fichas que si tienen PDF, porque esas ya pertenecen al flujo principal:
+### 1.6 Resultado de CEEI Elche
 
-```python
-def tiene_pdf_descargable(soup):
-    """Distingue fichas con PDF real de fichas que solo son pagina web."""
-    for a in soup.find_all("a", href=True):
-        href = a["href"].lower()
-        if "contando2.php" in href or href.endswith(".pdf"):
-            return True
-    return False
-```
-
-Si una pagina tiene PDF, se salta. Si no tiene PDF, se extrae su texto.
-
-## Fase 18: Limpieza de HTML y Extraccion de Texto
-
-Para limpiar el contenido de una pagina:
-
-```python
-def extraer_texto_documento(soup):
-    """Limpia HTML auxiliar y devuelve texto util para procesado posterior."""
-    for tag in soup(["script", "style", "noscript"]):
-        tag.decompose()
-```
-
-Primero se eliminan scripts, estilos y bloques no utiles.
-
-Despues se intenta recuperar el titulo:
-
-```python
-titulo = soup.find("h1")
-partes = []
-if titulo:
-    partes.append(titulo.get_text(" ", strip=True))
-```
-
-Y finalmente se extraen lineas suficientemente informativas:
-
-```python
-for linea in texto.splitlines():
-    linea = " ".join(linea.split())
-    if len(linea) >= 25 and linea not in lineas:
-        lineas.append(linea)
-```
-
-Se descartan lineas muy cortas y duplicadas para reducir ruido.
-
-## Fase 19: Guardado de TXT
-
-Cada documento de texto se guarda con titulo, URL y contenido:
-
-```python
-with open(ruta, "w", encoding="utf-8") as f:
-    f.write(f"Titulo: {titulo}\n")
-    f.write(f"URL: {url}\n\n")
-    f.write(texto)
-```
-
-Esto facilita que mas adelante se pueda saber de donde procede cada texto.
-
-Resultado obtenido:
-
-```text
-Modelos_de_Negocio_texto: 40 TXT
-```
-
-## Fase 20: Depuracion del Codigo
-
-Se depuro el codigo para que fuera mas mantenible:
-
-```text
-2_scraper_ceei_seguro.py
-extraer_modelos_negocio_texto.py
-scraper_multinivel.py
-```
-
-Cambios principales:
-
-- Se eliminaron salidas con caracteres problematicos para la consola de Windows.
-- Se anadieron comentarios y docstrings.
-- Se separaron responsabilidades en funciones.
-- Se corrigieron imports rotos.
-- Se anadio control de duplicados mediante CSV.
-- Se anadio validacion de PDFs.
-- Se anadio soporte para limitar secciones objetivo.
-
-Tambien se actualizo `.gitignore` para evitar subir caches:
-
-```gitignore
-__pycache__/
-*.py[cod]
-```
-
-## Fase 21: Validacion
-
-Antes de hacer commit se valido que los scripts principales compilaban:
-
-```powershell
-.\.venv\Scripts\python.exe -m py_compile 2_scraper_ceei_seguro.py extraer_modelos_negocio_texto.py scraper_multinivel.py
-```
-
-Esta comprobacion no ejecuta el scraping, pero si detecta errores de sintaxis.
-
-## Fase 22: Git, Commit y Sincronizacion
-
-Se reviso el estado del repositorio:
-
-```powershell
-git status --short
-```
-
-Se anadieron al control de versiones:
-
-```powershell
-git add .gitignore scraper_multinivel.py 2_scraper_ceei_seguro.py extraer_modelos_negocio_texto.py documentos_ceei_elche documentos_ceei_elche_PDF
-```
-
-Se creo el commit:
-
-```powershell
-git commit -m "Add CEEI document scraping outputs"
-```
-
-Commit generado:
-
-```text
-16ec82f Add CEEI document scraping outputs
-```
-
-Y se sincronizo con GitHub:
-
-```powershell
-git push origin main
-```
-
-Repositorio remoto:
-
-```text
-https://github.com/eloysentana-cell/tfm-recomendador-ceei-elche.git
-```
-
-## Como Repetir el Proceso
-
-Para descargar PDFs con la configuracion actual:
-
-```powershell
-.\.venv\Scripts\python.exe 2_scraper_ceei_seguro.py
-```
-
-Para cambiar la seccion objetivo, editar:
-
-```python
-SECCIONES_OBJETIVO = ["Modelos_de_Negocio"]
-```
-
-Ejemplos:
-
-```python
-SECCIONES_OBJETIVO = ["Infografias"]
-SECCIONES_OBJETIVO = ["Informes_y_Publicaciones"]
-SECCIONES_OBJETIVO = []
-```
-
-Para cambiar el numero de documentos nuevos:
-
-```python
-MAX_NUEVOS = 40
-```
-
-Para extraer texto de modelos de negocio sin PDF:
-
-```powershell
-.\.venv\Scripts\python.exe extraer_modelos_negocio_texto.py
-```
-
-## Estado Actual del Corpus
-
-Resumen del material preparado:
+Estado del corpus de Elche preparado en esta etapa:
 
 ```text
 PDFs:
   Fichas:                    121
-  Infografias:                 48
-  Informes_y_Publicaciones:    27
-  Modelos_de_Negocio:           5
+  Infografias:                48
+  Informes_y_Publicaciones:   27
+  Modelos_de_Negocio:          5
 
 Textos extraidos:
-  Modelos_de_Negocio_texto:    40
+  Modelos_de_Negocio_texto:   40
 ```
 
 Total aproximado:
@@ -673,19 +226,283 @@ Total aproximado:
 201 PDFs + 40 TXT
 ```
 
-## Siguientes Pasos Recomendados
+### 1.7 Scraping de CEEI Valencia con Scrapy
 
-Los proximos pasos naturales del TFM serian:
+Para CEEI Valencia se creo un proyecto Scrapy independiente:
 
-1. Extraer texto de todos los PDFs.
-2. Normalizar codificacion y limpiar caracteres corruptos en nombres o contenidos.
-3. Crear un dataset unico con columnas como `titulo`, `seccion`, `tipo_archivo`, `ruta`, `url` y `texto`.
-4. Aplicar tecnicas de embeddings o TF-IDF.
-5. Construir un buscador semantico o recomendador documental.
-6. Evaluar recomendaciones con consultas reales de usuarios emprendedores.
+```text
+scraping_valencia/
+```
 
-## Nota Sobre Codificacion
+El spider principal es:
 
-Algunos nombres de archivos descargados muestran caracteres mal codificados en consola de Windows. Los contenidos se han guardado en UTF-8 cuando el script escribe texto propio, pero los nombres proceden directamente de titulos web y de como PowerShell los representa.
+```text
+scraping_valencia/scraping_valencia/spiders/ceei_valencia.py
+```
 
-Esto no impide usar los documentos, pero conviene normalizar nombres y metadatos en una fase posterior de limpieza.
+Se eligio Scrapy porque permite dejar un flujo mas formal para:
+
+- Separar el spider del resto de scripts.
+- Exportar resultados directamente a JSON.
+- Controlar concurrencia y pausas.
+- Ejecutar primero en modo listado y despues en modo descarga.
+
+Las paginas de partida fueron:
+
+```text
+https://ceeivalencia.emprenemjunts.es/?op=130&id=73
+https://ceeivalencia.emprenemjunts.es/?op=35&quebusco=20&bbtipoagru=657
+https://ceeivalencia.emprenemjunts.es/?op=35&quebusco=20&bbtipoagru=994
+```
+
+En estas paginas los documentos tambien aparecen en segundo nivel. El spider entra en las fichas `op=13&n=...` y desde ahi localiza el enlace real de descarga.
+
+### 1.8 Modo listado y modo descarga
+
+El spider de Valencia puede ejecutarse de dos formas.
+
+Primero, modo listado:
+
+```powershell
+cd scraping_valencia
+..\.venv\Scripts\python.exe -m scrapy crawl ceei_valencia -O ..\data\processed\enlaces_ceei_valencia.json
+```
+
+Este modo no descarga archivos. Sirve para revisar que documentos se han localizado antes de guardar nada en disco.
+
+Despues, modo descarga:
+
+```powershell
+cd scraping_valencia
+..\.venv\Scripts\python.exe -m scrapy crawl ceei_valencia -a descargar=si -O ..\data\processed\documentos_ceei_valencia.json
+```
+
+Este modo descarga los documentos validos en:
+
+```text
+documentos_ceei_valencia/
+```
+
+y genera un indice JSON con metadatos.
+
+### 1.9 Campos del indice de Valencia
+
+El archivo:
+
+```text
+data/processed/documentos_ceei_valencia.json
+```
+
+incluye campos como:
+
+```text
+titulo
+categoria
+url_listado
+url_pagina
+url_descarga
+ruta_local
+tipo_archivo
+tamano_bytes
+content_type
+estado
+```
+
+El campo `estado` permite distinguir:
+
+- `descargado`: archivo real guardado correctamente.
+- `no_disponible`: enlace detectado, pero sin documento valido descargable.
+
+Esto mantiene trazabilidad incluso cuando la web muestra una ficha pero no entrega un PDF real.
+
+### 1.10 Limpieza de imagenes
+
+Durante la descarga de Valencia se detecto un archivo de imagen `.jpg`. Como el objetivo inmediato es construir un corpus documental textual, se elimino la imagen y se retiro su registro del indice de documentos descargados.
+
+Resultado final de Valencia:
+
+```text
+documentos_ceei_valencia/: 30 PDFs
+data/processed/documentos_ceei_valencia.json: 163 registros
+```
+
+Desglose del JSON:
+
+```text
+30 registros con estado descargado y tipo pdf
+133 registros con estado no_disponible y tipo pdf
+0 imagenes
+```
+
+### 1.11 Criterios de calidad aplicados al scraping
+
+En toda la etapa de scraping se han aplicado criterios pensados para que el proceso sea defendible:
+
+- Separacion entre exploracion, descarga y procesado posterior.
+- Conservacion de URLs de origen.
+- Indices CSV o JSON para trazabilidad.
+- Pausas entre peticiones para no saturar el servidor.
+- Validacion de tipos de archivo antes de guardar.
+- Evitacion de duplicados.
+- Limpieza de archivos no utiles para el corpus textual.
+- Uso de nombres de archivo compatibles con Windows.
+
+## Etapa 2: Perfiles de emprendedores
+
+Ademas del corpus documental, se preparo una primera base de perfiles de emprendedores.
+
+Archivo original:
+
+```text
+data/perfiles/catalogo_perfiles.md
+```
+
+Archivo estructurado:
+
+```text
+data/perfiles/perfiles_emprendedores.json
+```
+
+Cada perfil incluye:
+
+```text
+id
+nombre
+fase_emprendedora
+nivel_madurez
+perfil_funcional
+necesidades_prioritarias
+intenciones_busqueda
+palabras_clave_semanticas
+descripcion_embedding
+```
+
+La clave `descripcion_embedding` no contiene embeddings reales. Es una descripcion textual optimizada para alimentar despues TF-IDF o modelos de embeddings.
+
+Esta decision mantiene el sistema simple y explicable:
+
+- Primero se representa cada perfil con texto descriptivo.
+- Despues se comparara ese texto con los documentos.
+- No se usan APIs ni modelos externos en esta etapa.
+
+## Etapa 3: Corpus procesado
+
+El repositorio ya contiene datos procesados en:
+
+```text
+data/processed/
+```
+
+Entre ellos:
+
+```text
+corpus_documental.csv
+documentos_ceei.csv
+documentos_ceei_limpio.csv
+documentos_ceei_multinivel.csv
+documentos_ceei_playwright.csv
+documentos_ceei_valencia.json
+enlaces_ceei_valencia.json
+```
+
+Estos archivos sirven como base para unificar documentos, metadatos y texto extraido.
+
+El siguiente paso tecnico es consolidar una tabla unica con columnas como:
+
+```text
+id_documento
+titulo
+fuente
+seccion
+tipo_archivo
+ruta_local
+url_origen
+texto
+```
+
+## Etapa 4: Recomendador content-based
+
+El primer recomendador previsto sera content-based.
+
+Enfoque inicial:
+
+1. Construir un texto representativo para cada perfil.
+2. Construir un texto representativo para cada documento.
+3. Vectorizar ambos conjuntos con TF-IDF.
+4. Calcular similitud coseno entre perfiles y documentos.
+5. Devolver los documentos mas similares para cada perfil.
+
+Este enfoque es adecuado porque:
+
+- No hay historico de usuarios.
+- No se necesitan interacciones previas.
+- El resultado es explicable.
+- Se puede justificar con terminos relevantes y pesos TF-IDF.
+
+Mas adelante se comparara con embeddings, pero no se generan embeddings reales todavia.
+
+## Comandos utiles
+
+Ejecutar scraper de Elche:
+
+```powershell
+.\.venv\Scripts\python.exe 2_scraper_ceei_seguro.py
+```
+
+Extraer texto de modelos de negocio sin PDF:
+
+```powershell
+.\.venv\Scripts\python.exe extraer_modelos_negocio_texto.py
+```
+
+Listar enlaces de Valencia sin descargar:
+
+```powershell
+cd scraping_valencia
+..\.venv\Scripts\python.exe -m scrapy crawl ceei_valencia -O ..\data\processed\enlaces_ceei_valencia.json
+```
+
+Descargar documentos de Valencia:
+
+```powershell
+cd scraping_valencia
+..\.venv\Scripts\python.exe -m scrapy crawl ceei_valencia -a descargar=si -O ..\data\processed\documentos_ceei_valencia.json
+```
+
+Validar sintaxis de scripts principales:
+
+```powershell
+.\.venv\Scripts\python.exe -m py_compile 2_scraper_ceei_seguro.py extraer_modelos_negocio_texto.py scraper_multinivel.py
+```
+
+## Estado actual
+
+Resumen del material disponible:
+
+```text
+CEEI Elche:
+  201 PDFs aproximadamente
+  40 TXT de modelos de negocio sin PDF
+
+CEEI Valencia:
+  30 PDFs descargados
+  163 registros trazados en JSON
+
+Perfiles:
+  8 perfiles de emprendedores en JSON estructurado
+```
+
+## Siguientes pasos recomendados
+
+1. Unificar Elche y Valencia en un unico indice documental.
+2. Extraer texto de todos los PDFs.
+3. Normalizar texto, codificacion y metadatos.
+4. Crear un dataset final de documentos.
+5. Implementar TF-IDF + similitud coseno.
+6. Generar un ranking de documentos por perfil emprendedor.
+7. Evaluar resultados manualmente con ejemplos de perfiles.
+8. Comparar despues con embeddings.
+
+## Nota sobre codificacion
+
+Algunos nombres de archivos o textos pueden mostrar caracteres mal codificados en la consola de Windows. Esto no impide usar los documentos, pero conviene normalizar nombres y metadatos antes de construir el dataset final del recomendador.
