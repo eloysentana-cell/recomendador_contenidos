@@ -1,0 +1,54 @@
+"""Worker JSON para ejecutar recomendaciones fuera del proceso Streamlit."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+
+from recommend_from_text import MODEL_NAME, recommend_documents, recommend_profiles
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Devuelve recomendaciones en JSON.")
+    parser.add_argument("--query", required=True, help="Texto libre de consulta.")
+    parser.add_argument("--top-k", type=int, default=10, help="Numero de documentos.")
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    query = str(args.query or "").strip()
+    if not query:
+        payload = {
+            "model_name": MODEL_NAME,
+            "profiles": [],
+            "documents": [],
+            "error": "",
+        }
+        print(json.dumps(payload, ensure_ascii=False))
+        return
+
+    profiles_df = recommend_profiles(query, top_k=3)
+    documents_df = recommend_documents(query, top_k=args.top_k)
+    payload = {
+        "model_name": MODEL_NAME,
+        "profiles": profiles_df.to_dict(orient="records"),
+        "documents": documents_df.to_dict(orient="records"),
+        "error": "",
+    }
+    print(json.dumps(payload, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as exc:
+        payload = {
+            "model_name": MODEL_NAME,
+            "profiles": [],
+            "documents": [],
+            "error": str(exc),
+        }
+        print(json.dumps(payload, ensure_ascii=False))
+        sys.exit(1)

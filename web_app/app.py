@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -59,6 +61,47 @@ def show_table(df: pd.DataFrame, columns: list[str]) -> None:
         st.dataframe(df[existing], use_container_width=True, hide_index=True)
 
 
+@st.cache_data(show_spinner=False)
+def run_recommendation_worker(query_text: str, top_k: int) -> tuple[pd.DataFrame, pd.DataFrame, str]:
+    """Ejecuta la recomendacion fuera del proceso Streamlit."""
+    command = [
+        sys.executable,
+        str(ROOT / "recommend_from_text_worker.py"),
+        "--query",
+        query_text,
+        "--top-k",
+        str(top_k),
+    ]
+    result = subprocess.run(
+        command,
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        timeout=180,
+    )
+
+    output = result.stdout.strip()
+    if not output:
+        error = result.stderr.strip() or f"El worker termino con codigo {result.returncode}."
+        return pd.DataFrame(), pd.DataFrame(), error
+
+    try:
+        payload = json.loads(output.splitlines()[-1])
+    except json.JSONDecodeError as exc:
+        detail = result.stderr.strip() or output[-1000:]
+        return pd.DataFrame(), pd.DataFrame(), f"No se pudo leer la salida JSON: {exc}. {detail}"
+
+    error = str(payload.get("error") or "")
+    if result.returncode != 0 and not error:
+        error = result.stderr.strip() or f"El worker termino con codigo {result.returncode}."
+
+    profiles_df = pd.DataFrame(payload.get("profiles") or [])
+    docs_df = pd.DataFrame(payload.get("documents") or [])
+    return profiles_df, docs_df, error
+
+
 st.set_page_config(
     page_title="Recomendador de contenidos para emprendedores",
     layout="wide",
@@ -92,10 +135,13 @@ if st.button("Recomendar documentos", type="primary"):
 
     try:
         with st.spinner("Calculando recomendaciones..."):
-            profiles_df = recommend_profiles(query_text, top_k=3)
-            docs_df = recommend_documents(query_text, top_k=top_k)
+            profiles_df, docs_df, worker_error = run_recommendation_worker(query_text, top_k)
     except Exception as exc:
         st.error(f"No se pudieron calcular las recomendaciones: {exc}")
+        st.stop()
+
+    if worker_error:
+        st.error(f"No se pudieron calcular las recomendaciones: {worker_error}")
         st.stop()
 
     st.subheader("Perfiles predefinidos mas parecidos")
