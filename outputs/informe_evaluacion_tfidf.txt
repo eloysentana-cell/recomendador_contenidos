@@ -1,0 +1,39 @@
+Informe de evaluacion tecnica del recomendador TF-IDF
+=======================================================
+
+Importante:
+- Esto no es una evaluacion con usuarios reales.
+- Es una evaluacion tecnica y exploratoria.
+- Sirve como linea base antes de comparar con embeddings.
+
+Perfiles evaluados: 8
+Recomendaciones analizadas: 80
+Documentos repetidos entre perfiles: 14
+
+Metricas por perfil:
+                                    id_perfil                                      nombre_perfil  score_medio  score_maximo  score_minimo_top10  diversidad_fuentes  diversidad_secciones  total_recomendaciones
+              perfil_001_investigador_ebt_ebc Investigador académico en fase de spin-off EBT/EBC     0.090739      0.143180            0.070749                   2                     3                     10
+         perfil_002_ceo_scaling_internacional   CEO de startup en fase de escalado internacional     0.101063      0.228107            0.066670                   2                     5                     10
+                  perfil_003_consultor_silver              Consultor senior Silver en transición     0.078760      0.113544            0.066608                   2                     5                     10
+     perfil_004_mentor_negocios_tradicionales                   Mentor de negocios tradicionales     0.066912      0.091940            0.058872                   2                     5                     10
+perfil_005_emprendedora_rural_agroalimentaria    Emprendedora rural en el sector agroalimentario     0.115323      0.282578            0.058063                   2                     4                     10
+      perfil_006_fundador_cooperativa_impacto          Fundador de cooperativa de impacto social     0.094547      0.189507            0.067055                   2                     5                     10
+             perfil_007_estudiante_presemilla       Estudiante universitario en fase pre-semilla     0.108064      0.145535            0.083527                   2                     4                     10
+              perfil_008_autoempleo_necesidad    Emprendedor por necesidad en fase de autoempleo     0.052977      0.071484            0.045182                   2                     5                     10
+
+Documentos repetidos entre perfiles:
+id_documento
+doc_0324    5
+doc_0140    3
+doc_0326    3
+doc_0397    3
+doc_0025    2
+doc_0020    2
+doc_0323    2
+doc_0211    2
+doc_0186    2
+doc_0332    2
+doc_0337    2
+doc_0348    2
+doc_0394    2
+doc_0401    2

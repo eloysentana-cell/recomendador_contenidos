@@ -1,0 +1,9 @@
+﻿id_perfil,nombre_perfil,score_medio,score_maximo,score_minimo_top10,diversidad_fuentes,diversidad_secciones,total_recomendaciones
+perfil_001_investigador_ebt_ebc,Investigador académico en fase de spin-off EBT/EBC,0.0907386,0.14318,0.070749,2,3,10
+perfil_002_ceo_scaling_internacional,CEO de startup en fase de escalado internacional,0.1010626,0.228107,0.06667,2,5,10
+perfil_003_consultor_silver,Consultor senior Silver en transición,0.0787599,0.113544,0.066608,2,5,10
+perfil_004_mentor_negocios_tradicionales,Mentor de negocios tradicionales,0.06691240000000001,0.09194,0.058872,2,5,10
+perfil_005_emprendedora_rural_agroalimentaria,Emprendedora rural en el sector agroalimentario,0.1153229,0.282578,0.058063,2,4,10
+perfil_006_fundador_cooperativa_impacto,Fundador de cooperativa de impacto social,0.0945474,0.189507,0.067055,2,5,10
+perfil_007_estudiante_presemilla,Estudiante universitario en fase pre-semilla,0.1080635,0.145535,0.083527,2,4,10
+perfil_008_autoempleo_necesidad,Emprendedor por necesidad en fase de autoempleo,0.0529767,0.071484,0.045182,2,5,10

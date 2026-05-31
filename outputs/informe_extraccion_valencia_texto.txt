@@ -1,0 +1,9 @@
+Informe de extraccion HTML de CEEI Valencia
+=============================================
+Registros no_disponible analizados: 133
+Textos extraidos utiles: 133
+Textos insuficientes: 0
+Errores: 0
+Carpeta de salida: data/raw/ceei_valencia/txt
+JSON de salida: data/processed/documentos_ceei_valencia_texto.json
+Informe de salida: outputs/informe_extraccion_valencia_texto.txt

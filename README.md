@@ -17,6 +17,7 @@ La idea del proyecto es sencilla y defendible para el TFM:
 |-- 2_scraper_ceei_seguro.py
 |-- extraer_modelos_negocio_texto.py
 |-- build_corpus.py
+|-- recommend_tfidf.py
 |-- text_processing.py
 |-- scraper.py
 |-- scraper_multinivel.py
@@ -44,6 +45,8 @@ La idea del proyecto es sencilla y defendible para el TFM:
 |       |-- documentos_ceei_valencia.json
 |       `-- enlaces_ceei_valencia.json
 |-- outputs/
+|   |-- recomendaciones_tfidf.csv
+|   `-- recomendaciones_tfidf.xlsx
 |-- requirements.txt
 `-- README.md
 ```
@@ -440,70 +443,178 @@ documentos_ceei_valencia.json
 enlaces_ceei_valencia.json
 ```
 
-El archivo mas relevante ahora mismo es:
+El archivo historico de corpus inicial es:
 
 ```text
 data/processed/corpus_documental.csv
 ```
 
-Se genera con:
+El corpus consolidado actual del recomendador se genera con:
 
 ```text
-build_corpus.py
+build_corpus_recomendador.py
 ```
 
-Este script:
-
-1. Recorre documentos PDF y TXT.
-2. Extrae texto de los PDFs con `pypdf`.
-3. Lee los TXT generados desde paginas sin PDF.
-4. Limpia texto.
-5. Extrae URLs y correos detectados.
-6. Crea el campo `texto_recomendador`.
-7. Guarda CSV y Excel.
-
-Salidas principales:
+Salidas principales del corpus actual:
 
 ```text
-data/processed/corpus_documental.csv
-outputs/corpus_documental.xlsx
+data/processed/corpus_recomendador.csv
+outputs/corpus_recomendador.xlsx
 ```
 
 El CSV conserva el texto completo. El Excel recorta celdas largas para respetar el limite de 32.767 caracteres por celda.
 
-## Estado actual del proyecto
+## Pipeline actual del recomendador TF-IDF
 
-El estado actual puede resumirse asi:
+El objetivo actual del proyecto es construir una linea base reproducible para recomendar contenidos emprendedores a partir de perfiles semanticos. Esta primera version usa filtrado basado en contenido: compara textos de perfiles con textos de documentos mediante TF-IDF y similitud coseno.
+
+Se usa content-based filtering porque todavia no existe historico de usuarios, valoraciones, clics ni interacciones reales. Por esa misma razon no se usa collaborative filtering en esta fase: aplicar filtrado colaborativo sin datos de comportamiento obligaria a simular informacion que el proyecto no tiene y seria poco defendible en la memoria del TFM.
+
+El pipeline esta dividido en scripts independientes:
 
 ```text
-1. Scraping de CEEI Elche completado.
-2. Extraccion adicional de textos HTML de modelos de negocio completada.
-3. Scraping de CEEI Valencia completado.
-4. Corpus documental inicial generado.
-5. Perfiles de emprendedores creados en JSON.
-6. Proyecto preparado para iniciar el primer recomendador TF-IDF.
+build_corpus_recomendador.py
+validate_corpus.py
+build_profile_queries.py
+recommender_tfidf.py
+explain_tfidf_recommendations.py
+evaluate_tfidf_recommender.py
+run_pipeline.py
 ```
 
-Todavia no se ha construido el recomendador final. El siguiente paso tecnico es consolidar un corpus unico y ejecutar una primera recomendacion content-based.
+`extraer_valencia_texto_html.py` aprovecha las fichas HTML de CEEI Valencia cuyos PDFs no estaban disponibles publicamente. Lee `data/processed/documentos_ceei_valencia.json`, procesa registros `no_disponible` y guarda 133 TXT utiles en:
 
-## Siguiente paso tecnico
+```text
+data/raw/ceei_valencia/txt/
+data/processed/documentos_ceei_valencia_texto.json
+outputs/informe_extraccion_valencia_texto.txt
+```
 
-El siguiente paso recomendado es construir una version inicial del recomendador basada en:
+`build_corpus_recomendador.py` recorre las carpetas documentales locales, incluyendo PDFs de Elche, TXT de Elche, PDFs de Valencia y fichas HTML convertidas a TXT de Valencia. Extrae texto de PDFs con `pypdf`, lee TXT directamente, filtra documentos vacios o con menos de 300 caracteres y genera:
 
-- `TF-IDF` para representar documentos y perfiles.
-- `cosine similarity` para medir proximidad entre perfiles y documentos.
-- Resultados explicables, mostrando que terminos conectan cada perfil con cada documento recomendado.
+```text
+data/processed/corpus_recomendador.csv
+outputs/corpus_recomendador.xlsx
+```
 
-La primera salida esperada deberia ser:
+`validate_corpus.py` comprueba que el corpus tiene las columnas obligatorias, resume documentos por fuente, seccion y tipo, identifica documentos vacios, documentos cortos y titulos duplicados. No modifica el corpus. Genera:
+
+```text
+outputs/informe_validacion_corpus.txt
+```
+
+`build_profile_queries.py` lee:
+
+```text
+data/perfiles/perfiles_emprendedores.json
+```
+
+y transforma cada perfil en un texto largo comparable con documentos. Genera:
+
+```text
+data/processed/profile_queries.csv
+```
+
+`recommender_tfidf.py` lee el corpus validado y las consultas de perfil. Vectoriza documentos y perfiles con `TfidfVectorizer`, calcula similitud coseno y devuelve el top 10 de documentos por perfil. Genera:
 
 ```text
 outputs/recomendaciones_tfidf.csv
 outputs/recomendaciones_tfidf.xlsx
 ```
 
+`explain_tfidf_recommendations.py` no usa IA generativa. Reconstruye la matriz TF-IDF e identifica terminos o bigramas compartidos que ayudan a explicar cada recomendacion. Genera:
+
+```text
+outputs/recomendaciones_tfidf_explicadas.csv
+outputs/recomendaciones_tfidf_explicadas.xlsx
+```
+
+`evaluate_tfidf_recommender.py` calcula metricas descriptivas por perfil: score medio, score maximo, score minimo del top 10, diversidad de fuentes, diversidad de secciones y documentos repetidos entre perfiles. Genera:
+
+```text
+outputs/evaluacion_tfidf.csv
+outputs/evaluacion_tfidf.xlsx
+outputs/informe_evaluacion_tfidf.txt
+```
+
+Estas metricas no son una evaluacion con usuarios reales. Son una evaluacion tecnica y exploratoria que sirve como linea base antes de comparar con embeddings.
+
+## Estado actual
+
+Resumen del material disponible:
+
+```text
+CEEI Elche:
+  250 documentos utiles en el corpus consolidado.
+
+CEEI Valencia:
+  30 PDFs descargados.
+  133 fichas HTML convertidas a TXT.
+  163 documentos utiles en el corpus consolidado.
+
+Perfiles:
+  8 perfiles de emprendedores en JSON estructurado.
+
+Recomendador TF-IDF:
+  80 recomendaciones generadas.
+  outputs/recomendaciones_tfidf.csv
+  outputs/recomendaciones_tfidf.xlsx
+```
+
+## Comandos utiles
+
+Ejecutar scraper de Elche:
+
+```powershell
+.\.venv\Scripts\python.exe 2_scraper_ceei_seguro.py
+```
+
+Extraer texto de modelos de negocio sin PDF:
+
+```powershell
+.\.venv\Scripts\python.exe extraer_modelos_negocio_texto.py
+```
+
+Listar enlaces de Valencia sin descargar:
+
+```powershell
+cd scraping_valencia
+..\.venv\Scripts\python.exe -m scrapy crawl ceei_valencia -O ..\data\processed\enlaces_ceei_valencia.json
+```
+
+Descargar documentos de Valencia:
+
+```powershell
+cd scraping_valencia
+..\.venv\Scripts\python.exe -m scrapy crawl ceei_valencia -a descargar=si -O ..\data\processed\documentos_ceei_valencia.json
+```
+
+Extraer fichas HTML de Valencia como TXT:
+
+```powershell
+.\.venv\Scripts\python.exe extraer_valencia_texto_html.py
+```
+
+Ejecutar todo el pipeline TF-IDF:
+
+```powershell
+.\.venv\Scripts\python.exe run_pipeline.py
+```
+
+Tambien puede ejecutarse fase a fase:
+
+```powershell
+.\.venv\Scripts\python.exe build_corpus_recomendador.py
+.\.venv\Scripts\python.exe validate_corpus.py
+.\.venv\Scripts\python.exe build_profile_queries.py
+.\.venv\Scripts\python.exe recommender_tfidf.py
+.\.venv\Scripts\python.exe explain_tfidf_recommendations.py
+.\.venv\Scripts\python.exe evaluate_tfidf_recommender.py
+```
+
 ## Enfoque metodologico del recomendador
 
-La recomendacion sera inicialmente content-based:
+La recomendacion es inicialmente content-based:
 
 ```text
 perfil emprendedor -> texto descriptivo -> vector TF-IDF
@@ -513,4 +624,14 @@ comparacion -> similitud coseno
 
 No se usara collaborative filtering en esta fase porque no existe todavia historico de usuarios, interacciones, valoraciones ni comportamiento de navegacion.
 
-La comparacion posterior con embeddings permitira valorar si una representacion semantica mas avanzada mejora las recomendaciones frente a la linea base TF-IDF.
+La interpretacion de resultados debe hacerse con cautela. Un score TF-IDF alto indica mayor solapamiento textual ponderado entre el perfil y el documento, no una garantia de utilidad para una persona real. Los terminos explicativos permiten revisar si la recomendacion se apoya en conceptos coherentes con el perfil.
+
+Limitaciones actuales:
+
+- No hay validacion con usuarios reales.
+- No hay feedback implicito ni explicito.
+- Algunos PDFs pueden no tener texto extraible si son imagenes o infografias.
+- TF-IDF captura coincidencias lexicas, pero no siempre sinonimos o relaciones semanticas profundas.
+- Las recomendaciones pueden favorecer documentos largos o vocabulario muy repetido.
+
+El siguiente paso metodologico es comparar esta linea base con una version basada en embeddings, manteniendo el mismo corpus, los mismos perfiles y criterios de evaluacion comparables.

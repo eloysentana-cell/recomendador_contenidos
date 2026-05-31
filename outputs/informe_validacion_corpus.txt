@@ -1,0 +1,47 @@
+Informe de validacion del corpus
+===================================
+Numero total de documentos: 413
+
+Documentos por fuente:
+fuente
+CEEI Elche       250
+CEEI Valencia    163
+
+Documentos por seccion:
+seccion
+Fichas_HTML                 133
+Fichas                      121
+General                      49
+Modelos_de_Negocio_texto     40
+Infografias                  38
+Informes_y_Publicaciones     27
+Modelos_de_Negocio            5
+
+Documentos por tipo_archivo:
+tipo_archivo
+pdf    240
+txt    173
+
+Documentos vacios: 0
+Ninguno
+
+Documentos con menos de 300 caracteres: 0
+Ninguno
+
+Documentos duplicados por titulo: 8
+id_documento                                               titulo     fuente                  seccion
+    doc_0172                             Centro Deportivo Privado CEEI Elche                   Fichas
+    doc_0362                             Centro Deportivo Privado CEEI Elche Modelos_de_Negocio_texto
+    doc_0205                                  Empresa de Reformas CEEI Elche                   Fichas
+    doc_0371                                  Empresa de Reformas CEEI Elche Modelos_de_Negocio_texto
+    doc_0255                                 Servicios Forestales CEEI Elche                   Fichas
+    doc_0386                                 Servicios Forestales CEEI Elche Modelos_de_Negocio_texto
+    doc_0267 Tienda de Informática con Reparación y Mantenimiento CEEI Elche                   Fichas
+    doc_0389 Tienda de Informática con Reparación y Mantenimiento CEEI Elche Modelos_de_Negocio_texto
+
+Criterios minimos para continuar:
+- Mas de 100 documentos: OK
+- Hay documentos de CEEI Elche: OK
+- Hay documentos de CEEI Valencia: OK
+- Mayoria con texto: OK
+- Documentos vacios identificados: OK
