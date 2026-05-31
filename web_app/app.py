@@ -13,7 +13,12 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from recommend_from_text import MODEL_NAME, recommend_documents, recommend_profiles  # noqa: E402
+import recommend_from_text as recommender  # noqa: E402
+
+
+MODEL_NAME = recommender.MODEL_NAME
+recommend_profiles = recommender.recommend_profiles
+recommend_documents = getattr(recommender, "recommend_documents", recommender.recommend)
 
 
 DEFAULT_QUERY = (
