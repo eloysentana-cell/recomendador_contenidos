@@ -423,6 +423,21 @@ Esta decision mantiene el sistema simple y explicable:
 - Despues se comparara ese texto con los documentos.
 - No se usan APIs ni modelos externos en esta etapa.
 
+### 2.1 Tabla de caracterizacion de perfiles emprendedores
+
+Antes de calcular TF-IDF o embeddings, cada perfil se convierte en un texto de caracterizacion. Esta representacion combina fase emprendedora, perfil funcional, necesidades, intenciones de busqueda, palabras clave y descripcion semantica. La tabla siguiente resume como queda caracterizado cada perfil.
+
+| ID perfil | Nombre | Fase | Necesidades/intencion dominante | Palabras clave semanticas | Texto de caracterizacion para recomendacion |
+|---|---|---|---|---|---|
+| perfil_001_investigador_ebt_ebc | Investigador academico en fase de spin-off EBT/EBC | Transferencia tecnologica y creacion de empresa de base cientifica | Convertir resultados cientificos en empresa, proteger propiedad intelectual, constituir EBT/EBC, buscar ayudas y validar tecnologia | TRL; propiedad intelectual; patente; capital semilla; EBT; EBC; Plan GenT; RIS3 CV; transferencia universitaria | Investigador academico en fase de spin-off EBT/EBC. Transferencia tecnologica, empresa de base cientifica, propiedad intelectual, patentes, EBT, EBC, capital semilla, ayudas publicas, Plan GenT, RIS3 CV, validacion tecnologica, fiscalidad de la innovacion y transferencia universitaria. |
+| perfil_002_ceo_scaling_internacional | CEO de startup en fase de escalado internacional | Escalado, crecimiento e internacionalizacion | Captar financiacion privada, optimizar KPIs, entrar en nuevos mercados, ampliar equipo y preparar softlanding | KPIs; Venture Capital; Product-Market Fit; Market Fit; Softlanding; Serie A; escalado internacional; talento global | CEO de startup con producto validado y traccion inicial. Busca financiacion Serie A, venture capital, internacionalizacion, softlanding, KPIs, Product-Market Fit, automatizacion de crecimiento, talento global y programas de expansion. |
+| perfil_003_consultor_silver | Consultor senior Silver en transicion | Creacion de servicios profesionales especializados | Transformar experiencia profesional en consultoria, digitalizar servicios, aprovechar red de contactos y reducir riesgo | Economia Silver; consultora boutique; bienestar; educacion ejecutiva; mentoria; resiliencia; red de contactos | Profesional senior que quiere crear una consultora boutique o servicio especializado. Busca modelos prudentes, digitalizacion de servicios profesionales, economia silver, mentoria empresarial, red de contactos, resiliencia y supervivencia empresarial. |
+| perfil_004_mentor_negocios_tradicionales | Mentor de negocios tradicionales | Monetizacion de experiencia profesional | Disenar servicios de mentoria, formalizar propuesta de valor, organizar conocimiento y captar clientes | redes profesionales; estabilidad financiera; servicios profesionales; gestion del conocimiento; mentoria; negocios tradicionales | Profesional con experiencia directiva o sectorial que quiere convertir conocimiento acumulado en mentoria, asesoramiento y acompanamiento a negocios tradicionales. Busca planificacion prudente, propuesta de valor, captacion por redes profesionales y servicios especializados. |
+| perfil_005_emprendedora_rural_agroalimentaria | Emprendedora rural en el sector agroalimentario | Autoempleo o pyme rural con impacto territorial | Buscar ayudas rurales, conectar con ADL, acceder a GAL/GALP, disenar proyecto agroalimentario y alinear con economia circular | cohesion territorial; economia circular; GAL; GALP; ADL; desarrollo rural; agroalimentario; empoderamiento femenino | Emprendedora rural agroalimentaria vinculada a fijacion de poblacion, desarrollo rural, economia circular, cohesion territorial, ayudas GAL/GALP, Agentes de Desarrollo Local, autoempleo rural y empoderamiento femenino. |
+| perfil_006_fundador_cooperativa_impacto | Fundador de cooperativa de impacto social | Constitucion de entidad de economia social | Constituir cooperativa, alinear con ODS, medir impacto, disenar gobernanza democratica y buscar Plan Fent Cooperatives | RSE; bonos de impacto social; clausulas sociales; Plan Fent Cooperatives; ODS; economia social; cooperativa | Promotor de economia social y cooperativa de impacto. Busca constitucion de cooperativas, ODS, impacto social medible, RSE, clausulas sociales, gobernanza democratica, bonos de impacto social y Plan Fent Cooperatives. |
+| perfil_007_estudiante_presemilla | Estudiante universitario en fase pre-semilla | Idea, validacion inicial y pre-semilla | Validar idea, aprender lean startup, desarrollar competencias emprendedoras, buscar becas y definir modelo inicial | validacion de idea; lean startup; becas; cultura emprendedora; universidad; modelo de negocio; talento joven | Estudiante universitario con intencion emprendedora temprana. Busca validar una idea de negocio, aprender lean startup, acceder a becas y programas universitarios, desarrollar competencias emprendedoras y definir un modelo de negocio inicial. |
+| perfil_008_autoempleo_necesidad | Emprendedor por necesidad en fase de autoempleo | Autoempleo e insercion laboral rapida | Preparar plan de viabilidad, entender tramites, acceder al pago unico, recibir orientacion y aprender marketing basico | plan de viabilidad; pago unico; tramites administrativos; LABORA; IVF; autoempleo; microempresa | Persona que emprende por necesidad y busca una via rapida y viable de autoempleo. Necesita plan de viabilidad, tramites administrativos, pago unico de prestacion, orientacion LABORA/IVF, financiacion inicial y marketing digital basico. |
+
 ## Etapa 3: Corpus procesado
 
 El repositorio ya contiene datos procesados en:
@@ -558,14 +573,14 @@ outputs/recomendaciones_tfidf.csv
 outputs/recomendaciones_tfidf.xlsx
 ```
 
-`explain_tfidf_recommendations.py` no usa IA generativa. Reconstruye la matriz TF-IDF e identifica terminos o bigramas compartidos que ayudan a explicar cada recomendacion. Genera:
+`explain_tfidf_recommendations.py` anade una explicacion simple a cada recomendacion identificando terminos compartidos relevantes entre perfil y documento. Genera:
 
 ```text
 outputs/recomendaciones_tfidf_explicadas.csv
 outputs/recomendaciones_tfidf_explicadas.xlsx
 ```
 
-`evaluate_tfidf_recommender.py` calcula metricas descriptivas por perfil: score medio, score maximo, score minimo del top 10, diversidad de fuentes, diversidad de secciones y documentos repetidos entre perfiles. Genera:
+`evaluate_tfidf_recommender.py` calcula metricas descriptivas basicas de la linea base, sin simular usuarios reales. Genera:
 
 ```text
 outputs/evaluacion_tfidf.csv
@@ -573,84 +588,53 @@ outputs/evaluacion_tfidf.xlsx
 outputs/informe_evaluacion_tfidf.txt
 ```
 
-Estas metricas no son una evaluacion con usuarios reales. Son una evaluacion tecnica y exploratoria que sirve como linea base antes de comparar con embeddings.
-
-## Estado actual
-
-Resumen del material disponible:
-
-```text
-CEEI Elche:
-  250 documentos utiles en el corpus consolidado.
-
-CEEI Valencia:
-  30 PDFs descargados.
-  133 fichas HTML convertidas a TXT.
-  163 documentos utiles en el corpus consolidado.
-
-Perfiles:
-  8 perfiles de emprendedores en JSON estructurado.
-
-Recomendador TF-IDF:
-  80 recomendaciones generadas.
-  outputs/recomendaciones_tfidf.csv
-  outputs/recomendaciones_tfidf.xlsx
-```
-
-## Comandos utiles
-
-Ejecutar scraper de Elche:
-
-```powershell
-.\.venv\Scripts\python.exe 2_scraper_ceei_seguro.py
-```
-
-Extraer texto de modelos de negocio sin PDF:
-
-```powershell
-.\.venv\Scripts\python.exe extraer_modelos_negocio_texto.py
-```
-
-Listar enlaces de Valencia sin descargar:
-
-```powershell
-cd scraping_valencia
-..\.venv\Scripts\python.exe -m scrapy crawl ceei_valencia -O ..\data\processed\enlaces_ceei_valencia.json
-```
-
-Descargar documentos de Valencia:
-
-```powershell
-cd scraping_valencia
-..\.venv\Scripts\python.exe -m scrapy crawl ceei_valencia -a descargar=si -O ..\data\processed\documentos_ceei_valencia.json
-```
-
-Extraer fichas HTML de Valencia como TXT:
-
-```powershell
-.\.venv\Scripts\python.exe extraer_valencia_texto_html.py
-```
-
-Ejecutar todo el pipeline TF-IDF:
+Para ejecutar todo el pipeline:
 
 ```powershell
 .\.venv\Scripts\python.exe run_pipeline.py
 ```
 
-Tambien puede ejecutarse fase a fase:
+La salida principal para revisar las recomendaciones es:
+
+```text
+outputs/recomendaciones_tfidf_explicadas.xlsx
+```
+
+## Estado actual del proyecto
+
+El estado actual puede resumirse asi:
+
+```text
+1. Scraping de CEEI Elche completado.
+2. Extraccion adicional de textos HTML de modelos de negocio completada.
+3. Scraping de CEEI Valencia completado.
+4. Extraccion de fichas HTML de Valencia incorporada al flujo.
+5. Corpus consolidado generado mediante build_corpus_recomendador.py.
+6. Perfiles de emprendedores creados en JSON.
+7. Proyecto preparado para ejecutar y revisar el primer recomendador TF-IDF.
+```
+
+El primer hito funcional es obtener recomendaciones explicadas mediante TF-IDF. Despues se podra comparar con embeddings para evaluar si una representacion semantica mejora la linea base.
+
+## Siguiente paso tecnico
+
+El siguiente paso recomendado es ejecutar el pipeline completo y revisar manualmente las recomendaciones generadas:
 
 ```powershell
-.\.venv\Scripts\python.exe build_corpus_recomendador.py
-.\.venv\Scripts\python.exe validate_corpus.py
-.\.venv\Scripts\python.exe build_profile_queries.py
-.\.venv\Scripts\python.exe recommender_tfidf.py
-.\.venv\Scripts\python.exe explain_tfidf_recommendations.py
-.\.venv\Scripts\python.exe evaluate_tfidf_recommender.py
+.\.venv\Scripts\python.exe run_pipeline.py
+```
+
+Despues deben revisarse:
+
+```text
+outputs/recomendaciones_tfidf.xlsx
+outputs/recomendaciones_tfidf_explicadas.xlsx
+outputs/informe_evaluacion_tfidf.txt
 ```
 
 ## Enfoque metodologico del recomendador
 
-La recomendacion es inicialmente content-based:
+La recomendacion sera inicialmente content-based:
 
 ```text
 perfil emprendedor -> texto descriptivo -> vector TF-IDF
@@ -660,14 +644,4 @@ comparacion -> similitud coseno
 
 No se usara collaborative filtering en esta fase porque no existe todavia historico de usuarios, interacciones, valoraciones ni comportamiento de navegacion.
 
-La interpretacion de resultados debe hacerse con cautela. Un score TF-IDF alto indica mayor solapamiento textual ponderado entre el perfil y el documento, no una garantia de utilidad para una persona real. Los terminos explicativos permiten revisar si la recomendacion se apoya en conceptos coherentes con el perfil.
-
-Limitaciones actuales:
-
-- No hay validacion con usuarios reales.
-- No hay feedback implicito ni explicito.
-- Algunos PDFs pueden no tener texto extraible si son imagenes o infografias.
-- TF-IDF captura coincidencias lexicas, pero no siempre sinonimos o relaciones semanticas profundas.
-- Las recomendaciones pueden favorecer documentos largos o vocabulario muy repetido.
-
-El siguiente paso metodologico es comparar esta linea base con una version basada en embeddings, manteniendo el mismo corpus, los mismos perfiles y criterios de evaluacion comparables.
+La comparacion posterior con embeddings permitira valorar si una representacion semantica mas avanzada mejora las recomendaciones frente a la linea base TF-IDF.
