@@ -3,12 +3,20 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 from typing import Any
 
 import numpy as np
 import pandas as pd
 from sentence_transformers import SentenceTransformer
+from transformers.utils import logging as transformers_logging
+
+
+os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
+os.environ["TQDM_DISABLE"] = "1"
+transformers_logging.disable_progress_bar()
+transformers_logging.set_verbosity_error()
 
 
 ROOT = Path(__file__).resolve().parent
