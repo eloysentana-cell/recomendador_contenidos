@@ -1,0 +1,22 @@
+Informe de embeddings de documentos
+Fecha: 2026-05-31T20:57:26
+
+Entrada:
+- Corpus: C:\tmp\recomendador_contenidos\data\processed\corpus_recomendador.csv
+- Documentos en corpus original: 423
+
+Modelo:
+- sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+- Dimension embedding: 384
+- Embeddings normalizados: si
+- Batch size: 32
+
+Preparacion:
+- Longitud maxima por documento: 5000 caracteres
+- Umbral minimo de texto: 300 caracteres
+- Documentos descartados por texto insuficiente: 8
+- Documentos vectorizados: 415
+
+Salidas:
+- C:\tmp\recomendador_contenidos\data\embeddings\document_embeddings.csv
+- C:\tmp\recomendador_contenidos\data\embeddings\document_embeddings.parquet

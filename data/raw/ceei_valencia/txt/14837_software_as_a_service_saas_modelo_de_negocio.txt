@@ -25,7 +25,7 @@ Cuando hablamos de
 Por lo tanto, el software que utiliza la empresa no se encontraría en sus instalaciones, sino que un proveedor le proporcionaría el hosting de dicho software en la nube y, por supuesto, el mantenimiento y el soporte del mismo.
 ....
 Descarga el archivo para obtener toda la información sobre este modelo de negocio.
-Visitas: 15.513 Descargas: 314
+Visitas: 15.515 Descargas: 314
 nube
 cloud computing
 20/12/2019 12:54 |

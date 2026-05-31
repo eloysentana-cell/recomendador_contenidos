@@ -23,7 +23,7 @@ Para entrar de lleno en explicar la metodología Scrum a través de este libro e
 Empecemos por el principio. Scrum es una metodología ágil, pero, ¿qué son las metodologías ágiles?
 Las metodologías Ágiles permiten a las organizaciones obtener mejores resultados mediante el trabajo de equipos de alto rendimiento, integrando al cliente en el equipo, impulsando la motivación de las personas, teniendo feedback rápido sobre el producto final que se está desarrollando y reflexionando de manera estructural sobre cómo mejorar el proceso de trabajo.
 Consulta Cuaderno de Trabajo Metodología SCRUM
-Visitas: 26.330 Descargas: 810
+Visitas: 26.332 Descargas: 810
 29/09/2020 08:00 |
 AdmonVlc
 URL oficial/canónica:

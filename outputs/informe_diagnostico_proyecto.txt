@@ -1,0 +1,181 @@
+Informe de diagnostico del proyecto
+=====================================
+
+Archivos y carpetas existentes:
+- documentos_ceei_elche_PDF: carpeta
+- documentos_ceei_valencia: carpeta
+- data/raw/ceei_valencia/txt: carpeta
+- data/processed/documentos_ceei_valencia.json: archivo
+- data/processed/documentos_ceei_valencia_texto.json: archivo
+- data/processed/corpus_recomendador.csv: archivo
+- data/processed/corpus_documental.csv: archivo
+- outputs/informe_extraccion_valencia_texto.txt: archivo
+- outputs/informe_corpus_recomendador.txt: archivo
+
+Tamano de archivos CSV:
+- data/processed/corpus_recomendador.csv: 12097435 bytes
+- data/processed/corpus_documental.csv: 9268796 bytes
+
+Conteo PDF/TXT por carpeta:
+- documentos_ceei_elche_PDF: PDF=201, TXT=40
+- documentos_ceei_valencia: PDF=30, TXT=0
+- data/raw/ceei_valencia/txt: PDF=0, TXT=133
+
+documentos_ceei_valencia_texto.json:
+- total registros: 133
+- conteo por estado_extraccion: {'texto_extraido': 133}
+
+documentos_ceei_valencia.json:
+- total registros: 163
+- conteo por estado: {'no_disponible': 133, 'descargado': 30}
+- conteo por tipo_archivo: {'pdf': 163}
+
+Estado Git:
+M README.md
+ M build_corpus_recomendador.py
+ M data/processed/corpus_recomendador.csv
+ M "data/raw/ceei_valencia/txt/1018_distribuci\303\263n_en_planta_19_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
+ M "data/raw/ceei_valencia/txt/1019_an\303\241lisis_de_posici\303\263n_competitiva_20_manual_emprenemjunts.txt"
+ M "data/raw/ceei_valencia/txt/1020_estrategias_competitivas_b\303\241sicas_21_manuales_emprenemjunts.txt"
+ M "data/raw/ceei_valencia/txt/1021_proceso_de_elaboraci\303\263n_de_un_plan_estrat\303\251gico_22.txt"
+ M "data/raw/ceei_valencia/txt/1022_cooperaci\303\263n_empresarial_23_manuales_emprenemjunts.txt"
+ M "data/raw/ceei_valencia/txt/1023_metodolog\303\255a_de_la_innovaci\303\263n_24_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
+ M "data/raw/ceei_valencia/txt/1100_presentaci\303\263n_de_proyectos_empresariales_a_posibles_inversores_25.txt"
+ M data/raw/ceei_valencia/txt/1101_dirigir_eficazmente_26_manuales_emprenemjunts.txt
+ M "data/raw/ceei_valencia/txt/1102_fidelizaci\303\263n_de_los_recursos_humanos_27_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
+ M data/raw/ceei_valencia/txt/1103_propiedad_industrial_e_intelectual_28.txt
+ M "data/raw/ceei_valencia/txt/1104_lanzamiento_y_promoci\303\263n_de_productos_innovadores_29_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
+ M "data/raw/ceei_valencia/txt/1183_dise\303\261ar_red_comercial_y_fijar_objetivos_de_ventas_17_manuales_emprenemjunts.txt"
+ M "data/raw/ceei_valencia/txt/11900_producto_m\303\255nimo_viable_51_autor_roberto_touza.txt"
+ M data/raw/ceei_valencia/txt/11901_agile_development_52_autor_aday_guerra_nestor_co.txt
+ M "data/raw/ceei_valencia/txt/11902_customer_validation_53_autora_luc\303\255a_ruiz_montiel_de_nestor_co.txt"
+ M "data/raw/ceei_valencia/txt/11903_business_design_customer_discovery_54_autora_consuelo_verd\303\272_de_nestor_co.txt"
+ M data/raw/ceei_valencia/txt/13789_marketing_sensorial_55.txt
+ M "data/raw/ceei_valencia/txt/14184_escalado_\303\241gil_c\303\263mo_descubrir_y_usar_palancas_exponenciales_de_un_modelo_de_negocio_autor_jos\303\251_antonio_de_miguel_presiden.txt"
+ M "data/raw/ceei_valencia/txt/14624_escalabilidad_startups_57_manual_de_gesti\303\263n_empresarial_elaborado_por_roberto_touza.txt"
+ M data/raw/ceei_valencia/txt/14625_lean_startup_para_el_escalado_de_startups.txt
+ M "data/raw/ceei_valencia/txt/14626_estrategias_m\303\251tricas_y_an\303\241lisis_para_la_escalabilidad_de_startups.txt"
+ M data/raw/ceei_valencia/txt/14641_comercio_de_proximidad_modelo_de_negocio_de_actividades_empresariales.txt
+ M data/raw/ceei_valencia/txt/14642_servicios_a_particulares_modelo_de_negocio_de_actividades_empresariales.txt
+ M data/raw/ceei_valencia/txt/14643_empresas_fabricantes_modelo_de_negocio_de_actividades_empresariales.txt
+ M data/raw/ceei_valencia/txt/14644_servicios_profesionales_empresariales_modelo_de_negocio_de_actividades_empresariales.txt
+ M data/raw/ceei_valencia/txt/14649_ecommerce_b2c_model_de_negoci.txt
+ M data/raw/ceei_valencia/txt/14704_plataformas_online_modelo_de_negocio.txt
+ M "data/raw/ceei_valencia/txt/14744_formaci\303\263n_y_cultura_modelo_de_negocio_de_actividades_empresariales.txt"
+ M data/raw/ceei_valencia/txt/14757_long_tail_modelo_de_negocio.txt
+ M data/raw/ceei_valencia/txt/14766_plataformas_de_crowdfunding_modelo_de_negocio.txt
+ M "data/raw/ceei_valencia/txt/14801_m\303\251tricas_para_startups_58_manual_de_gesti\303\263n_empresarial_elaborado_por_roberto_touza.txt"
+ M "data/raw/ceei_valencia/txt/14822_econom\303\255a_circular_modelo_de_negocio.txt"
+ M data/raw/ceei_valencia/txt/14837_software_as_a_service_saas_modelo_de_negocio.txt
+ M "data/raw/ceei_valencia/txt/15825_teletrabajo_59_manual_de_gesti\303\263n_empresarial_elaborado_por_david_blay.txt"
+ M "data/raw/ceei_valencia/txt/15935_metodolog\303\255a_scrum_60_manual_elaborado_por_roberto_touza.txt"
+ M "data/raw/ceei_valencia/txt/16264_alquiler_y_reparaci\303\263n_de_embarcaciones_modelo_de_negocio_de_actividades_empresariales.txt"
+ M "data/raw/ceei_valencia/txt/16265_distribuci\303\263n_y_asistencia_t\303\251cnica_en_impresi\303\263n_3d_modelo_de_negocio_de_actividades_empresariales.txt"
+ M "data/raw/ceei_valencia/txt/16266_robot_corta-c\303\251sped_modelo_de_negocio_de_actividades_empresariales.txt"
+ M data/raw/ceei_valencia/txt/16267_tienda_taller_de_composturas_modelo_de_negocio_de_actividades_empresariales.txt
+ M "data/raw/ceei_valencia/txt/18162_la_sostenibilidad_en_la_empresa._aplicaci\303\263n_pr\303\241ctica_a_las_pymes_61_manual_elaborado_por_joan_ramon_sanchis_palacio_vane.txt"
+ M "data/raw/ceei_valencia/txt/18259_asesor\303\255a_energ\303\251tica_modelo_de_negocio.txt"
+ M data/raw/ceei_valencia/txt/18260_asistencia_a_la_infancia_modelo_de_negocio.txt
+ M data/raw/ceei_valencia/txt/18261_asistencia_a_personas_mayores.txt
+ M "data/raw/ceei_valencia/txt/18262_carpinter\303\255a_de_madera_modelo_de_negocio.txt"
+ M "data/raw/ceei_valencia/txt/18263_carpinter\303\255a_met\303\241lica_modelo_de_negocio.txt"
+ M "data/raw/ceei_valencia/txt/18271_cl\303\255nica_dental_modelo_de_negocio.txt"
+ M "data/raw/ceei_valencia/txt/18272_dom\303\263tica_e_inm\303\263tica.txt"
+ M "data/raw/ceei_valencia/txt/18273_imprenta_y_artes_gr\303\241ficas_modelo_de_negocio.txt"
+ M data/raw/ceei_valencia/txt/18274_empresa_de_mantenimiento_industrial_modelo_de_negocio.txt
+ M "data/raw/ceei_valencia/txt/18275_taller_electromec\303\241nico_del_autom\303\263vil_modelo_de_negocio.txt"
+ M "data/raw/ceei_valencia/txt/18339_gu\303\255a_de_digitalizaci\303\263n_para_pymes_manual_de_gesti\303\263n_empresarial_elaborado_por_leonard_pera.txt"
+ M "data/raw/ceei_valencia/txt/18340_claves_para_elaborar_un_plan_de_igualdad_manual_de_gesti\303\263n_empresarial_elaborado_por_sandra_merch\303\241n.txt"
+ M "data/raw/ceei_valencia/txt/19312_calefacci\303\263n_y_fontaner\303\255a_con_energ\303\255as_renovables_modelo_de_negocio.txt"
+ M "data/raw/ceei_valencia/txt/19323_okr._objetivos_y_resultados_claves_manual_gesti\303\263n_empresarial_realizado_por_francisco_javier_rivero.txt"
+ M "data/raw/ceei_valencia/txt/19325_cl\303\255nica_veterinaria_modelo_de_negocio.txt"
+ M data/raw/ceei_valencia/txt/19327_empresa_de_reformas_modelo_de_negocio.txt
+ M "data/raw/ceei_valencia/txt/19329_instalaci\303\263n_solar_fotovoltaica.txt"
+ M "data/raw/ceei_valencia/txt/19331_tienda_de_inform\303\241tica_con_reparaci\303\263n_y_mantenimiento_modelo_de_negocio.txt"
+ M "data/raw/ceei_valencia/txt/2029_gabinete_de_dise\303\261o_gr\303\241fico.txt"
+ M "data/raw/ceei_valencia/txt/2038_tienda_inform\303\241tica_con_reparaci\303\263n_y_mantenimiento.txt"
+ M "data/raw/ceei_valencia/txt/20496_manual_de_inversi\303\263n_en_startups.txt"
+ M data/raw/ceei_valencia/txt/20510_empresa_proptech_modelo_de_negocio.txt
+ M data/raw/ceei_valencia/txt/20511_empresa_fintech_modelo_de_negocio.txt
+ M data/raw/ceei_valencia/txt/20512_empresa_insurtech_modelo_de_negocio.txt
+ M data/raw/ceei_valencia/txt/20513_asesoramiento_en_criptomonedas_modelo_de_negocio.txt
+ M "data/raw/ceei_valencia/txt/2055_centro_de_est\303\251tica.txt"
+ M data/raw/ceei_valencia/txt/20564_manual_de_inbound_marketing.txt
+ M "data/raw/ceei_valencia/txt/2072_mecanizados_de_precisi\303\263n.txt"
+ M data/raw/ceei_valencia/txt/2091_empresa_de_reformas.txt
+ M "data/raw/ceei_valencia/txt/2094_comercio_minorista_de_confecci\303\263n_y_complementos.txt"
+ M data/raw/ceei_valencia/txt/2109_sector_de_la_moda.txt
+ M data/raw/ceei_valencia/txt/2123_restaurante_vegetariano.txt
+ M "data/raw/ceei_valencia/txt/21498_manual_de_comunicaci\303\263n_efectiva.txt"
+ M data/raw/ceei_valencia/txt/21499_manual_de_salud_mental_para_personas_emprendedoras.txt
+ M "data/raw/ceei_valencia/txt/21500_manual_de_creaci\303\263n_de_valor_compartido.txt"
+ M data/raw/ceei_valencia/txt/21518_centro_deportivo_privado_modelo_de_negocio.txt
+ M "data/raw/ceei_valencia/txt/21519_despacho_profesional_servicios_de_consultor\303\255a_modelo_de_negocio.txt"
+ M "data/raw/ceei_valencia/txt/21520_panader\303\255a_-_cafeter\303\255a_modelo_de_negocio.txt"
+ M "data/raw/ceei_valencia/txt/21521_tienda_de_muebles_con_servicio_de_dise\303\261o_a_medida_modelo_de_negocio.txt"
+ M "data/raw/ceei_valencia/txt/22444_gesti\303\263n_cultural.txt"
+ M data/raw/ceei_valencia/txt/22445_turismo_cultural_modelo_de_negocio_de_actividades_empresariales.txt
+ M data/raw/ceei_valencia/txt/22446_turismo_activo_modelo_de_negocio_de_actividades_empresariales.txt
+ M data/raw/ceei_valencia/txt/22447_servicios_forestales_modelo_de_negocio_de_actividades_empresariales.txt
+ M data/raw/ceei_valencia/txt/22448_empresa_de_tiempo_libre_modelo_de_negocio_de_actividades_empresariales.txt
+ M "data/raw/ceei_valencia/txt/22545_como_gestionar_un_funnel_de_innovaci\303\263n_de_idea_a_implantaci\303\263n.txt"
+ M "data/raw/ceei_valencia/txt/22546_como_dise\303\261ar_un_programa_de_colaboraci\303\263n_empresa-startup.txt"
+ M "data/raw/ceei_valencia/txt/22547_financiaci\303\263n_i_d_i.txt"
+ M data/raw/ceei_valencia/txt/22548_propiedad_intelectual.txt
+ M data/raw/ceei_valencia/txt/22915_manual_de_ciberseguridad_para_pymes.txt
+ M "data/raw/ceei_valencia/txt/22995_estudio_de_fotograf\303\255a_y_v\303\255deo_para_empresas.txt"
+ M "data/raw/ceei_valencia/txt/23047_gesti\303\263n_\303\241gil_de_equipos_claves_pr\303\241cticas_para_organizar_mejor_el_trabajo_adaptarse_al_cambio_y_mejorar_la_coordinaci\303\263n_d.txt"
+ M "data/raw/ceei_valencia/txt/23048_evaluaci\303\263n_del_desempe\303\261o_claves_pr\303\241cticas_para_convertir_la_evaluaci\303\263n_en_una_conversaci\303\263n_\303\272til_sobre_resultados_crecimi.txt"
+ M "data/raw/ceei_valencia/txt/23076_fabricaci\303\263n_de_productos_de_limpieza_ecol\303\263gicos_a_granel_modelo_de_negocio.txt"
+ M "data/raw/ceei_valencia/txt/23077_producci\303\263n_hidrop\303\263nica_y_aerop\303\263nica_de_bajo_consumo_modelo_de_negocio.txt"
+ M "data/raw/ceei_valencia/txt/23078_consultor\303\255a_en_gesti\303\263n_del_agua_y_reciclaje_modelo_de_negocio.txt"
+ M data/raw/ceei_valencia/txt/237_estudios_de_mercado_1.txt
+ M data/raw/ceei_valencia/txt/238_reclutar_y_seleccionar_personas_2.txt
+ M "data/raw/ceei_valencia/txt/239_alternativas_de_financiaci\303\263n_y_sus_costes_3.txt"
+ M "data/raw/ceei_valencia/txt/240_an\303\241lisis_financiero_b\303\241sico_4.txt"
+ M data/raw/ceei_valencia/txt/241_marketing_online_y_posicionamiento_en_internet_5.txt
+ M "data/raw/ceei_valencia/txt/244_plan_y_presupuesto_de_comunicaci\303\263n_6_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
+ M "data/raw/ceei_valencia/txt/245_an\303\241lisis_de_satisfacci\303\263n_del_cliente_7_manuales_emprenemjunts.txt"
+ M "data/raw/ceei_valencia/txt/297_valoraci\303\263n_de_empresas_8.txt"
+ M "data/raw/ceei_valencia/txt/298_log\303\255stica_y_distribuci\303\263n_9_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
+ M data/raw/ceei_valencia/txt/299_definir_funciones_y_estructuras_organizativas_10_manuales_emprenemjunts.txt
+ M "data/raw/ceei_valencia/txt/324_fiscalidad_y_formas_jur\303\255dicas_11_manuales_emprenemjunts.txt"
+ M "data/raw/ceei_valencia/txt/325_organizaci\303\263n_de_la_producci\303\263n_12_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
+ M "data/raw/ceei_valencia/txt/326_reingenier\303\255a_de_procesos_13.txt"
+ M "data/raw/ceei_valencia/txt/328_fijaci\303\263n_de_precios_14_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
+ M "data/raw/ceei_valencia/txt/330_plan_de_internacionalizaci\303\263n_de_empresas_16_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
+ M "data/raw/ceei_valencia/txt/4388_gesti\303\263n_de_procesos_de_innovaci\303\263n_en_la_empresa_31_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
+ M "data/raw/ceei_valencia/txt/4389_el_presupuesto_de_tesorer\303\255a_en_la_empresa_32_manuales_emprenemjunts.txt"
+ M "data/raw/ceei_valencia/txt/4390_utilizaci\303\263n_de_las_redes_sociales_para_posicionar_la_empresa_y_vender_33.txt"
+ M data/raw/ceei_valencia/txt/4391_internacionalizarse_desde_el_origen_30_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+ M data/raw/ceei_valencia/txt/4589_marca_y_posicionamiento_15_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+ M data/raw/ceei_valencia/txt/5604_cultura_economica_para_emprendedores_34_manuales_para_emprendedores.txt
+ M "data/raw/ceei_valencia/txt/5606_c\303\263mo_crear_una_tienda_online_35_colecci\303\263n_manuales_para_el_emprendedor.txt"
+ M "data/raw/ceei_valencia/txt/5627_c\303\263mo_solicita_financiaci\303\263n_un_joven_emprendedor_a_la_banca_37_manuales_emprenemjunts.txt"
+ M data/raw/ceei_valencia/txt/5628_marca_personal_36_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+ M data/raw/ceei_valencia/txt/6878_herramientas_de_creatividad_aplicada_a_la_empresa_38_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+ M "data/raw/ceei_valencia/txt/6879_c\303\263mo_gestionar_el_crecimiento_de_tu_empresa_39.txt"
+ M "data/raw/ceei_valencia/txt/6880_c\303\263mo_dise\303\261ar_tu_modelo_de_negocio._modelo_canvas_40.txt"
+ M "data/raw/ceei_valencia/txt/6891_metodolog\303\255a_lean_startup_41_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
+ M "data/raw/ceei_valencia/txt/7749_c\303\263mo_vender_en_el_exterior_42_manuales_emprenemjunts.txt"
+ M "data/raw/ceei_valencia/txt/7750_t\303\251cnicas_de_venta_para_emprendedores_43.txt"
+ M data/raw/ceei_valencia/txt/7751_estrategias_low_cost_para_emprendedores_44.txt
+ M "data/raw/ceei_valencia/txt/7752_t\303\251cnicas_de_negociaci\303\263n_para_emprendedores_45.txt"
+ M "data/raw/ceei_valencia/txt/8916_la_innovaci\303\263n_como_factor_clave_de_competitividad_46.txt"
+ M "data/raw/ceei_valencia/txt/8917_instrumentos_de_planificaci\303\263n_estrat\303\251gica_47_manuales_emprenemjunts.txt"
+ M "data/raw/ceei_valencia/txt/9083_gesti\303\263n_administrativa_y_econ\303\263mica_de_proyectos_de_i_d_i_48.txt"
+ M "data/raw/ceei_valencia/txt/9098_planificaci\303\263n_control_y_seguimiento_de_proyectos_de_i_d_i_49.txt"
+ M "data/raw/ceei_valencia/txt/9099_elaboraci\303\263n_propuestas_de_proyectos_de_i_d_i_50.txt"
+ M data/raw/ceei_valencia/txt/983_modelos_de_contratos_entre_empresas_18_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+ M outputs/corpus_recomendador.xlsx
+?? build_characterization_tables.py
+?? diagnostico_proyecto.py
+?? outputs/documentos_caracterizados_muestra.csv
+?? outputs/documentos_caracterizados_muestra.xlsx
+?? outputs/informe_caracterizacion.txt
+?? outputs/informe_corpus_recomendador.txt
+?? outputs/informe_diagnostico_proyecto.txt
+?? outputs/informe_validacion_corpus_recomendador.txt
+?? outputs/perfiles_caracterizados.csv
+?? outputs/perfiles_caracterizados.xlsx
+?? validate_corpus_recomendador.py

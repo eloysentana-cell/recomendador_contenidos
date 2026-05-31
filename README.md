@@ -464,6 +464,42 @@ outputs/corpus_recomendador.xlsx
 
 El CSV conserva el texto completo. El Excel recorta celdas largas para respetar el limite de 32.767 caracteres por celda.
 
+## Corpus consolidado y caracterizacion previa a la recomendacion
+
+El corpus consolidado se genera con:
+
+```powershell
+.\.venv\Scripts\python.exe build_corpus_recomendador.py
+```
+
+Este script reconstruye `data/processed/corpus_recomendador.csv` a partir de fuentes reales del proyecto:
+
+- PDFs y TXT de CEEI Elche, incluyendo `documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/`.
+- PDFs descargados de CEEI Valencia en `documentos_ceei_valencia/`.
+- TXT extraidos de fichas HTML de Valencia en `data/raw/ceei_valencia/txt/`.
+
+Los CSV antiguos o vacios no deben usarse como fuente hasta ser regenerados correctamente. El archivo de referencia para el flujo actual es:
+
+```text
+data/processed/corpus_recomendador.csv
+```
+
+La validacion del corpus se ejecuta con:
+
+```powershell
+.\.venv\Scripts\python.exe validate_corpus_recomendador.py
+```
+
+Este script verifica que el corpus existe, no esta vacio, contiene cabecera, incluye las columnas obligatorias y tiene documentos utiles de CEEI Elche y CEEI Valencia.
+
+Antes de aplicar TF-IDF o embeddings, se pueden revisar las representaciones textuales con:
+
+```powershell
+.\.venv\Scripts\python.exe build_characterization_tables.py
+```
+
+Este script genera tablas legibles de perfiles y una muestra de documentos caracterizados para revisar manualmente como se estan representando perfiles, documentos, fuentes, secciones y textos de entrada.
+
 ## Pipeline actual del recomendador TF-IDF
 
 El objetivo actual del proyecto es construir una linea base reproducible para recomendar contenidos emprendedores a partir de perfiles semanticos. Esta primera version usa filtrado basado en contenido: compara textos de perfiles con textos de documentos mediante TF-IDF y similitud coseno.

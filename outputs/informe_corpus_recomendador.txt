@@ -1,0 +1,458 @@
+Informe del corpus recomendador
+==================================
+Total documentos procesados: 423
+Documentos con texto: 414
+Documentos sin texto: 9
+Documentos con texto insuficiente: 1
+
+Documentos por fuente:
+fuente
+CEEI Elche       260
+CEEI Valencia    163
+
+Documentos por seccion:
+seccion
+Ficha_HTML                  133
+Fichas                      121
+Infografias                  48
+Modelos_de_Negocio_texto     40
+Documento_PDF                30
+Informes_y_Publicaciones     27
+General                      19
+Modelos_de_Negocio            5
+
+Documentos por tipo_archivo:
+tipo_archivo
+pdf    250
+txt    173
+
+Documentos por estado_extraccion:
+estado_extraccion
+OK                    413
+Sin texto extraido      9
+Texto insuficiente      1
+
+Rutas procesadas:
+- data/raw/ceei_valencia/txt/1018_distribución_en_planta_19_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/1019_análisis_de_posición_competitiva_20_manual_emprenemjunts.txt
+- data/raw/ceei_valencia/txt/1020_estrategias_competitivas_básicas_21_manuales_emprenemjunts.txt
+- data/raw/ceei_valencia/txt/1021_proceso_de_elaboración_de_un_plan_estratégico_22.txt
+- data/raw/ceei_valencia/txt/1022_cooperación_empresarial_23_manuales_emprenemjunts.txt
+- data/raw/ceei_valencia/txt/1023_metodología_de_la_innovación_24_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/1100_presentación_de_proyectos_empresariales_a_posibles_inversores_25.txt
+- data/raw/ceei_valencia/txt/1101_dirigir_eficazmente_26_manuales_emprenemjunts.txt
+- data/raw/ceei_valencia/txt/1102_fidelización_de_los_recursos_humanos_27_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/1103_propiedad_industrial_e_intelectual_28.txt
+- data/raw/ceei_valencia/txt/1104_lanzamiento_y_promoción_de_productos_innovadores_29_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/1183_diseñar_red_comercial_y_fijar_objetivos_de_ventas_17_manuales_emprenemjunts.txt
+- data/raw/ceei_valencia/txt/11900_producto_mínimo_viable_51_autor_roberto_touza.txt
+- data/raw/ceei_valencia/txt/11901_agile_development_52_autor_aday_guerra_nestor_co.txt
+- data/raw/ceei_valencia/txt/11902_customer_validation_53_autora_lucía_ruiz_montiel_de_nestor_co.txt
+- data/raw/ceei_valencia/txt/11903_business_design_customer_discovery_54_autora_consuelo_verdú_de_nestor_co.txt
+- data/raw/ceei_valencia/txt/13789_marketing_sensorial_55.txt
+- data/raw/ceei_valencia/txt/14184_escalado_ágil_cómo_descubrir_y_usar_palancas_exponenciales_de_un_modelo_de_negocio_autor_josé_antonio_de_miguel_presiden.txt
+- data/raw/ceei_valencia/txt/14624_escalabilidad_startups_57_manual_de_gestión_empresarial_elaborado_por_roberto_touza.txt
+- data/raw/ceei_valencia/txt/14625_lean_startup_para_el_escalado_de_startups.txt
+- data/raw/ceei_valencia/txt/14626_estrategias_métricas_y_análisis_para_la_escalabilidad_de_startups.txt
+- data/raw/ceei_valencia/txt/14641_comercio_de_proximidad_modelo_de_negocio_de_actividades_empresariales.txt
+- data/raw/ceei_valencia/txt/14642_servicios_a_particulares_modelo_de_negocio_de_actividades_empresariales.txt
+- data/raw/ceei_valencia/txt/14643_empresas_fabricantes_modelo_de_negocio_de_actividades_empresariales.txt
+- data/raw/ceei_valencia/txt/14644_servicios_profesionales_empresariales_modelo_de_negocio_de_actividades_empresariales.txt
+- data/raw/ceei_valencia/txt/14649_ecommerce_b2c_model_de_negoci.txt
+- data/raw/ceei_valencia/txt/14704_plataformas_online_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/14744_formación_y_cultura_modelo_de_negocio_de_actividades_empresariales.txt
+- data/raw/ceei_valencia/txt/14757_long_tail_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/14766_plataformas_de_crowdfunding_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/14801_métricas_para_startups_58_manual_de_gestión_empresarial_elaborado_por_roberto_touza.txt
+- data/raw/ceei_valencia/txt/14822_economía_circular_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/14837_software_as_a_service_saas_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/15825_teletrabajo_59_manual_de_gestión_empresarial_elaborado_por_david_blay.txt
+- data/raw/ceei_valencia/txt/15935_metodología_scrum_60_manual_elaborado_por_roberto_touza.txt
+- data/raw/ceei_valencia/txt/16264_alquiler_y_reparación_de_embarcaciones_modelo_de_negocio_de_actividades_empresariales.txt
+- data/raw/ceei_valencia/txt/16265_distribución_y_asistencia_técnica_en_impresión_3d_modelo_de_negocio_de_actividades_empresariales.txt
+- data/raw/ceei_valencia/txt/16266_robot_corta-césped_modelo_de_negocio_de_actividades_empresariales.txt
+- data/raw/ceei_valencia/txt/16267_tienda_taller_de_composturas_modelo_de_negocio_de_actividades_empresariales.txt
+- data/raw/ceei_valencia/txt/18162_la_sostenibilidad_en_la_empresa._aplicación_práctica_a_las_pymes_61_manual_elaborado_por_joan_ramon_sanchis_palacio_vane.txt
+- data/raw/ceei_valencia/txt/18259_asesoría_energética_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/18260_asistencia_a_la_infancia_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/18261_asistencia_a_personas_mayores.txt
+- data/raw/ceei_valencia/txt/18262_carpintería_de_madera_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/18263_carpintería_metálica_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/18271_clínica_dental_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/18272_domótica_e_inmótica.txt
+- data/raw/ceei_valencia/txt/18273_imprenta_y_artes_gráficas_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/18274_empresa_de_mantenimiento_industrial_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/18275_taller_electromecánico_del_automóvil_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/18339_guía_de_digitalización_para_pymes_manual_de_gestión_empresarial_elaborado_por_leonard_pera.txt
+- data/raw/ceei_valencia/txt/18340_claves_para_elaborar_un_plan_de_igualdad_manual_de_gestión_empresarial_elaborado_por_sandra_merchán.txt
+- data/raw/ceei_valencia/txt/19312_calefacción_y_fontanería_con_energías_renovables_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/19323_okr._objetivos_y_resultados_claves_manual_gestión_empresarial_realizado_por_francisco_javier_rivero.txt
+- data/raw/ceei_valencia/txt/19325_clínica_veterinaria_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/19327_empresa_de_reformas_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/19329_instalación_solar_fotovoltaica.txt
+- data/raw/ceei_valencia/txt/19331_tienda_de_informática_con_reparación_y_mantenimiento_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/2029_gabinete_de_diseño_gráfico.txt
+- data/raw/ceei_valencia/txt/2038_tienda_informática_con_reparación_y_mantenimiento.txt
+- data/raw/ceei_valencia/txt/20496_manual_de_inversión_en_startups.txt
+- data/raw/ceei_valencia/txt/20510_empresa_proptech_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/20511_empresa_fintech_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/20512_empresa_insurtech_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/20513_asesoramiento_en_criptomonedas_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/2055_centro_de_estética.txt
+- data/raw/ceei_valencia/txt/20564_manual_de_inbound_marketing.txt
+- data/raw/ceei_valencia/txt/2072_mecanizados_de_precisión.txt
+- data/raw/ceei_valencia/txt/2091_empresa_de_reformas.txt
+- data/raw/ceei_valencia/txt/2094_comercio_minorista_de_confección_y_complementos.txt
+- data/raw/ceei_valencia/txt/2109_sector_de_la_moda.txt
+- data/raw/ceei_valencia/txt/2123_restaurante_vegetariano.txt
+- data/raw/ceei_valencia/txt/21498_manual_de_comunicación_efectiva.txt
+- data/raw/ceei_valencia/txt/21499_manual_de_salud_mental_para_personas_emprendedoras.txt
+- data/raw/ceei_valencia/txt/21500_manual_de_creación_de_valor_compartido.txt
+- data/raw/ceei_valencia/txt/21518_centro_deportivo_privado_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/21519_despacho_profesional_servicios_de_consultoría_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/21520_panadería_-_cafetería_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/21521_tienda_de_muebles_con_servicio_de_diseño_a_medida_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/22444_gestión_cultural.txt
+- data/raw/ceei_valencia/txt/22445_turismo_cultural_modelo_de_negocio_de_actividades_empresariales.txt
+- data/raw/ceei_valencia/txt/22446_turismo_activo_modelo_de_negocio_de_actividades_empresariales.txt
+- data/raw/ceei_valencia/txt/22447_servicios_forestales_modelo_de_negocio_de_actividades_empresariales.txt
+- data/raw/ceei_valencia/txt/22448_empresa_de_tiempo_libre_modelo_de_negocio_de_actividades_empresariales.txt
+- data/raw/ceei_valencia/txt/22545_como_gestionar_un_funnel_de_innovación_de_idea_a_implantación.txt
+- data/raw/ceei_valencia/txt/22546_como_diseñar_un_programa_de_colaboración_empresa-startup.txt
+- data/raw/ceei_valencia/txt/22547_financiación_i_d_i.txt
+- data/raw/ceei_valencia/txt/22548_propiedad_intelectual.txt
+- data/raw/ceei_valencia/txt/22915_manual_de_ciberseguridad_para_pymes.txt
+- data/raw/ceei_valencia/txt/22995_estudio_de_fotografía_y_vídeo_para_empresas.txt
+- data/raw/ceei_valencia/txt/23047_gestión_ágil_de_equipos_claves_prácticas_para_organizar_mejor_el_trabajo_adaptarse_al_cambio_y_mejorar_la_coordinación_d.txt
+- data/raw/ceei_valencia/txt/23048_evaluación_del_desempeño_claves_prácticas_para_convertir_la_evaluación_en_una_conversación_útil_sobre_resultados_crecimi.txt
+- data/raw/ceei_valencia/txt/23076_fabricación_de_productos_de_limpieza_ecológicos_a_granel_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/23077_producción_hidropónica_y_aeropónica_de_bajo_consumo_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/23078_consultoría_en_gestión_del_agua_y_reciclaje_modelo_de_negocio.txt
+- data/raw/ceei_valencia/txt/237_estudios_de_mercado_1.txt
+- data/raw/ceei_valencia/txt/238_reclutar_y_seleccionar_personas_2.txt
+- data/raw/ceei_valencia/txt/239_alternativas_de_financiación_y_sus_costes_3.txt
+- data/raw/ceei_valencia/txt/240_análisis_financiero_básico_4.txt
+- data/raw/ceei_valencia/txt/241_marketing_online_y_posicionamiento_en_internet_5.txt
+- data/raw/ceei_valencia/txt/244_plan_y_presupuesto_de_comunicación_6_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/245_análisis_de_satisfacción_del_cliente_7_manuales_emprenemjunts.txt
+- data/raw/ceei_valencia/txt/297_valoración_de_empresas_8.txt
+- data/raw/ceei_valencia/txt/298_logística_y_distribución_9_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/299_definir_funciones_y_estructuras_organizativas_10_manuales_emprenemjunts.txt
+- data/raw/ceei_valencia/txt/324_fiscalidad_y_formas_jurídicas_11_manuales_emprenemjunts.txt
+- data/raw/ceei_valencia/txt/325_organización_de_la_producción_12_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/326_reingeniería_de_procesos_13.txt
+- data/raw/ceei_valencia/txt/328_fijación_de_precios_14_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/330_plan_de_internacionalización_de_empresas_16_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/4388_gestión_de_procesos_de_innovación_en_la_empresa_31_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/4389_el_presupuesto_de_tesorería_en_la_empresa_32_manuales_emprenemjunts.txt
+- data/raw/ceei_valencia/txt/4390_utilización_de_las_redes_sociales_para_posicionar_la_empresa_y_vender_33.txt
+- data/raw/ceei_valencia/txt/4391_internacionalizarse_desde_el_origen_30_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/4589_marca_y_posicionamiento_15_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/5604_cultura_economica_para_emprendedores_34_manuales_para_emprendedores.txt
+- data/raw/ceei_valencia/txt/5606_cómo_crear_una_tienda_online_35_colección_manuales_para_el_emprendedor.txt
+- data/raw/ceei_valencia/txt/5627_cómo_solicita_financiación_un_joven_emprendedor_a_la_banca_37_manuales_emprenemjunts.txt
+- data/raw/ceei_valencia/txt/5628_marca_personal_36_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/6878_herramientas_de_creatividad_aplicada_a_la_empresa_38_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/6879_cómo_gestionar_el_crecimiento_de_tu_empresa_39.txt
+- data/raw/ceei_valencia/txt/6880_cómo_diseñar_tu_modelo_de_negocio._modelo_canvas_40.txt
+- data/raw/ceei_valencia/txt/6891_metodología_lean_startup_41_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- data/raw/ceei_valencia/txt/7749_cómo_vender_en_el_exterior_42_manuales_emprenemjunts.txt
+- data/raw/ceei_valencia/txt/7750_técnicas_de_venta_para_emprendedores_43.txt
+- data/raw/ceei_valencia/txt/7751_estrategias_low_cost_para_emprendedores_44.txt
+- data/raw/ceei_valencia/txt/7752_técnicas_de_negociación_para_emprendedores_45.txt
+- data/raw/ceei_valencia/txt/8916_la_innovación_como_factor_clave_de_competitividad_46.txt
+- data/raw/ceei_valencia/txt/8917_instrumentos_de_planificación_estratégica_47_manuales_emprenemjunts.txt
+- data/raw/ceei_valencia/txt/9083_gestión_administrativa_y_económica_de_proyectos_de_i_d_i_48.txt
+- data/raw/ceei_valencia/txt/9098_planificación_control_y_seguimiento_de_proyectos_de_i_d_i_49.txt
+- data/raw/ceei_valencia/txt/9099_elaboración_propuestas_de_proyectos_de_i_d_i_50.txt
+- data/raw/ceei_valencia/txt/983_modelos_de_contratos_entre_empresas_18_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+- documentos_ceei_elche/Facebook crea una comunidad interactúa y vende.pdf
+- documentos_ceei_elche/Guia de responsabilidad social de la empresaGuía d.pdf
+- documentos_ceei_elche/Guía básica para crear una app móvil de éxitoAlgun.pdf
+- documentos_ceei_elche/Guía Cómo obtener el Sello PYME InnovadoraQué es.pdf
+- documentos_ceei_elche/Guía de Apoyo Ayudas y Subvenciones.pdf
+- documentos_ceei_elche/Guía de Apoyo El miedo a hablar en públicoApuntes.pdf
+- documentos_ceei_elche/Guía de Apoyo Fuentes de Financiación.pdf
+- documentos_ceei_elche/Guía de Apoyo Fuentes de Información EmpresarialI.pdf
+- documentos_ceei_elche/Guía de apoyo Geolocalización y Redes Sociales d.pdf
+- documentos_ceei_elche/Guía de apoyo Listado de Guías de Actividades Emp.pdf
+- documentos_ceei_elche/Guía de Apoyo Métodos de Cálculo del Tamaño de Me.pdf
+- documentos_ceei_elche/Guía de Apoyo Premios para Emprendedores y Empres.pdf
+- documentos_ceei_elche/Guía de Apoyo Principios básicos de LOPD y LSSI.pdf
+- documentos_ceei_elche/Guía de Apoyo Trámites de constitución de empresa.pdf
+- documentos_ceei_elche/Guía Sello JEI y PYME Innovadora.pdf
+- documentos_ceei_elche/Mejoras en las deducciones fiscales por IDiGuía.pdf
+- documentos_ceei_elche/Patent Box y Deducciones Fiscales.pdf
+- documentos_ceei_elche/Recursos y Herramientas de Apoyo para la Creación.pdf
+- documentos_ceei_elche/Servicios Coworking CEEI Valencia.pdf
+- documentos_ceei_elche_PDF/Fichas/Academias.pdf
+- documentos_ceei_elche_PDF/Fichas/Actividades Naúticas.pdf
+- documentos_ceei_elche_PDF/Fichas/Agencia de Transporte Local.pdf
+- documentos_ceei_elche_PDF/Fichas/Agencia Inmobiliaria.pdf
+- documentos_ceei_elche_PDF/Fichas/Agencias de Exportación.pdf
+- documentos_ceei_elche_PDF/Fichas/Agencias de Viajes.pdf
+- documentos_ceei_elche_PDF/Fichas/Agricultura Ecológica.pdf
+- documentos_ceei_elche_PDF/Fichas/Ahorro y Eficiencia Energética.pdf
+- documentos_ceei_elche_PDF/Fichas/Arreglo de ropa y composturas.pdf
+- documentos_ceei_elche_PDF/Fichas/Atención Educativa al Niño.pdf
+- documentos_ceei_elche_PDF/Fichas/Ayuda a Domicilio a la Tercera Edad.pdf
+- documentos_ceei_elche_PDF/Fichas/Ayuda a Domicilio para la 3ª Edad.pdf
+- documentos_ceei_elche_PDF/Fichas/Ayuda a Domicilio.pdf
+- documentos_ceei_elche_PDF/Fichas/Bioenergía.pdf
+- documentos_ceei_elche_PDF/Fichas/Bodegas de vino.pdf
+- documentos_ceei_elche_PDF/Fichas/Calefacción y Fontanería con Energías Renovables.pdf
+- documentos_ceei_elche_PDF/Fichas/Carpintería de Muebles.pdf
+- documentos_ceei_elche_PDF/Fichas/Centro Comercial Virtual.pdf
+- documentos_ceei_elche_PDF/Fichas/Centro de Impresión Digital.pdf
+- documentos_ceei_elche_PDF/Fichas/Centro Deportivo Privado.pdf
+- documentos_ceei_elche_PDF/Fichas/Centros de Asistencia.pdf
+- documentos_ceei_elche_PDF/Fichas/Centros de Día.pdf
+- documentos_ceei_elche_PDF/Fichas/Centros de Estética.pdf
+- documentos_ceei_elche_PDF/Fichas/Clínica de Fisioterapia.pdf
+- documentos_ceei_elche_PDF/Fichas/Clínica y Tienda Veterinaria.pdf
+- documentos_ceei_elche_PDF/Fichas/Coaching.pdf
+- documentos_ceei_elche_PDF/Fichas/Comercio de Proximidad.pdf
+- documentos_ceei_elche_PDF/Fichas/Comercio Electrónico.pdf
+- documentos_ceei_elche_PDF/Fichas/Comercio Minorista de Confección y Complementos.pdf
+- documentos_ceei_elche_PDF/Fichas/Comida a Domicilio.pdf
+- documentos_ceei_elche_PDF/Fichas/Community Manager.pdf
+- documentos_ceei_elche_PDF/Fichas/Compras Colectivas y Outlets Online.pdf
+- documentos_ceei_elche_PDF/Fichas/Consulta de Nutricionista.pdf
+- documentos_ceei_elche_PDF/Fichas/Consultoría de Internacionalización.pdf
+- documentos_ceei_elche_PDF/Fichas/Consultoría de Prevención de Riesgos Laborales.pdf
+- documentos_ceei_elche_PDF/Fichas/Consultoría de Proyectos y Captación de Financiación.pdf
+- documentos_ceei_elche_PDF/Fichas/Consultoría Medioambiental.pdf
+- documentos_ceei_elche_PDF/Fichas/Desarrolladores de Ocio Interactivo.pdf
+- documentos_ceei_elche_PDF/Fichas/Desarrollo de Aplicaciones para Móviles y Tablets _APP_.pdf
+- documentos_ceei_elche_PDF/Fichas/Despachos Profesionales.pdf
+- documentos_ceei_elche_PDF/Fichas/Diseño de Contenidos Educativos para Tablets.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa de Catering.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa de Contenidos para Formación Online.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa de Domótica para Ahorro Energético.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa de e-Commerce para Comercio de Barrio.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa de Experiencias Turísticas Locales.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa de Fabricación de Productos de Limpieza Ecológicos a Granel.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa de I_D.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa de Jardinería.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa de Mecanizados de Precisión.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa de Producción Audiovisual y Multimedia.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa de Reciclaje y Recuperación de Residuos.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa de Reformas.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa de Servicio Móvil de Maquillaje y Peluquería para Eventos.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresa Instaladora de Energía Solar Foltovoltaica.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresas de Jardinería.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresas de Limpieza.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresas de seguridad.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresas de Servicios Sociales.pdf
+- documentos_ceei_elche_PDF/Fichas/Empresas de Vending.pdf
+- documentos_ceei_elche_PDF/Fichas/Energías Renovables.pdf
+- documentos_ceei_elche_PDF/Fichas/Entrenador Personal.pdf
+- documentos_ceei_elche_PDF/Fichas/Envío a Casa de Productos y Menú Semanal con Recetas.pdf
+- documentos_ceei_elche_PDF/Fichas/Escuela de Baile.pdf
+- documentos_ceei_elche_PDF/Fichas/Fabricación de Componentes Electrónicos.pdf
+- documentos_ceei_elche_PDF/Fichas/Fabricación de Envases y Embalajes.pdf
+- documentos_ceei_elche_PDF/Fichas/Food Truck.pdf
+- documentos_ceei_elche_PDF/Fichas/Fotografía para Empresa y eCommerce.pdf
+- documentos_ceei_elche_PDF/Fichas/Fotografía y Edición de Vídeo_Streaming.pdf
+- documentos_ceei_elche_PDF/Fichas/Franquicias.pdf
+- documentos_ceei_elche_PDF/Fichas/Fábrica Artesanal de Productos Agroalimentarios.pdf
+- documentos_ceei_elche_PDF/Fichas/Gabinete de Diseño Gráfico.pdf
+- documentos_ceei_elche_PDF/Fichas/Gabinete de Diseño Industrial.pdf
+- documentos_ceei_elche_PDF/Fichas/Gestión del Patrimonio Cultural.pdf
+- documentos_ceei_elche_PDF/Fichas/Gestoría Administrativa.pdf
+- documentos_ceei_elche_PDF/Fichas/Granja Escuela.pdf
+- documentos_ceei_elche_PDF/Fichas/Guarderías.pdf
+- documentos_ceei_elche_PDF/Fichas/Impresión 3D.pdf
+- documentos_ceei_elche_PDF/Fichas/Instalación de Calefacción y Fontanería con Energías Renovables.pdf
+- documentos_ceei_elche_PDF/Fichas/Instalación de Seguridad Electrónica y Domótica.pdf
+- documentos_ceei_elche_PDF/Fichas/Laboratorio agroalimentario y medioambiental.pdf
+- documentos_ceei_elche_PDF/Fichas/Logística y Transporte para Empresas de e-Commerce.pdf
+- documentos_ceei_elche_PDF/Fichas/Marketing Online y Posicionamiento SEM-SEO.pdf
+- documentos_ceei_elche_PDF/Fichas/Marketing y Estudios de Mercado.pdf
+- documentos_ceei_elche_PDF/Fichas/Obrador de Alimentos Veganos o Plant-Based.pdf
+- documentos_ceei_elche_PDF/Fichas/Oficina Técnica de Ingeniería.pdf
+- documentos_ceei_elche_PDF/Fichas/Organización de Conciertos_ Agencia de Conferenciantes y Programación de Contenidos.pdf
+- documentos_ceei_elche_PDF/Fichas/Organización de Conferencias_ Jornadas_ Encuentros_ Networking_ Bodas y Eventos.pdf
+- documentos_ceei_elche_PDF/Fichas/Organización de Reuniones.pdf
+- documentos_ceei_elche_PDF/Fichas/Panadería-Cafetería.pdf
+- documentos_ceei_elche_PDF/Fichas/Parafarmàcies.pdf
+- documentos_ceei_elche_PDF/Fichas/Personal Shopper.pdf
+- documentos_ceei_elche_PDF/Fichas/Portal Online de Trueque.pdf
+- documentos_ceei_elche_PDF/Fichas/Producción de Textiles Técnicos.pdf
+- documentos_ceei_elche_PDF/Fichas/Producción Hidropónica y Aeropónica de Bajo Consumo.pdf
+- documentos_ceei_elche_PDF/Fichas/Reforma de Interiores y Decoración.pdf
+- documentos_ceei_elche_PDF/Fichas/Reparaciones en el Hogar.pdf
+- documentos_ceei_elche_PDF/Fichas/Residencias de la Tercera Edad.pdf
+- documentos_ceei_elche_PDF/Fichas/Restaurantes.pdf
+- documentos_ceei_elche_PDF/Fichas/Sector de la Moda.pdf
+- documentos_ceei_elche_PDF/Fichas/Servicios de Asistencia Técnica _SAT_.pdf
+- documentos_ceei_elche_PDF/Fichas/Servicios de Fotografía y Vídeo para Empresas.pdf
+- documentos_ceei_elche_PDF/Fichas/Servicios Forestales.pdf
+- documentos_ceei_elche_PDF/Fichas/Servicios Médicos a la Tercera Edad.pdf
+- documentos_ceei_elche_PDF/Fichas/Software Especialitzat i Programació d_Ordinadors.pdf
+- documentos_ceei_elche_PDF/Fichas/Software Especializado y Programación de Ordenadores.pdf
+- documentos_ceei_elche_PDF/Fichas/Taller de Arreglos y Confección Personalizada.pdf
+- documentos_ceei_elche_PDF/Fichas/Taller de Impresión 3D y Prototipado Sostenible.pdf
+- documentos_ceei_elche_PDF/Fichas/Taller de Informática con Reparación y Mantenimiento.pdf
+- documentos_ceei_elche_PDF/Fichas/Tareas a terceros.pdf
+- documentos_ceei_elche_PDF/Fichas/Teletrabajo.pdf
+- documentos_ceei_elche_PDF/Fichas/Tienda de Calzado.pdf
+- documentos_ceei_elche_PDF/Fichas/Tienda de Decoración.pdf
+- documentos_ceei_elche_PDF/Fichas/Tienda de Iluminación.pdf
+- documentos_ceei_elche_PDF/Fichas/Tienda de Informática con Reparación y Mantenimiento.pdf
+- documentos_ceei_elche_PDF/Fichas/Tienda de Mascotas y Alimentación Animal.pdf
+- documentos_ceei_elche_PDF/Fichas/Tienda de Muebles.pdf
+- documentos_ceei_elche_PDF/Fichas/Tienda de Productos Ecológicos.pdf
+- documentos_ceei_elche_PDF/Fichas/Tratamiento de Residuos.pdf
+- documentos_ceei_elche_PDF/Fichas/Turismo Rural.pdf
+- documentos_ceei_elche_PDF/Fichas/Youtuber.pdf
+- documentos_ceei_elche_PDF/Infografias/10 Claves para lograr la efectividad de un proceso empresarial.pdf
+- documentos_ceei_elche_PDF/Infografias/10 errores comunes al lanzar una campaña de email marketing.pdf
+- documentos_ceei_elche_PDF/Infografias/10 herramientas digitales para mejorar tu negocio.pdf
+- documentos_ceei_elche_PDF/Infografias/10 tips para mejorar la usabilidad de tu web.pdf
+- documentos_ceei_elche_PDF/Infografias/3 Nuevas metodologías BIK para empresas y emprendedoresPara emprendedores_ startups y pymes.pdf
+- documentos_ceei_elche_PDF/Infografias/5 Claves para buscar financiaciónPara emprendedores_ startups y pymes.pdf
+- documentos_ceei_elche_PDF/Infografias/5 Tips para aumentar tu Inteligencia EmocionalINFOGRAFÍAS.pdf
+- documentos_ceei_elche_PDF/Infografias/5_1 claves para que tu web esté in love with GoogleINFOGRAFÍAS.pdf
+- documentos_ceei_elche_PDF/Infografias/6 pasos para gestionar tu tesorería.pdf
+- documentos_ceei_elche_PDF/Infografias/8 tendencias en el sector logístico para el 2022.pdf
+- documentos_ceei_elche_PDF/Infografias/_Cómo gestionar un _funnel_ de innovación_De ideación a implantación.pdf
+- documentos_ceei_elche_PDF/Infografias/_Cómo proteger la propiedad intelectual_.pdf
+- documentos_ceei_elche_PDF/Infografias/_Qué es OKR_.pdf
+- documentos_ceei_elche_PDF/Infografias/Claves del Mentoring en Desarrollo de NegocioPlan de Trabajo y Metodologías Aplicables.pdf
+- documentos_ceei_elche_PDF/Infografias/Claves para crear una cultura de innovación colaborativa en tu empresa.pdf
+- documentos_ceei_elche_PDF/Infografias/Cómo construir un funnel de ventas paso a pasoDe desconocido a cliente fiel_ guía para crear un funnel que convierta.pdf
+- documentos_ceei_elche_PDF/Infografias/Cómo convertir tu contenido en la fuente favorita de la IA.pdf
+- documentos_ceei_elche_PDF/Infografias/Cómo crear una estrategia de contenidos para RRSS.pdf
+- documentos_ceei_elche_PDF/Infografias/Cómo estructurar un plan de crisis en comunicaciónDe la prevención a la recuperación_ Pasos para proteger tu reputación.pdf
+- documentos_ceei_elche_PDF/Infografias/Cómo hacer un briefing completo para agencia o equipo creativo.pdf
+- documentos_ceei_elche_PDF/Infografias/Design Thinking - _Qué puede aportar a tu empresa_INFOGRAFÍA.pdf
+- documentos_ceei_elche_PDF/Infografias/Diagnóstico integral de Startups.pdf
+- documentos_ceei_elche_PDF/Infografias/Ecuación de Valor.pdf
+- documentos_ceei_elche_PDF/Infografias/El proceso de innovación de las empresas de éxitoEl modelo de las ETIs para asegurar la competitividad actual y la perma.pdf
+- documentos_ceei_elche_PDF/Infografias/Estrategias para reutilizar y reciclar contenido.pdf
+- documentos_ceei_elche_PDF/Infografias/Fases Ecosistema Emprendimiento de la Comunitat Valenciana.pdf
+- documentos_ceei_elche_PDF/Infografias/Gestión Ágil y StartupPara emprendedores  y startups.pdf
+- documentos_ceei_elche_PDF/Infografias/Incubadoras_ hackatones o aceleradoras.pdf
+- documentos_ceei_elche_PDF/Infografias/Infografia Innovacion abierta vs cerrada.pdf
+- documentos_ceei_elche_PDF/Infografias/Innovación abiertaINFOGRAFÍAS.pdf
+- documentos_ceei_elche_PDF/Infografias/KPIs_ Indicadores Clave de RendimientoINFOGRAFÍAS.pdf
+- documentos_ceei_elche_PDF/Infografias/Las tres coherencias del emprendedorCómo alinear pensamiento_ acción y emoción para avanzar con seguridad.pdf
+- documentos_ceei_elche_PDF/Infografias/Mentalidad disruptiva_ planificación o adaptabilidad.pdf
+- documentos_ceei_elche_PDF/Infografias/Mentorización a emprendedores potenciado por IAAcompañamiento con herramientas productivas de IA.pdf
+- documentos_ceei_elche_PDF/Infografias/Pasos para realizar el Plan Social Media de tu negocio.pdf
+- documentos_ceei_elche_PDF/Infografias/Producto Mínimo Viable y PrototipadoCerca de 600 recursos para emprendedores_ startups y pymes.pdf
+- documentos_ceei_elche_PDF/Infografias/Protocolo asesoramiento a personas emprendedoras y a empresas con BIK CEEI.pdf
+- documentos_ceei_elche_PDF/Infografias/Recursos Gratuitos_ Creación y Crecimiento de empresasCerca de 600 recursos para emprendedores_ startups y pymes.pdf
+- documentos_ceei_elche_PDF/Infografias/Recursos Gratuitos_ Creación y Crecimiento de empresasCerca de 600 recursos para personas emprendedoras_ startups y pyme.pdf
+- documentos_ceei_elche_PDF/Infografias/Reflexiones antes de enviar contenido a los medios de comunicación.pdf
+- documentos_ceei_elche_PDF/Infografias/Ruta de Financiación en I_D_i.pdf
+- documentos_ceei_elche_PDF/Infografias/Sello Pyme InnovadoraMinisterio de Economía y competitividad.pdf
+- documentos_ceei_elche_PDF/Infografias/Tecnologías habilitadoras que favorecen la innovación abierta.pdf
+- documentos_ceei_elche_PDF/Infografias/Teletrabajo_ Consejos y ventajas para afrontarlo con éxitoINFOGRAFÍA.pdf
+- documentos_ceei_elche_PDF/Infografias/Tips para elaborar una nota de prensa eficaz.pdf
+- documentos_ceei_elche_PDF/Infografias/Tips para romper el Techo de Cristal en las EmpresasINFOGRAFÍA.pdf
+- documentos_ceei_elche_PDF/Infografias/Ventajas de la innovación abierta.pdf
+- documentos_ceei_elche_PDF/Infografias/VERIFACTU_ que es_ a quien afecta y como prepararse.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Análisis de la capacidad tractora de las empresas de la Provincia de AlicanteIdentificación de las micro y pequeñas empr.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Análisis para la definición de las competencias del perfil profesional de un Agente de Desarrollo Local_.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Análisis sobre metodologías y herramientas de innovación del ecosistema emprendedor de CVInformes y estudios.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Business Innovation Kit-Bikceei 2020.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/EBC_s generadas en el entorno de los Parque Científicos de la Provincia de Alicante y su relación con RIS3-CVInformes y .pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Estudio integral sobre el sector marítimo_recreativo en la Comunidad Valenciana.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Estudio sobre creación de un Fondo de Garantía para la concesión de microcréditosInformes y estudios.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Guía sobre registro jornada laboralDesde el 12 de mayo las empresas deben realizar un registro de la jornada laboral de .pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe 2023_ Ecosistema local energético colaborativo_ autosuficiente_ eficiente y sostenible en Salinas_Resultados de .pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe 2025 - Hacia un ecosistema más verde_ digital e inclusivo_ Tendencias del emprendimiento en EspañaInforme del be.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe Benchmarking CEEI Elche 2018-2019_ Análisis sobre metodologías y herramientas de innovación_Informes y estudios.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe Benchmarking CEEI Elche 2020_ Impacto COVID19_ Claves para la Recuperación Económica 2021Informes y estudios.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe COTEC 2014.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de comercio exterior de Alicante por ICEX.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de la Pyme 2018_ Comunidad Valenciana_.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ HUB Nueva Ruralidad RegenerativaLo rural como punta de lanza de la transformación económica_.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ Retos de la industria auxiliar del calzado_ presente y futuro del sectorEsta acción ha sido .pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creación de valor a futuro Comarca de la Vega BajaEsta acción ha sido desarrol.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creación de valor a futuro de AESEC_Esta acción ha sido desarrollada en colabo.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creación de valor a futuro en la Marina Alta_Esta acción ha sido desarrollada .pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados proyecto Innoteams 2022.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe Empresas Tractoras 2020 Comunitat Valenciana.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe GEM 2018-19 sobre el ecosistema emprendedor en España.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Observatorio Económico-Empresarial de la ciudad de Elche.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Resultados fase entender HUB Innovación Colaborativa Territorial 2023- Nueva Ruralidad Regenerativa.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Resultados proyecto piloto HUB Innovación Colaborativa Territorial 2021 - 2022.pdf
+- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Resumen HUB de Innovación Colaborativa.pdf
+- documentos_ceei_elche_PDF/Modelos_de_Negocio/Centro especializado en vehículos eléctricos.pdf
+- documentos_ceei_elche_PDF/Modelos_de_Negocio/Obrador de alimentos veganos o Plant-Based.pdf
+- documentos_ceei_elche_PDF/Modelos_de_Negocio/Servicio móvil de maquillaje y peluquería para eventos.pdf
+- documentos_ceei_elche_PDF/Modelos_de_Negocio/Taller de arreglos y confección personalizada sostenible.pdf
+- documentos_ceei_elche_PDF/Modelos_de_Negocio/Taller de impresión 3D  y prototipado rápido a partir de residuos vegetales.pdf
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Alquiler y reparación de embarcaciones.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Asesoramiento en Criptomonedas.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Asesoría Energética.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Asistencia a la infancia.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Asistencia a personas mayores.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Calefacción y fontanería con energías renovables.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Carpintería de madera.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Carpintería metálica.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Centro Deportivo Privado.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Clínica dental.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Clínica Veterinaria.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Despacho Profesional_ Servicios de Consultoría.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Distribución y asistencia técnica en impresión 3D.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Domótica e inmótica.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Ecommerce B2C.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Economía Circular.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa de mantenimiento industrial.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa de Reformas.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa de Tiempo Libre.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa Fintech.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa Insurtech.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa Proptech.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Estudio de fotografía y vídeo para empresas.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Formación y cultura.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Gestión Cultural.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Imprenta y artes gráficas.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Instalación Solar Fotovoltaica.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Long Tail.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Panadería - Cafetería.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Plataformas de Crowdfunding.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Plataformas Online.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Robot Corta-Césped.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Servicios Forestales.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Software as a Service _SAAS_.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Taller electromecánico del automóvil.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Tienda de Informática con Reparación y Mantenimiento.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Tienda de Muebles con Servicio de Diseño a Medida.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Tienda taller de composturas.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Turismo Activo.txt
+- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Turismo Cultural.txt
+- documentos_ceei_valencia/20407_networking_mentoring_y_techscouting_tres_modelos_de_innovacion_abierta_para_tu_negocio.pdf
+- documentos_ceei_valencia/20408_flujos_entrantes_salientes_y_procesos_mixtos_que_formas_de_apertura_tiene_una_organizacion.pdf
+- documentos_ceei_valencia/20482_tecnologias_habilitadoras_que_favorecen_la_innovacion_abierta.pdf
+- documentos_ceei_valencia/20565_manual_scaleup_y_softlanding_scaleup_y_softlanding_internacional.pdf
+- documentos_ceei_valencia/20566_manual_inteligencia_artificial_aplicada_a_startups.pdf
+- documentos_ceei_valencia/20569_inteligencia_artificial_aplicada_a_startups.pdf
+- documentos_ceei_valencia/22544_alianzas_estrategicas_entre_empresas_y_startups_como_construir_relaciones_que_beneficien_a.pdf
+- documentos_ceei_valencia/22691_manual_diagrama_integral_de_startups.pdf
+- documentos_ceei_valencia/22712_verifactu_validacion_de_facturas_electronicas.pdf
+- documentos_ceei_valencia/22980_sostenibilidad_decidir_hoy_para_no_limitar_el_crecimiento_manana.pdf
+- documentos_ceei_valencia/22982_el_potencial_de_la_inteligencia_artificial_para_la_innovacion.pdf
+- documentos_ceei_valencia/22986_transforma_tu_idea_en_un_negocio_global_en_la_yesa.pdf
+- documentos_ceei_valencia/22996_servicio_movil_de_maquillaje_y_peluqueria_para_eventos.pdf
+- documentos_ceei_valencia/22997_taller_de_arreglos_y_confeccion_personalizada_sostenible.pdf
+- documentos_ceei_valencia/23008_innovacion_interna_metodologias_agiles_de_innovacion.pdf
+- documentos_ceei_valencia/23016_obrador_de_alimentos_veganos_o_plant_based.pdf
+- documentos_ceei_valencia/23017_taller_de_impresion_3d_y_prototipado_rapido_a_partir_de_residuos_vegetales.pdf
+- documentos_ceei_valencia/23019_centro_especializado_en_vehiculos_electricos.pdf
+- documentos_ceei_valencia/23022_innovacion_interna_metodologias_agiles_de_innovacion_ii.pdf
+- documentos_ceei_valencia/23025_transforma_tu_idea_en_un_negocio_global_en_casas_bajas.pdf
+- documentos_ceei_valencia/23032_servicios_de_fotografia_y_video_para_empresas.pdf
+- documentos_ceei_valencia/23035_creacion_de_una_spin_off.pdf
+- documentos_ceei_valencia/23049_carpinteria_de_muebles.pdf
+- documentos_ceei_valencia/23051_centro_de_impresion_digital.pdf
+- documentos_ceei_valencia/23052_empresa_de_domotica_para_ahorro_energetico.pdf
+- documentos_ceei_valencia/23053_empresa_de_experiencias_turisticas_locales.pdf
+- documentos_ceei_valencia/23054_empresa_de_reformas.pdf
+- documentos_ceei_valencia/23055_produccion_de_textiles_tecnicos.pdf
+- documentos_ceei_valencia/23056_taller_de_arreglos_y_confeccion_personalizada.pdf
+- documentos_ceei_valencia/23069_plan_de_innovacion.pdf

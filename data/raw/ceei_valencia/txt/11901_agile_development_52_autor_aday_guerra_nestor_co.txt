@@ -23,7 +23,7 @@ Agile Development
 : Con este manual se pretende ayudar a cualquier persona que vaya a empezar a utilizar un marco de trabajo como es el Scrum como método de gestión ágil de sus proyectos de software.
 Por eso, a lo largo de estas páginas, se explicará cómo surge el agilismo como método de gestión de proyectos software, así como el marco de trabajo Scrum. Para facilitar su comprensión y validar su puesta en práctica se añaden una serie de ejercicios y formularios de control.
 CONSULTA OTROS MANUALES DE GESTIÓN EMPRESARIAL
-Visitas: 22.825 Descargas: 903
+Visitas: 22.827 Descargas: 903
 ágil
 30/12/2017 00:59 | publisher
 URL oficial/canónica:

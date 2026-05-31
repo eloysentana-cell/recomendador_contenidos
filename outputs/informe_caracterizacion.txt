@@ -1,0 +1,22 @@
+Informe de caracterizacion
+============================
+Numero de perfiles: 8
+Numero total de documentos: 423
+
+Documentos por fuente:
+fuente
+CEEI Elche       260
+CEEI Valencia    163
+
+Documentos por estado_extraccion:
+estado_extraccion
+OK                    413
+Sin texto extraido      9
+Texto insuficiente      1
+
+Archivos generados:
+- outputs/perfiles_caracterizados.csv
+- outputs/perfiles_caracterizados.xlsx
+- outputs/documentos_caracterizados_muestra.csv
+- outputs/documentos_caracterizados_muestra.xlsx
+- outputs/informe_caracterizacion.txt
