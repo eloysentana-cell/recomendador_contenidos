@@ -2,10 +2,15 @@
 
 from __future__ import annotations
 
+import io
 import json
 import os
+from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 from typing import Any
+
+os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
+os.environ["TQDM_DISABLE"] = "1"
 
 import numpy as np
 import pandas as pd
@@ -13,8 +18,6 @@ from sentence_transformers import SentenceTransformer
 from transformers.utils import logging as transformers_logging
 
 
-os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
-os.environ["TQDM_DISABLE"] = "1"
 transformers_logging.disable_progress_bar()
 transformers_logging.set_verbosity_error()
 
@@ -68,7 +71,10 @@ def require_file(path: Path) -> None:
 def load_model() -> SentenceTransformer:
     global _MODEL
     if _MODEL is None:
-        _MODEL = SentenceTransformer(MODEL_NAME)
+        # Streamlit puede exponer un stderr no compatible con tqdm en Windows.
+        # Redirigimos la carga inicial para evitar OSError al pintar barras.
+        with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+            _MODEL = SentenceTransformer(MODEL_NAME)
     return _MODEL
 
 
