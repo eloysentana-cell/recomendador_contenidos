@@ -257,7 +257,24 @@ https://ceeivalencia.emprenemjunts.es/?op=35&quebusco=20&bbtipoagru=994
 
 En estas paginas los documentos tambien aparecen en segundo nivel. El spider entra en las fichas `op=13&n=...` y desde ahi localiza el enlace real de descarga.
 
-### 1.8 Modo listado y modo descarga
+### 1.8 Decision metodologica: scraper de Elche y spider de Valencia
+
+Se mantienen dos herramientas distintas porque responden a necesidades diferentes de la fase de captacion documental.
+
+Para CEEI Elche se conserva el scraper basado en `requests` y `BeautifulSoup`. Este enfoque es mas directo, facil de auditar y suficiente para una web cuya estructura ya habia sido explorada. Permite controlar manualmente las secciones, la paginacion mediante parametros como `empieza` y `cuantos`, la entrada en fichas `op=13&n=...` y la descarga final mediante enlaces como `contando2.php`.
+
+Para CEEI Valencia se utiliza un spider Scrapy porque el objetivo era disponer de un flujo mas formal y reutilizable: separacion entre listado, analisis de la ficha y descarga; exportacion directa a JSON; control de concurrencia; validacion de tipos de archivo; y ejecucion diferenciada entre modo listado y modo descarga.
+
+La diferencia principal es, por tanto, de arquitectura:
+
+```text
+CEEI Elche     -> scraper secuencial con requests + BeautifulSoup
+CEEI Valencia  -> spider Scrapy con flujo de crawling mas estructurado
+```
+
+Esta decision no implica que una tecnica sea superior en todos los casos. En el proyecto se considera defendible mantener ambas: el scraper de Elche documenta una fase exploratoria y controlada, mientras que el spider de Valencia aporta una aproximacion mas escalable para una segunda fuente documental. En ambos casos se aplican criterios comunes de calidad: trazabilidad de URLs, pausas entre peticiones, validacion del archivo descargado, evitacion de duplicados y conservacion de metadatos.
+
+### 1.9 Modo listado y modo descarga
 
 El spider de Valencia puede ejecutarse de dos formas.
 
@@ -285,7 +302,7 @@ documentos_ceei_valencia/
 
 y genera un indice JSON con metadatos.
 
-### 1.9 Campos del indice de Valencia
+### 1.10 Campos del indice de Valencia
 
 El archivo:
 
@@ -315,7 +332,7 @@ El campo `estado` permite distinguir:
 
 Esto mantiene trazabilidad incluso cuando la web muestra una ficha pero no entrega un PDF real.
 
-### 1.10 Limpieza de imagenes
+### 1.11 Limpieza de imagenes
 
 Durante la descarga de Valencia se detecto un archivo de imagen `.jpg`. Como el objetivo inmediato es construir un corpus documental textual, se elimino la imagen y se retiro su registro del indice de documentos descargados.
 
@@ -334,7 +351,7 @@ Desglose del JSON:
 0 imagenes
 ```
 
-### 1.11 Criterios de calidad aplicados al scraping
+### 1.12 Criterios de calidad aplicados al scraping
 
 En toda la etapa de scraping se han aplicado criterios pensados para que el proceso sea defendible:
 
@@ -405,104 +422,77 @@ documentos_ceei_valencia.json
 enlaces_ceei_valencia.json
 ```
 
-Estos archivos sirven como base para unificar documentos, metadatos y texto extraido.
-
-El siguiente paso tecnico es consolidar una tabla unica con columnas como:
+El archivo mas relevante ahora mismo es:
 
 ```text
-id_documento
-titulo
-fuente
-seccion
-tipo_archivo
-ruta_local
-url_origen
-texto
+data/processed/corpus_documental.csv
 ```
 
-## Etapa 4: Recomendador content-based
-
-El primer recomendador previsto sera content-based.
-
-Enfoque inicial:
-
-1. Construir un texto representativo para cada perfil.
-2. Construir un texto representativo para cada documento.
-3. Vectorizar ambos conjuntos con TF-IDF.
-4. Calcular similitud coseno entre perfiles y documentos.
-5. Devolver los documentos mas similares para cada perfil.
-
-Este enfoque es adecuado porque:
-
-- No hay historico de usuarios.
-- No se necesitan interacciones previas.
-- El resultado es explicable.
-- Se puede justificar con terminos relevantes y pesos TF-IDF.
-
-Mas adelante se comparara con embeddings, pero no se generan embeddings reales todavia.
-
-## Comandos utiles
-
-Ejecutar scraper de Elche:
-
-```powershell
-.\.venv\Scripts\python.exe 2_scraper_ceei_seguro.py
-```
-
-Extraer texto de modelos de negocio sin PDF:
-
-```powershell
-.\.venv\Scripts\python.exe extraer_modelos_negocio_texto.py
-```
-
-Listar enlaces de Valencia sin descargar:
-
-```powershell
-cd scraping_valencia
-..\.venv\Scripts\python.exe -m scrapy crawl ceei_valencia -O ..\data\processed\enlaces_ceei_valencia.json
-```
-
-Descargar documentos de Valencia:
-
-```powershell
-cd scraping_valencia
-..\.venv\Scripts\python.exe -m scrapy crawl ceei_valencia -a descargar=si -O ..\data\processed\documentos_ceei_valencia.json
-```
-
-Validar sintaxis de scripts principales:
-
-```powershell
-.\.venv\Scripts\python.exe -m py_compile 2_scraper_ceei_seguro.py extraer_modelos_negocio_texto.py scraper_multinivel.py
-```
-
-## Estado actual
-
-Resumen del material disponible:
+Se genera con:
 
 ```text
-CEEI Elche:
-  201 PDFs aproximadamente
-  40 TXT de modelos de negocio sin PDF
-
-CEEI Valencia:
-  30 PDFs descargados
-  163 registros trazados en JSON
-
-Perfiles:
-  8 perfiles de emprendedores en JSON estructurado
+build_corpus.py
 ```
 
-## Siguientes pasos recomendados
+Este script:
 
-1. Unificar Elche y Valencia en un unico indice documental.
-2. Extraer texto de todos los PDFs.
-3. Normalizar texto, codificacion y metadatos.
-4. Crear un dataset final de documentos.
-5. Implementar TF-IDF + similitud coseno.
-6. Generar un ranking de documentos por perfil emprendedor.
-7. Evaluar resultados manualmente con ejemplos de perfiles.
-8. Comparar despues con embeddings.
+1. Recorre documentos PDF y TXT.
+2. Extrae texto de los PDFs con `pypdf`.
+3. Lee los TXT generados desde paginas sin PDF.
+4. Limpia texto.
+5. Extrae URLs y correos detectados.
+6. Crea el campo `texto_recomendador`.
+7. Guarda CSV y Excel.
 
-## Nota sobre codificacion
+Salidas principales:
 
-Algunos nombres de archivos o textos pueden mostrar caracteres mal codificados en la consola de Windows. Esto no impide usar los documentos, pero conviene normalizar nombres y metadatos antes de construir el dataset final del recomendador.
+```text
+data/processed/corpus_documental.csv
+outputs/corpus_documental.xlsx
+```
+
+El CSV conserva el texto completo. El Excel recorta celdas largas para respetar el limite de 32.767 caracteres por celda.
+
+## Estado actual del proyecto
+
+El estado actual puede resumirse asi:
+
+```text
+1. Scraping de CEEI Elche completado.
+2. Extraccion adicional de textos HTML de modelos de negocio completada.
+3. Scraping de CEEI Valencia completado.
+4. Corpus documental inicial generado.
+5. Perfiles de emprendedores creados en JSON.
+6. Proyecto preparado para iniciar el primer recomendador TF-IDF.
+```
+
+Todavia no se ha construido el recomendador final. El siguiente paso tecnico es consolidar un corpus unico y ejecutar una primera recomendacion content-based.
+
+## Siguiente paso tecnico
+
+El siguiente paso recomendado es construir una version inicial del recomendador basada en:
+
+- `TF-IDF` para representar documentos y perfiles.
+- `cosine similarity` para medir proximidad entre perfiles y documentos.
+- Resultados explicables, mostrando que terminos conectan cada perfil con cada documento recomendado.
+
+La primera salida esperada deberia ser:
+
+```text
+outputs/recomendaciones_tfidf.csv
+outputs/recomendaciones_tfidf.xlsx
+```
+
+## Enfoque metodologico del recomendador
+
+La recomendacion sera inicialmente content-based:
+
+```text
+perfil emprendedor -> texto descriptivo -> vector TF-IDF
+recurso documental -> texto del documento -> vector TF-IDF
+comparacion -> similitud coseno
+```
+
+No se usara collaborative filtering en esta fase porque no existe todavia historico de usuarios, interacciones, valoraciones ni comportamiento de navegacion.
+
+La comparacion posterior con embeddings permitira valorar si una representacion semantica mas avanzada mejora las recomendaciones frente a la linea base TF-IDF.
