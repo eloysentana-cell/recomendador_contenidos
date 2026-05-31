@@ -257,13 +257,31 @@ https://ceeivalencia.emprenemjunts.es/?op=35&quebusco=20&bbtipoagru=994
 
 En estas paginas los documentos tambien aparecen en segundo nivel. El spider entra en las fichas `op=13&n=...` y desde ahi localiza el enlace real de descarga.
 
-### 1.8 Decision metodologica: scraper de Elche y spider de Valencia
+### 1.8 Decision metodologica: comparacion de alternativas de scraping
 
-Se mantienen dos herramientas distintas porque responden a necesidades diferentes de la fase de captacion documental.
+Se mantienen dos herramientas distintas porque el proyecto tambien busca probar y comparar alternativas de captacion documental. La finalidad no es declarar que una herramienta sea siempre mejor que otra, sino observar como se comportan dos aproximaciones razonables sobre fuentes documentales similares dentro del ecosistema EmprenemJunts.
 
-Para CEEI Elche se conserva el scraper basado en `requests` y `BeautifulSoup`. Este enfoque es mas directo, facil de auditar y suficiente para una web cuya estructura ya habia sido explorada. Permite controlar manualmente las secciones, la paginacion mediante parametros como `empieza` y `cuantos`, la entrada en fichas `op=13&n=...` y la descarga final mediante enlaces como `contando2.php`.
+Para CEEI Elche se conserva el scraper basado en `requests` y `BeautifulSoup`. Este enfoque es mas directo, facil de auditar y adecuado para una web cuya estructura ya habia sido explorada. Permite controlar manualmente las secciones, la paginacion mediante parametros como `empieza` y `cuantos`, la entrada en fichas `op=13&n=...` y la descarga final mediante enlaces como `contando2.php`.
 
-Para CEEI Valencia se utiliza un spider Scrapy porque el objetivo era disponer de un flujo mas formal y reutilizable: separacion entre listado, analisis de la ficha y descarga; exportacion directa a JSON; control de concurrencia; validacion de tipos de archivo; y ejecucion diferenciada entre modo listado y modo descarga.
+Para CEEI Valencia se utiliza un spider Scrapy. Este enfoque permite disponer de un flujo mas formal y reutilizable: separacion entre listado, analisis de la ficha y descarga; exportacion directa a JSON; control de concurrencia; validacion de tipos de archivo; y ejecucion diferenciada entre modo listado y modo descarga.
+
+Comparacion sintetica:
+
+| Aspecto | Scraper de CEEI Elche | Spider de CEEI Valencia |
+|---|---|---|
+| Tecnologia | `requests` + `BeautifulSoup` | `Scrapy` |
+| Archivo principal | `2_scraper_ceei_seguro.py` | `scraping_valencia/scraping_valencia/spiders/ceei_valencia.py` |
+| Enfoque | Script secuencial | Spider/crawler estructurado |
+| Flujo de trabajo | Funciones manuales y `main()` | Metodos `parse`, `parse_recurso` y `guardar_documento` |
+| Descarga opcional | Descarga directa con limites configurados | Modo listado y modo descarga con `descargar=si` |
+| Control de secciones | Manual, mediante lista de secciones | Mediante URLs iniciales del spider |
+| Paginacion | Control explicito con `empieza` y `cuantos` | Recorrido de enlaces desde paginas iniciales |
+| Metadatos | Indice CSV mas simple | JSON con metadatos mas completos |
+| Formatos previstos | Principalmente PDF y TXT extraido de HTML | PDF y otros formatos detectables por extension o `content_type` |
+| Reutilizacion | Media | Alta |
+| Facilidad de auditoria | Alta, por ser un script directo | Media, por la arquitectura Scrapy |
+| Escalabilidad | Menor | Mayor |
+| Utilidad en el TFM | Permite documentar una fase exploratoria controlada | Permite comparar con una solucion mas formal de crawling |
 
 La diferencia principal es, por tanto, de arquitectura:
 
@@ -272,7 +290,7 @@ CEEI Elche     -> scraper secuencial con requests + BeautifulSoup
 CEEI Valencia  -> spider Scrapy con flujo de crawling mas estructurado
 ```
 
-Esta decision no implica que una tecnica sea superior en todos los casos. En el proyecto se considera defendible mantener ambas: el scraper de Elche documenta una fase exploratoria y controlada, mientras que el spider de Valencia aporta una aproximacion mas escalable para una segunda fuente documental. En ambos casos se aplican criterios comunes de calidad: trazabilidad de URLs, pausas entre peticiones, validacion del archivo descargado, evitacion de duplicados y conservacion de metadatos.
+La decision metodologica es mantener ambas aproximaciones para poder comparar resultados, trazabilidad, facilidad de ejecucion, riqueza de metadatos y mantenibilidad. En ambos casos se aplican criterios comunes de calidad: conservacion de URLs de origen, pausas entre peticiones, validacion del archivo descargado, evitacion de duplicados y conservacion de metadatos.
 
 ### 1.9 Modo listado y modo descarga
 
