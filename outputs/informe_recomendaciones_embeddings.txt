@@ -1,0 +1,33 @@
+INFORME DE RECOMENDACIONES POR EMBEDDINGS
+================================================
+Fecha: 2026-06-01T00:30:32
+Perfiles: 8
+Documentos: 413
+Top por perfil: 10
+
+Scores por perfil:
+- Investigador académico en fase de spin-off EBT/EBC: max=0.574050, medio=0.538121, min=0.518553
+- CEO de startup en fase de escalado internacional: max=0.598265, medio=0.575438, min=0.556106
+- Consultor senior Silver en transición: max=0.539928, medio=0.486351, min=0.454486
+- Mentor de negocios tradicionales: max=0.608847, medio=0.574340, min=0.541652
+- Emprendedora rural en el sector agroalimentario: max=0.666062, medio=0.571591, min=0.534848
+- Fundador de cooperativa de impacto social: max=0.731076, medio=0.554735, min=0.513173
+- Estudiante universitario en fase pre-semilla: max=0.600502, medio=0.554134, min=0.519216
+- Emprendedor por necesidad en fase de autoempleo: max=0.612714, medio=0.544848, min=0.499230
+
+Documentos mas repetidos entre perfiles:
+- doc_0155 | Claves para crear una cultura de innovación colaborativa en tu empresa: 4 apariciones
+- doc_0151 | _Cómo gestionar un _funnel_ de innovación_De ideación a implantación: 4 apariciones
+- doc_0199 | Informe Benchmarking CEEI Elche 2018-2019_ Análisis sobre metodologías y herramientas de innovación_Informes y estudios: 3 apariciones
+- doc_0055 | Consultoría de Proyectos y Captación de Financiación: 3 apariciones
+- doc_0053 | Consultoría de Internacionalización: 3 apariciones
+- doc_0050 | Community Manager: 3 apariciones
+- doc_0154 | Claves del Mentoring en Desarrollo de NegocioPlan de Trabajo y Metodologías Aplicables: 3 apariciones
+- doc_0168 | Incubadoras_ hackatones o aceleradoras: 2 apariciones
+- doc_0291 | Métricas para Startups (58) Manual de Gestión Empresarial elaborado por Roberto Touza: 2 apariciones
+- doc_0167 | Gestión Ágil y StartupPara emprendedores y startups: 2 apariciones
+
+Archivos generados:
+- outputs/recomendaciones_embeddings_perfiles.csv
+- outputs/recomendaciones_embeddings_perfiles.xlsx
+- outputs/informe_recomendaciones_embeddings.txt

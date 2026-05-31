@@ -1,0 +1,22 @@
+INFORME DE COMPARACION TF-IDF VS EMBEDDINGS
+================================================
+Fecha: 2026-06-01T00:30:40
+Entrada TF-IDF: outputs/recomendaciones_tfidf_explicadas.csv
+Entrada embeddings: outputs/recomendaciones_embeddings_perfiles.csv
+Perfiles comparados: 8
+Promedio de solapamiento top 10: 0.1750
+
+Perfiles con mayor coincidencia:
+- Emprendedora rural en el sector agroalimentario: 0.4000
+- Fundador de cooperativa de impacto social: 0.3000
+- CEO de startup en fase de escalado internacional: 0.2000
+
+Perfiles con menor coincidencia:
+- Investigador académico en fase de spin-off EBT/EBC: 0.0000
+- Emprendedor por necesidad en fase de autoempleo: 0.0000
+- Consultor senior Silver en transición: 0.1000
+
+Archivos generados:
+- outputs/comparacion_tfidf_embeddings.csv
+- outputs/comparacion_tfidf_embeddings.xlsx
+- outputs/informe_comparacion_tfidf_embeddings.txt

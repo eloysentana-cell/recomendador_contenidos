@@ -1,0 +1,15 @@
+INFORME DE EMBEDDINGS DE PERFILES
+========================================
+Fecha: 2026-06-01T00:30:24
+Entrada: data/perfiles/perfiles_emprendedores.json
+Modelo: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Dimension: 384
+Perfiles procesados: 8
+Longitud maxima aplicada: 3000 caracteres
+
+Archivos generados:
+- data/embeddings/profile_embeddings.csv
+- data/embeddings/profile_embeddings.parquet
+- outputs/informe_profile_embeddings.txt
+- outputs/profile_embeddings_muestra.csv
+- outputs/profile_embeddings_muestra.xlsx

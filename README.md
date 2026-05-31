@@ -52,6 +52,10 @@ La estructura actual se mantiene deliberadamente simple para que los scripts sig
 |-- validate_corpus_recomendador.py
 |-- build_characterization_tables.py
 |-- build_document_embeddings.py
+|-- build_profile_embeddings.py
+|-- recommend_embeddings_by_profile.py
+|-- compare_tfidf_vs_embeddings.py
+|-- recommend_from_text.py
 |-- build_profile_queries.py
 |-- recommender_tfidf.py
 |-- explain_tfidf_recommendations.py
@@ -59,9 +63,14 @@ La estructura actual se mantiene deliberadamente simple para que los scripts sig
 |-- run_pipeline.py
 |-- extraer_valencia_texto_html.py
 |-- diagnostico_proyecto.py
+|-- web_app/
+|   `-- app.py
 |-- data/
 |   |-- raw/
-|   |   `-- ceei_valencia/txt/            # fichas HTML convertidas a TXT
+|   |   |-- ceei_elche/
+|   |   |   |-- pdf/                       # PDFs y TXT extraidos de CEEI Elche
+|   |   |   `-- original/                  # documentos originales descargados
+|   |   `-- ceei_valencia/txt/             # fichas HTML convertidas a TXT
 |   |-- processed/
 |   |   |-- corpus_recomendador.csv       # corpus principal actual
 |   |   |-- documentos_ceei_valencia.json
@@ -73,9 +82,6 @@ La estructura actual se mantiene deliberadamente simple para que los scripts sig
 |   `-- embeddings/
 |       |-- document_embeddings.csv
 |       `-- document_embeddings.parquet
-|-- data/raw/ceei_elche/
-|   |-- pdf/
-|   `-- original/
 |-- documentos_ceei_valencia/
 |-- scraping_valencia/
 `-- outputs/
@@ -134,7 +140,40 @@ outputs/informe_diagnostico_proyecto.txt
 
 Sirve para comprobar carpetas, datos procesados, conteos basicos y estado Git.
 
-### 2. Extraccion De Fichas HTML De Valencia
+### 2. Extraccion De Documentos De Elche
+
+La captacion de CEEI Elche se hizo antes que Valencia y combina dos tecnicas:
+
+```text
+1. Descarga web con requests + BeautifulSoup:
+   se recorren listados de recursos, se detectan enlaces a fichas y se descargan PDFs reales.
+
+2. Extraccion HTML a TXT:
+   en Modelos de Negocio, cuando la ficha no ofrece PDF descargable, se aprovecha el HTML como texto util.
+```
+
+Scripts relacionados:
+
+```powershell
+.\.venv\Scripts\python.exe 2_scraper_ceei_seguro.py
+.\.venv\Scripts\python.exe extraer_modelos_negocio_texto.py
+.\.venv\Scripts\python.exe build_corpus.py
+```
+
+Salidas principales:
+
+```text
+data/raw/ceei_elche/pdf/
+data/raw/ceei_elche/original/
+data/raw/ceei_elche/pdf/INDEX_DOCUMENTOS.csv
+data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/INDEX_MODELOS_TEXTO.csv
+data/processed/corpus_documental.csv
+outputs/corpus_documental.xlsx
+```
+
+En esta fase se usaron cabeceras de navegador, paginacion controlada, pausas entre peticiones e indices CSV para mantener trazabilidad de titulo, seccion, URL y ruta local. La extraccion textual posterior de PDFs se hace con `pypdf`; los TXT procedentes de HTML se limpian con reglas simples de normalizacion de espacios y ruido.
+
+### 3. Extraccion De Fichas HTML De Valencia
 
 ```powershell
 .\.venv\Scripts\python.exe extraer_valencia_texto_html.py
@@ -154,9 +193,9 @@ data/processed/documentos_ceei_valencia_texto.json
 outputs/informe_extraccion_valencia_texto.txt
 ```
 
-Esta fase convierte las fichas HTML de Valencia no descargables como PDF en TXT utiles para el corpus.
+Esta fase parte del indice generado por el spider de Valencia y trabaja solo sobre registros con `estado == "no_disponible"`. La tecnica usada es distinta a Elche: no intenta forzar la descarga cuando la URL devuelve HTML, sino que visita `url_pagina`, elimina bloques no utiles (`script`, `style`, `nav`, `footer`, `header`, formularios, iframes), prioriza selectores de contenido (`article`, `main`, `div.contenido`, `div.detalle`, `div.ficha`) y guarda la ficha como TXT si supera el umbral minimo de calidad.
 
-### 3. Construccion Del Corpus Recomendador
+### 4. Construccion Del Corpus Recomendador
 
 ```powershell
 .\.venv\Scripts\python.exe build_corpus_recomendador.py
@@ -186,7 +225,7 @@ estado_extraccion
 texto_recomendador
 ```
 
-### 4. Validacion Del Corpus
+### 5. Validacion Del Corpus
 
 ```powershell
 .\.venv\Scripts\python.exe validate_corpus_recomendador.py
@@ -200,7 +239,7 @@ outputs/informe_validacion_corpus_recomendador.txt
 
 Comprueba columnas, documentos utiles, documentos vacios/cortos y duplicados.
 
-### 5. Caracterizacion De Perfiles Y Muestra De Documentos
+### 6. Caracterizacion De Perfiles Y Muestra De Documentos
 
 ```powershell
 .\.venv\Scripts\python.exe build_characterization_tables.py
@@ -216,7 +255,7 @@ outputs/documentos_caracterizados_muestra.xlsx
 outputs/informe_caracterizacion.txt
 ```
 
-### 6. Recomendador TF-IDF
+### 7. Recomendador TF-IDF
 
 ```powershell
 .\.venv\Scripts\python.exe run_pipeline.py
@@ -244,7 +283,7 @@ outputs/evaluacion_tfidf.xlsx
 outputs/informe_evaluacion_tfidf.txt
 ```
 
-### 7. Embeddings Locales De Documentos
+### 8. Embeddings Locales De Documentos
 
 ```powershell
 .\.venv\Scripts\python.exe build_document_embeddings.py
@@ -295,6 +334,43 @@ embedding
 
 `embedding` contiene el vector completo serializado como JSON string. `embedding_preview` contiene solo las primeras 8 dimensiones para inspeccion humana.
 
+### 9. Recomendacion Semantica Y Comparacion
+
+```powershell
+.\.venv\Scripts\python.exe build_profile_embeddings.py
+.\.venv\Scripts\python.exe recommend_embeddings_by_profile.py
+.\.venv\Scripts\python.exe compare_tfidf_vs_embeddings.py
+.\.venv\Scripts\python.exe recommend_from_text.py
+```
+
+Salidas principales:
+
+```text
+data/embeddings/profile_embeddings.csv
+data/embeddings/profile_embeddings.parquet
+outputs/recomendaciones_embeddings_perfiles.csv
+outputs/recomendaciones_embeddings_perfiles.xlsx
+outputs/comparacion_tfidf_embeddings.csv
+outputs/comparacion_tfidf_embeddings.xlsx
+outputs/informe_comparacion_tfidf_embeddings.txt
+```
+
+### 10. Demostrador Web Local
+
+Instalar dependencia web:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-web.txt
+```
+
+Ejecutar:
+
+```powershell
+streamlit run web_app/app.py
+```
+
+La web permite escribir una necesidad emprendedora en lenguaje natural, comparar ese texto contra perfiles predefinidos y recomendar documentos del corpus usando embeddings locales.
+
 ## Perfiles Emprendedores
 
 Los perfiles estan en:
@@ -337,6 +413,19 @@ perfil_008_autoempleo_necesidad
 
 ### CEEI Elche
 
+Tecnica usada:
+
+```text
+1. Scraping HTML con requests + BeautifulSoup sobre listados de recursos.
+2. Deteccion de enlaces de ficha y enlaces de descarga.
+3. Descarga directa de PDFs cuando existe documento descargable real.
+4. Guardado de originales y PDFs procesables en data/raw/ceei_elche/.
+5. Extraccion de texto con pypdf para PDFs y lectura directa para TXT.
+6. Conversion de fichas HTML sin PDF de Modelos de Negocio a TXT.
+```
+
+La estrategia de Elche prioriza el documento descargable. Cuando el recurso existe como PDF, se conserva como archivo documental. Cuando una ficha no ofrece PDF util, se aprovecha el contenido HTML como texto limpio para no perder informacion relevante para el corpus.
+
 Documentos principales:
 
 ```text
@@ -360,6 +449,18 @@ Modelos_de_Negocio_texto: 40 TXT
 ```
 
 ### CEEI Valencia
+
+Tecnica usada:
+
+```text
+1. Spider de Scrapy para detectar fichas y registrar metadatos.
+2. Intento de descarga de PDF desde la URL de descarga.
+3. Clasificacion de registros como descargado o no_disponible.
+4. Recuperacion posterior de fichas no_disponible mediante requests + BeautifulSoup.
+5. Limpieza de HTML y conversion a TXT cuando la ficha supera el umbral minimo de texto.
+```
+
+La estrategia de Valencia parte de un indice estructurado en JSON. Los PDFs validos se mantienen como documentos descargados; las fichas cuya descarga devolvia HTML se incorporan como TXT para aprovechar contenido que de otra forma quedaria fuera del corpus.
 
 Indice principal:
 
@@ -452,19 +553,176 @@ La carpeta `.venv/`, caches de Python y archivos temporales locales no deben sub
 
 ## Siguiente Paso Recomendado
 
-El siguiente paso tecnico es generar embeddings tambien para los perfiles emprendedores y construir una comparacion directa:
+Tras incorporar embeddings de perfiles, ranking semantico y demostrador web, el siguiente paso recomendable es preparar una evaluacion cualitativa:
 
 ```text
-perfil_embedding vs document_embedding
+1. Revisar recomendaciones con personas emprendedoras o expertos.
+2. Recoger valoraciones de utilidad por perfil.
+3. Comparar la percepcion humana con los rankings TF-IDF y embeddings.
+4. Ajustar perfiles, textos de consulta y criterios de interpretacion.
 ```
 
-Despues se podran comparar:
+Esto permitiria pasar de una validacion tecnica reproducible a una evaluacion de utilidad percibida, sin simular historicos de usuarios que el proyecto todavia no tiene.
+
+## Embeddings, Comparacion Semantica Y Demostrador Web
+
+El proyecto incorpora dos aproximaciones complementarias para recomendar contenidos:
 
 ```text
-1. Ranking TF-IDF
-2. Ranking por embeddings locales
-3. Coincidencias entre ambos
-4. Explicabilidad y utilidad por perfil emprendedor
+1. TF-IDF como linea base explicable.
+2. Embeddings locales como representacion semantica.
 ```
 
-Esto permitiria defender una evolucion natural desde una linea base explicable hacia una aproximacion semantica mas avanzada.
+### Embeddings De Documentos
+
+Los embeddings de documentos se generan con:
+
+```powershell
+.\.venv\Scripts\python.exe build_document_embeddings.py
+```
+
+Configuracion:
+
+```text
+Modelo: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Dimension: 384
+Documentos vectorizados: 413
+```
+
+Salidas:
+
+```text
+data/embeddings/document_embeddings.csv
+data/embeddings/document_embeddings.parquet
+outputs/informe_document_embeddings.txt
+```
+
+### Embeddings De Perfiles
+
+Los embeddings de perfiles se generan con:
+
+```powershell
+.\.venv\Scripts\python.exe build_profile_embeddings.py
+```
+
+El script usa los 8 perfiles definidos en:
+
+```text
+data/perfiles/perfiles_emprendedores.json
+```
+
+Utiliza el mismo modelo multilingue y la misma dimension vectorial que los documentos. Esto permite comparar directamente:
+
+```text
+profile_embedding vs document_embedding
+```
+
+Salidas:
+
+```text
+data/embeddings/profile_embeddings.csv
+data/embeddings/profile_embeddings.parquet
+outputs/informe_profile_embeddings.txt
+outputs/profile_embeddings_muestra.csv
+outputs/profile_embeddings_muestra.xlsx
+```
+
+### Ranking Por Embeddings
+
+El ranking semantico por perfiles se calcula con:
+
+```powershell
+.\.venv\Scripts\python.exe recommend_embeddings_by_profile.py
+```
+
+Para cada perfil emprendedor, el script compara su embedding contra todos los embeddings de documentos mediante producto escalar, equivalente a similitud coseno al estar normalizados.
+
+Salidas:
+
+```text
+outputs/recomendaciones_embeddings_perfiles.csv
+outputs/recomendaciones_embeddings_perfiles.xlsx
+outputs/informe_recomendaciones_embeddings.txt
+```
+
+### Comparacion TF-IDF Vs Embeddings
+
+La comparacion de rankings se genera con:
+
+```powershell
+.\.venv\Scripts\python.exe compare_tfidf_vs_embeddings.py
+```
+
+Compara el top 10 de TF-IDF contra el top 10 de embeddings para cada perfil, calcula coincidencias, porcentaje de solapamiento y documentos exclusivos de cada metodo.
+
+Salidas:
+
+```text
+outputs/comparacion_tfidf_embeddings.csv
+outputs/comparacion_tfidf_embeddings.xlsx
+outputs/informe_comparacion_tfidf_embeddings.txt
+```
+
+Interpretacion academica:
+
+```text
+TF-IDF aporta una linea base explicable basada en coincidencias lexicas.
+Los embeddings capturan similitud semantica mas alla de coincidencias literales.
+La comparacion de ambos rankings permite evaluar si la representacion semantica mejora o complementa la linea base.
+No hay evaluacion con usuarios reales todavia.
+```
+
+### Recomendacion Desde Texto Libre
+
+El script:
+
+```powershell
+.\.venv\Scripts\python.exe recommend_from_text.py
+```
+
+permite probar por consola una consulta libre como:
+
+```text
+Soy una emprendedora rural que quiere montar una pequena empresa agroalimentaria con impacto territorial y necesito ayudas publicas
+```
+
+Internamente compara el texto del usuario contra:
+
+```text
+1. Perfiles emprendedores predefinidos.
+2. Documentos vectorizados del corpus.
+```
+
+### Demostrador Web
+
+La web local esta en:
+
+```text
+web_app/app.py
+```
+
+Instalacion de dependencia web:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-web.txt
+```
+
+Ejecucion:
+
+```powershell
+streamlit run web_app/app.py
+```
+
+La interfaz permite introducir una descripcion libre del perfil o necesidad emprendedora, seleccionar el numero de documentos, ver perfiles similares, recomendaciones documentales, scores de similitud y previews de embeddings. Por legibilidad no muestra los vectores completos salvo indicacion explicita; los embeddings completos estan almacenados en `data/embeddings/`.
+
+### Comandos De La Fase Semantica
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements-web.txt
+.\.venv\Scripts\python.exe build_profile_embeddings.py
+.\.venv\Scripts\python.exe recommend_embeddings_by_profile.py
+.\.venv\Scripts\python.exe compare_tfidf_vs_embeddings.py
+.\.venv\Scripts\python.exe recommend_from_text.py
+streamlit run web_app/app.py
+```
