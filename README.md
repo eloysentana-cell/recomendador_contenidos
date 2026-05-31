@@ -1,6 +1,6 @@
 # Recomendador de contenidos para emprendedores
 
-Repositorio del proyecto TFM/ANBAN para construir un recomendador documental orientado a perfiles emprendedores. El sistema trabaja con documentos publicos de CEEI Elche y CEEI Valencia, crea un corpus consolidado, caracteriza perfiles de usuarios y genera recomendaciones mediante enfoques content-based.
+Repositorio del proyecto para el trabajo final del curso ANBAN 2026 para construir un recomendador documental orientado a perfiles emprendedores. El sistema trabaja con documentos publicos de CEEI Elche y CEEI Valencia, crea un corpus consolidado, caracteriza perfiles de usuarios y genera recomendaciones mediante enfoques content-based.
 
 El proyecto esta pensado para avanzar por fases reproducibles:
 
