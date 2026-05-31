@@ -13,6 +13,7 @@ from typing import Any
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
 os.environ["TRANSFORMERS_NO_ADVISORY_WARNINGS"] = "1"
+os.environ["TRANSFORMERS_VERBOSITY"] = "error"
 
 import numpy as np
 import pandas as pd
@@ -82,9 +83,19 @@ def load_embedding_table(parquet_path: Path, csv_path: Path) -> pd.DataFrame:
 @lru_cache(maxsize=1)
 def load_model():
     """Carga el modelo local con cache y sin barras de progreso en Streamlit."""
-    from sentence_transformers import SentenceTransformer
-
     with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+        from transformers.utils import logging as transformers_logging
+        import tqdm.std
+
+        def silent_status_printer(_file):
+            return lambda *_args, **_kwargs: None
+
+        transformers_logging.disable_progress_bar()
+        transformers_logging.set_verbosity_error()
+        tqdm.std.tqdm.status_printer = staticmethod(silent_status_printer)
+
+        from sentence_transformers import SentenceTransformer
+
         try:
             return SentenceTransformer(MODEL_NAME, local_files_only=True)
         except Exception:
