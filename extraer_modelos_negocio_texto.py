@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 BASE_URL = "https://ceeielche.emprenemjunts.es"
 URL_MODELOS = "https://ceeielche.emprenemjunts.es/?op=35&quebusco=3&bgcanal=-1&bbtipofic=26&estado=3&orlis=1&fmto=3&buscar=1"
-CARPETA_SALIDA = os.path.join("documentos_ceei_elche_PDF", "Modelos_de_Negocio_texto")
+CARPETA_SALIDA = os.path.join("data", "raw", "ceei_elche", "pdf", "Modelos_de_Negocio_texto")
 INDEX_PATH = os.path.join(CARPETA_SALIDA, "INDEX_MODELOS_TEXTO.csv")
 MAX_DOCUMENTOS = 40
 

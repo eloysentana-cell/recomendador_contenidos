@@ -1,43 +1,98 @@
 Informe de validacion del corpus
 ===================================
-Numero total de documentos: 413
+Numero total de documentos: 423
 
 Documentos por fuente:
 fuente
-CEEI Elche       250
+CEEI Elche       260
 CEEI Valencia    163
 
 Documentos por seccion:
 seccion
-Fichas_HTML                 133
+Ficha_HTML                  133
 Fichas                      121
-General                      49
+Infografias                  48
 Modelos_de_Negocio_texto     40
-Infografias                  38
+Documento_PDF                30
 Informes_y_Publicaciones     27
+General                      19
 Modelos_de_Negocio            5
 
 Documentos por tipo_archivo:
 tipo_archivo
-pdf    240
+pdf    250
 txt    173
 
-Documentos vacios: 0
-Ninguno
+Documentos vacios: 9
+id_documento                                                                                                                   titulo     fuente     seccion
+    doc_0142                                                              10 errores comunes al lanzar una campaña de email marketing CEEI Elche Infografias
+    doc_0156     Cómo construir un funnel de ventas paso a pasoDe desconocido a cliente fiel_ guía para crear un funnel que convierta CEEI Elche Infografias
+    doc_0157                                                               Cómo convertir tu contenido en la fuente favorita de la IA CEEI Elche Infografias
+    doc_0158                                                                        Cómo crear una estrategia de contenidos para RRSS CEEI Elche Infografias
+    doc_0159  Cómo estructurar un plan de crisis en comunicaciónDe la prevención a la recuperación_ Pasos para proteger tu reputación CEEI Elche Infografias
+    doc_0160                                                           Cómo hacer un briefing completo para agencia o equipo creativo CEEI Elche Infografias
+    doc_0162                                                                                         Diagnóstico integral de Startups CEEI Elche Infografias
+    doc_0165                                                                         Estrategias para reutilizar y reciclar contenido CEEI Elche Infografias
+    doc_0179 Recursos Gratuitos_ Creación y Crecimiento de empresasCerca de 600 recursos para personas emprendedoras_ startups y pyme CEEI Elche Infografias
 
-Documentos con menos de 300 caracteres: 0
-Ninguno
+Documentos con menos de 300 caracteres: 1
+id_documento                                                    titulo     fuente     seccion  num_caracteres
+    doc_0147 5 Tips para aumentar tu Inteligencia EmocionalINFOGRAFÍAS CEEI Elche Infografias              46
 
-Documentos duplicados por titulo: 8
-id_documento                                               titulo     fuente                  seccion
-    doc_0172                             Centro Deportivo Privado CEEI Elche                   Fichas
-    doc_0362                             Centro Deportivo Privado CEEI Elche Modelos_de_Negocio_texto
-    doc_0205                                  Empresa de Reformas CEEI Elche                   Fichas
-    doc_0371                                  Empresa de Reformas CEEI Elche Modelos_de_Negocio_texto
-    doc_0255                                 Servicios Forestales CEEI Elche                   Fichas
-    doc_0386                                 Servicios Forestales CEEI Elche Modelos_de_Negocio_texto
-    doc_0267 Tienda de Informática con Reparación y Mantenimiento CEEI Elche                   Fichas
-    doc_0389 Tienda de Informática con Reparación y Mantenimiento CEEI Elche Modelos_de_Negocio_texto
+Documentos duplicados por titulo: 52
+id_documento                                                                     titulo        fuente                  seccion
+    doc_0225                                              Asistencia a personas mayores    CEEI Elche Modelos_de_Negocio_texto
+    doc_0303                                              Asistencia a personas mayores CEEI Valencia               Ficha_HTML
+    doc_0036                                                     Carpintería de Muebles    CEEI Elche                   Fichas
+    doc_0416                                                     Carpintería de Muebles CEEI Valencia            Documento_PDF
+    doc_0039                                                   Centro Deportivo Privado    CEEI Elche                   Fichas
+    doc_0229                                                   Centro Deportivo Privado    CEEI Elche Modelos_de_Negocio_texto
+    doc_0038                                                Centro de Impresión Digital    CEEI Elche                   Fichas
+    doc_0417                                                Centro de Impresión Digital CEEI Valencia            Documento_PDF
+    doc_0216                               Centro especializado en vehículos eléctricos    CEEI Elche       Modelos_de_Negocio
+    doc_0411                               Centro especializado en vehículos eléctricos CEEI Valencia            Documento_PDF
+    doc_0048                            Comercio Minorista de Confección y Complementos    CEEI Elche                   Fichas
+    doc_0330                            Comercio Minorista de Confección y Complementos CEEI Valencia               Ficha_HTML
+    doc_0234                                                        Domótica e inmótica    CEEI Elche Modelos_de_Negocio_texto
+    doc_0307                                                        Domótica e inmótica CEEI Valencia               Ficha_HTML
+    doc_0063                                 Empresa de Domótica para Ahorro Energético    CEEI Elche                   Fichas
+    doc_0418                                 Empresa de Domótica para Ahorro Energético CEEI Valencia            Documento_PDF
+    doc_0065                                 Empresa de Experiencias Turísticas Locales    CEEI Elche                   Fichas
+    doc_0419                                 Empresa de Experiencias Turísticas Locales CEEI Valencia            Documento_PDF
+    doc_0072                                                        Empresa de Reformas    CEEI Elche                   Fichas
+    doc_0238                                                        Empresa de Reformas    CEEI Elche Modelos_de_Negocio_texto
+    doc_0329                                                        Empresa de Reformas CEEI Valencia               Ficha_HTML
+    doc_0420                                                        Empresa de Reformas CEEI Valencia            Documento_PDF
+    doc_0243                                Estudio de fotografía y vídeo para empresas    CEEI Elche Modelos_de_Negocio_texto
+    doc_0350                                Estudio de fotografía y vídeo para empresas CEEI Valencia               Ficha_HTML
+    doc_0091                                                 Gabinete de Diseño Gráfico    CEEI Elche                   Fichas
+    doc_0319                                                 Gabinete de Diseño Gráfico CEEI Valencia               Ficha_HTML
+    doc_0245                                                           Gestión Cultural    CEEI Elche Modelos_de_Negocio_texto
+    doc_0340                                                           Gestión Cultural CEEI Valencia               Ficha_HTML
+    doc_0247                                             Instalación Solar Fotovoltaica    CEEI Elche Modelos_de_Negocio_texto
+    doc_0317                                             Instalación Solar Fotovoltaica CEEI Valencia               Ficha_HTML
+    doc_0217                                 Obrador de alimentos veganos o Plant-Based    CEEI Elche       Modelos_de_Negocio
+    doc_0409                                 Obrador de alimentos veganos o Plant-Based CEEI Valencia            Documento_PDF
+    doc_0113                                            Producción de Textiles Técnicos    CEEI Elche                   Fichas
+    doc_0421                                            Producción de Textiles Técnicos CEEI Valencia            Documento_PDF
+    doc_0119                                                          Sector de la Moda    CEEI Elche                   Fichas
+    doc_0331                                                          Sector de la Moda CEEI Valencia               Ficha_HTML
+    doc_0218                     Servicio móvil de maquillaje y peluquería para eventos    CEEI Elche       Modelos_de_Negocio
+    doc_0406                     Servicio móvil de maquillaje y peluquería para eventos CEEI Valencia            Documento_PDF
+    doc_0122                                                       Servicios Forestales    CEEI Elche                   Fichas
+    doc_0253                                                       Servicios Forestales    CEEI Elche Modelos_de_Negocio_texto
+    doc_0121                              Servicios de Fotografía y Vídeo para Empresas    CEEI Elche                   Fichas
+    doc_0414                              Servicios de Fotografía y Vídeo para Empresas CEEI Valencia            Documento_PDF
+    doc_0126                              Taller de Arreglos y Confección Personalizada    CEEI Elche                   Fichas
+    doc_0422                              Taller de Arreglos y Confección Personalizada CEEI Valencia            Documento_PDF
+    doc_0219                   Taller de arreglos y confección personalizada sostenible    CEEI Elche       Modelos_de_Negocio
+    doc_0407                   Taller de arreglos y confección personalizada sostenible CEEI Valencia            Documento_PDF
+    doc_0220 Taller de impresión 3D y prototipado rápido a partir de residuos vegetales    CEEI Elche       Modelos_de_Negocio
+    doc_0410 Taller de impresión 3D y prototipado rápido a partir de residuos vegetales CEEI Valencia            Documento_PDF
+    doc_0183              Tecnologías habilitadoras que favorecen la innovación abierta    CEEI Elche              Infografias
+    doc_0396              Tecnologías habilitadoras que favorecen la innovación abierta CEEI Valencia            Documento_PDF
+    doc_0134                       Tienda de Informática con Reparación y Mantenimiento    CEEI Elche                   Fichas
+    doc_0256                       Tienda de Informática con Reparación y Mantenimiento    CEEI Elche Modelos_de_Negocio_texto
 
 Criterios minimos para continuar:
 - Mas de 100 documentos: OK

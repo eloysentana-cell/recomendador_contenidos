@@ -33,6 +33,266 @@ Sin texto extraido      9
 Texto insuficiente      1
 
 Rutas procesadas:
+- data/raw/ceei_elche/original/Facebook crea una comunidad interactúa y vende.pdf
+- data/raw/ceei_elche/original/Guia de responsabilidad social de la empresaGuía d.pdf
+- data/raw/ceei_elche/original/Guía básica para crear una app móvil de éxitoAlgun.pdf
+- data/raw/ceei_elche/original/Guía Cómo obtener el Sello PYME InnovadoraQué es.pdf
+- data/raw/ceei_elche/original/Guía de Apoyo Ayudas y Subvenciones.pdf
+- data/raw/ceei_elche/original/Guía de Apoyo El miedo a hablar en públicoApuntes.pdf
+- data/raw/ceei_elche/original/Guía de Apoyo Fuentes de Financiación.pdf
+- data/raw/ceei_elche/original/Guía de Apoyo Fuentes de Información EmpresarialI.pdf
+- data/raw/ceei_elche/original/Guía de apoyo Geolocalización y Redes Sociales d.pdf
+- data/raw/ceei_elche/original/Guía de apoyo Listado de Guías de Actividades Emp.pdf
+- data/raw/ceei_elche/original/Guía de Apoyo Métodos de Cálculo del Tamaño de Me.pdf
+- data/raw/ceei_elche/original/Guía de Apoyo Premios para Emprendedores y Empres.pdf
+- data/raw/ceei_elche/original/Guía de Apoyo Principios básicos de LOPD y LSSI.pdf
+- data/raw/ceei_elche/original/Guía de Apoyo Trámites de constitución de empresa.pdf
+- data/raw/ceei_elche/original/Guía Sello JEI y PYME Innovadora.pdf
+- data/raw/ceei_elche/original/Mejoras en las deducciones fiscales por IDiGuía.pdf
+- data/raw/ceei_elche/original/Patent Box y Deducciones Fiscales.pdf
+- data/raw/ceei_elche/original/Recursos y Herramientas de Apoyo para la Creación.pdf
+- data/raw/ceei_elche/original/Servicios Coworking CEEI Valencia.pdf
+- data/raw/ceei_elche/pdf/Fichas/Academias.pdf
+- data/raw/ceei_elche/pdf/Fichas/Actividades Naúticas.pdf
+- data/raw/ceei_elche/pdf/Fichas/Agencia de Transporte Local.pdf
+- data/raw/ceei_elche/pdf/Fichas/Agencia Inmobiliaria.pdf
+- data/raw/ceei_elche/pdf/Fichas/Agencias de Exportación.pdf
+- data/raw/ceei_elche/pdf/Fichas/Agencias de Viajes.pdf
+- data/raw/ceei_elche/pdf/Fichas/Agricultura Ecológica.pdf
+- data/raw/ceei_elche/pdf/Fichas/Ahorro y Eficiencia Energética.pdf
+- data/raw/ceei_elche/pdf/Fichas/Arreglo de ropa y composturas.pdf
+- data/raw/ceei_elche/pdf/Fichas/Atención Educativa al Niño.pdf
+- data/raw/ceei_elche/pdf/Fichas/Ayuda a Domicilio a la Tercera Edad.pdf
+- data/raw/ceei_elche/pdf/Fichas/Ayuda a Domicilio para la 3ª Edad.pdf
+- data/raw/ceei_elche/pdf/Fichas/Ayuda a Domicilio.pdf
+- data/raw/ceei_elche/pdf/Fichas/Bioenergía.pdf
+- data/raw/ceei_elche/pdf/Fichas/Bodegas de vino.pdf
+- data/raw/ceei_elche/pdf/Fichas/Calefacción y Fontanería con Energías Renovables.pdf
+- data/raw/ceei_elche/pdf/Fichas/Carpintería de Muebles.pdf
+- data/raw/ceei_elche/pdf/Fichas/Centro Comercial Virtual.pdf
+- data/raw/ceei_elche/pdf/Fichas/Centro de Impresión Digital.pdf
+- data/raw/ceei_elche/pdf/Fichas/Centro Deportivo Privado.pdf
+- data/raw/ceei_elche/pdf/Fichas/Centros de Asistencia.pdf
+- data/raw/ceei_elche/pdf/Fichas/Centros de Día.pdf
+- data/raw/ceei_elche/pdf/Fichas/Centros de Estética.pdf
+- data/raw/ceei_elche/pdf/Fichas/Clínica de Fisioterapia.pdf
+- data/raw/ceei_elche/pdf/Fichas/Clínica y Tienda Veterinaria.pdf
+- data/raw/ceei_elche/pdf/Fichas/Coaching.pdf
+- data/raw/ceei_elche/pdf/Fichas/Comercio de Proximidad.pdf
+- data/raw/ceei_elche/pdf/Fichas/Comercio Electrónico.pdf
+- data/raw/ceei_elche/pdf/Fichas/Comercio Minorista de Confección y Complementos.pdf
+- data/raw/ceei_elche/pdf/Fichas/Comida a Domicilio.pdf
+- data/raw/ceei_elche/pdf/Fichas/Community Manager.pdf
+- data/raw/ceei_elche/pdf/Fichas/Compras Colectivas y Outlets Online.pdf
+- data/raw/ceei_elche/pdf/Fichas/Consulta de Nutricionista.pdf
+- data/raw/ceei_elche/pdf/Fichas/Consultoría de Internacionalización.pdf
+- data/raw/ceei_elche/pdf/Fichas/Consultoría de Prevención de Riesgos Laborales.pdf
+- data/raw/ceei_elche/pdf/Fichas/Consultoría de Proyectos y Captación de Financiación.pdf
+- data/raw/ceei_elche/pdf/Fichas/Consultoría Medioambiental.pdf
+- data/raw/ceei_elche/pdf/Fichas/Desarrolladores de Ocio Interactivo.pdf
+- data/raw/ceei_elche/pdf/Fichas/Desarrollo de Aplicaciones para Móviles y Tablets _APP_.pdf
+- data/raw/ceei_elche/pdf/Fichas/Despachos Profesionales.pdf
+- data/raw/ceei_elche/pdf/Fichas/Diseño de Contenidos Educativos para Tablets.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa de Catering.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa de Contenidos para Formación Online.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa de Domótica para Ahorro Energético.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa de e-Commerce para Comercio de Barrio.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa de Experiencias Turísticas Locales.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa de Fabricación de Productos de Limpieza Ecológicos a Granel.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa de I_D.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa de Jardinería.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa de Mecanizados de Precisión.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa de Producción Audiovisual y Multimedia.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa de Reciclaje y Recuperación de Residuos.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa de Reformas.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa de Servicio Móvil de Maquillaje y Peluquería para Eventos.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresa Instaladora de Energía Solar Foltovoltaica.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresas de Jardinería.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresas de Limpieza.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresas de seguridad.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresas de Servicios Sociales.pdf
+- data/raw/ceei_elche/pdf/Fichas/Empresas de Vending.pdf
+- data/raw/ceei_elche/pdf/Fichas/Energías Renovables.pdf
+- data/raw/ceei_elche/pdf/Fichas/Entrenador Personal.pdf
+- data/raw/ceei_elche/pdf/Fichas/Envío a Casa de Productos y Menú Semanal con Recetas.pdf
+- data/raw/ceei_elche/pdf/Fichas/Escuela de Baile.pdf
+- data/raw/ceei_elche/pdf/Fichas/Fabricación de Componentes Electrónicos.pdf
+- data/raw/ceei_elche/pdf/Fichas/Fabricación de Envases y Embalajes.pdf
+- data/raw/ceei_elche/pdf/Fichas/Food Truck.pdf
+- data/raw/ceei_elche/pdf/Fichas/Fotografía para Empresa y eCommerce.pdf
+- data/raw/ceei_elche/pdf/Fichas/Fotografía y Edición de Vídeo_Streaming.pdf
+- data/raw/ceei_elche/pdf/Fichas/Franquicias.pdf
+- data/raw/ceei_elche/pdf/Fichas/Fábrica Artesanal de Productos Agroalimentarios.pdf
+- data/raw/ceei_elche/pdf/Fichas/Gabinete de Diseño Gráfico.pdf
+- data/raw/ceei_elche/pdf/Fichas/Gabinete de Diseño Industrial.pdf
+- data/raw/ceei_elche/pdf/Fichas/Gestión del Patrimonio Cultural.pdf
+- data/raw/ceei_elche/pdf/Fichas/Gestoría Administrativa.pdf
+- data/raw/ceei_elche/pdf/Fichas/Granja Escuela.pdf
+- data/raw/ceei_elche/pdf/Fichas/Guarderías.pdf
+- data/raw/ceei_elche/pdf/Fichas/Impresión 3D.pdf
+- data/raw/ceei_elche/pdf/Fichas/Instalación de Calefacción y Fontanería con Energías Renovables.pdf
+- data/raw/ceei_elche/pdf/Fichas/Instalación de Seguridad Electrónica y Domótica.pdf
+- data/raw/ceei_elche/pdf/Fichas/Laboratorio agroalimentario y medioambiental.pdf
+- data/raw/ceei_elche/pdf/Fichas/Logística y Transporte para Empresas de e-Commerce.pdf
+- data/raw/ceei_elche/pdf/Fichas/Marketing Online y Posicionamiento SEM-SEO.pdf
+- data/raw/ceei_elche/pdf/Fichas/Marketing y Estudios de Mercado.pdf
+- data/raw/ceei_elche/pdf/Fichas/Obrador de Alimentos Veganos o Plant-Based.pdf
+- data/raw/ceei_elche/pdf/Fichas/Oficina Técnica de Ingeniería.pdf
+- data/raw/ceei_elche/pdf/Fichas/Organización de Conciertos_ Agencia de Conferenciantes y Programación de Contenidos.pdf
+- data/raw/ceei_elche/pdf/Fichas/Organización de Conferencias_ Jornadas_ Encuentros_ Networking_ Bodas y Eventos.pdf
+- data/raw/ceei_elche/pdf/Fichas/Organización de Reuniones.pdf
+- data/raw/ceei_elche/pdf/Fichas/Panadería-Cafetería.pdf
+- data/raw/ceei_elche/pdf/Fichas/Parafarmàcies.pdf
+- data/raw/ceei_elche/pdf/Fichas/Personal Shopper.pdf
+- data/raw/ceei_elche/pdf/Fichas/Portal Online de Trueque.pdf
+- data/raw/ceei_elche/pdf/Fichas/Producción de Textiles Técnicos.pdf
+- data/raw/ceei_elche/pdf/Fichas/Producción Hidropónica y Aeropónica de Bajo Consumo.pdf
+- data/raw/ceei_elche/pdf/Fichas/Reforma de Interiores y Decoración.pdf
+- data/raw/ceei_elche/pdf/Fichas/Reparaciones en el Hogar.pdf
+- data/raw/ceei_elche/pdf/Fichas/Residencias de la Tercera Edad.pdf
+- data/raw/ceei_elche/pdf/Fichas/Restaurantes.pdf
+- data/raw/ceei_elche/pdf/Fichas/Sector de la Moda.pdf
+- data/raw/ceei_elche/pdf/Fichas/Servicios de Asistencia Técnica _SAT_.pdf
+- data/raw/ceei_elche/pdf/Fichas/Servicios de Fotografía y Vídeo para Empresas.pdf
+- data/raw/ceei_elche/pdf/Fichas/Servicios Forestales.pdf
+- data/raw/ceei_elche/pdf/Fichas/Servicios Médicos a la Tercera Edad.pdf
+- data/raw/ceei_elche/pdf/Fichas/Software Especialitzat i Programació d_Ordinadors.pdf
+- data/raw/ceei_elche/pdf/Fichas/Software Especializado y Programación de Ordenadores.pdf
+- data/raw/ceei_elche/pdf/Fichas/Taller de Arreglos y Confección Personalizada.pdf
+- data/raw/ceei_elche/pdf/Fichas/Taller de Impresión 3D y Prototipado Sostenible.pdf
+- data/raw/ceei_elche/pdf/Fichas/Taller de Informática con Reparación y Mantenimiento.pdf
+- data/raw/ceei_elche/pdf/Fichas/Tareas a terceros.pdf
+- data/raw/ceei_elche/pdf/Fichas/Teletrabajo.pdf
+- data/raw/ceei_elche/pdf/Fichas/Tienda de Calzado.pdf
+- data/raw/ceei_elche/pdf/Fichas/Tienda de Decoración.pdf
+- data/raw/ceei_elche/pdf/Fichas/Tienda de Iluminación.pdf
+- data/raw/ceei_elche/pdf/Fichas/Tienda de Informática con Reparación y Mantenimiento.pdf
+- data/raw/ceei_elche/pdf/Fichas/Tienda de Mascotas y Alimentación Animal.pdf
+- data/raw/ceei_elche/pdf/Fichas/Tienda de Muebles.pdf
+- data/raw/ceei_elche/pdf/Fichas/Tienda de Productos Ecológicos.pdf
+- data/raw/ceei_elche/pdf/Fichas/Tratamiento de Residuos.pdf
+- data/raw/ceei_elche/pdf/Fichas/Turismo Rural.pdf
+- data/raw/ceei_elche/pdf/Fichas/Youtuber.pdf
+- data/raw/ceei_elche/pdf/Infografias/10 Claves para lograr la efectividad de un proceso empresarial.pdf
+- data/raw/ceei_elche/pdf/Infografias/10 errores comunes al lanzar una campaña de email marketing.pdf
+- data/raw/ceei_elche/pdf/Infografias/10 herramientas digitales para mejorar tu negocio.pdf
+- data/raw/ceei_elche/pdf/Infografias/10 tips para mejorar la usabilidad de tu web.pdf
+- data/raw/ceei_elche/pdf/Infografias/3 Nuevas metodologías BIK para empresas y emprendedoresPara emprendedores_ startups y pymes.pdf
+- data/raw/ceei_elche/pdf/Infografias/5 Claves para buscar financiaciónPara emprendedores_ startups y pymes.pdf
+- data/raw/ceei_elche/pdf/Infografias/5 Tips para aumentar tu Inteligencia EmocionalINFOGRAFÍAS.pdf
+- data/raw/ceei_elche/pdf/Infografias/5_1 claves para que tu web esté in love with GoogleINFOGRAFÍAS.pdf
+- data/raw/ceei_elche/pdf/Infografias/6 pasos para gestionar tu tesorería.pdf
+- data/raw/ceei_elche/pdf/Infografias/8 tendencias en el sector logístico para el 2022.pdf
+- data/raw/ceei_elche/pdf/Infografias/_Cómo gestionar un _funnel_ de innovación_De ideación a implantación.pdf
+- data/raw/ceei_elche/pdf/Infografias/_Cómo proteger la propiedad intelectual_.pdf
+- data/raw/ceei_elche/pdf/Infografias/_Qué es OKR_.pdf
+- data/raw/ceei_elche/pdf/Infografias/Claves del Mentoring en Desarrollo de NegocioPlan de Trabajo y Metodologías Aplicables.pdf
+- data/raw/ceei_elche/pdf/Infografias/Claves para crear una cultura de innovación colaborativa en tu empresa.pdf
+- data/raw/ceei_elche/pdf/Infografias/Cómo construir un funnel de ventas paso a pasoDe desconocido a cliente fiel_ guía para crear un funnel que convierta.pdf
+- data/raw/ceei_elche/pdf/Infografias/Cómo convertir tu contenido en la fuente favorita de la IA.pdf
+- data/raw/ceei_elche/pdf/Infografias/Cómo crear una estrategia de contenidos para RRSS.pdf
+- data/raw/ceei_elche/pdf/Infografias/Cómo estructurar un plan de crisis en comunicaciónDe la prevención a la recuperación_ Pasos para proteger tu reputación.pdf
+- data/raw/ceei_elche/pdf/Infografias/Cómo hacer un briefing completo para agencia o equipo creativo.pdf
+- data/raw/ceei_elche/pdf/Infografias/Design Thinking - _Qué puede aportar a tu empresa_INFOGRAFÍA.pdf
+- data/raw/ceei_elche/pdf/Infografias/Diagnóstico integral de Startups.pdf
+- data/raw/ceei_elche/pdf/Infografias/Ecuación de Valor.pdf
+- data/raw/ceei_elche/pdf/Infografias/El proceso de innovación de las empresas de éxitoEl modelo de las ETIs para asegurar la competitividad actual y la perma.pdf
+- data/raw/ceei_elche/pdf/Infografias/Estrategias para reutilizar y reciclar contenido.pdf
+- data/raw/ceei_elche/pdf/Infografias/Fases Ecosistema Emprendimiento de la Comunitat Valenciana.pdf
+- data/raw/ceei_elche/pdf/Infografias/Gestión Ágil y StartupPara emprendedores  y startups.pdf
+- data/raw/ceei_elche/pdf/Infografias/Incubadoras_ hackatones o aceleradoras.pdf
+- data/raw/ceei_elche/pdf/Infografias/Infografia Innovacion abierta vs cerrada.pdf
+- data/raw/ceei_elche/pdf/Infografias/Innovación abiertaINFOGRAFÍAS.pdf
+- data/raw/ceei_elche/pdf/Infografias/KPIs_ Indicadores Clave de RendimientoINFOGRAFÍAS.pdf
+- data/raw/ceei_elche/pdf/Infografias/Las tres coherencias del emprendedorCómo alinear pensamiento_ acción y emoción para avanzar con seguridad.pdf
+- data/raw/ceei_elche/pdf/Infografias/Mentalidad disruptiva_ planificación o adaptabilidad.pdf
+- data/raw/ceei_elche/pdf/Infografias/Mentorización a emprendedores potenciado por IAAcompañamiento con herramientas productivas de IA.pdf
+- data/raw/ceei_elche/pdf/Infografias/Pasos para realizar el Plan Social Media de tu negocio.pdf
+- data/raw/ceei_elche/pdf/Infografias/Producto Mínimo Viable y PrototipadoCerca de 600 recursos para emprendedores_ startups y pymes.pdf
+- data/raw/ceei_elche/pdf/Infografias/Protocolo asesoramiento a personas emprendedoras y a empresas con BIK CEEI.pdf
+- data/raw/ceei_elche/pdf/Infografias/Recursos Gratuitos_ Creación y Crecimiento de empresasCerca de 600 recursos para emprendedores_ startups y pymes.pdf
+- data/raw/ceei_elche/pdf/Infografias/Recursos Gratuitos_ Creación y Crecimiento de empresasCerca de 600 recursos para personas emprendedoras_ startups y pyme.pdf
+- data/raw/ceei_elche/pdf/Infografias/Reflexiones antes de enviar contenido a los medios de comunicación.pdf
+- data/raw/ceei_elche/pdf/Infografias/Ruta de Financiación en I_D_i.pdf
+- data/raw/ceei_elche/pdf/Infografias/Sello Pyme InnovadoraMinisterio de Economía y competitividad.pdf
+- data/raw/ceei_elche/pdf/Infografias/Tecnologías habilitadoras que favorecen la innovación abierta.pdf
+- data/raw/ceei_elche/pdf/Infografias/Teletrabajo_ Consejos y ventajas para afrontarlo con éxitoINFOGRAFÍA.pdf
+- data/raw/ceei_elche/pdf/Infografias/Tips para elaborar una nota de prensa eficaz.pdf
+- data/raw/ceei_elche/pdf/Infografias/Tips para romper el Techo de Cristal en las EmpresasINFOGRAFÍA.pdf
+- data/raw/ceei_elche/pdf/Infografias/Ventajas de la innovación abierta.pdf
+- data/raw/ceei_elche/pdf/Infografias/VERIFACTU_ que es_ a quien afecta y como prepararse.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Análisis de la capacidad tractora de las empresas de la Provincia de AlicanteIdentificación de las micro y pequeñas empr.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Análisis para la definición de las competencias del perfil profesional de un Agente de Desarrollo Local_.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Análisis sobre metodologías y herramientas de innovación del ecosistema emprendedor de CVInformes y estudios.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Business Innovation Kit-Bikceei 2020.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/EBC_s generadas en el entorno de los Parque Científicos de la Provincia de Alicante y su relación con RIS3-CVInformes y .pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Estudio integral sobre el sector marítimo_recreativo en la Comunidad Valenciana.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Estudio sobre creación de un Fondo de Garantía para la concesión de microcréditosInformes y estudios.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Guía sobre registro jornada laboralDesde el 12 de mayo las empresas deben realizar un registro de la jornada laboral de .pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe 2023_ Ecosistema local energético colaborativo_ autosuficiente_ eficiente y sostenible en Salinas_Resultados de .pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe 2025 - Hacia un ecosistema más verde_ digital e inclusivo_ Tendencias del emprendimiento en EspañaInforme del be.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe Benchmarking CEEI Elche 2018-2019_ Análisis sobre metodologías y herramientas de innovación_Informes y estudios.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe Benchmarking CEEI Elche 2020_ Impacto COVID19_ Claves para la Recuperación Económica 2021Informes y estudios.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe COTEC 2014.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de comercio exterior de Alicante por ICEX.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de la Pyme 2018_ Comunidad Valenciana_.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de resultados 2023_ HUB Nueva Ruralidad RegenerativaLo rural como punta de lanza de la transformación económica_.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de resultados 2023_ Retos de la industria auxiliar del calzado_ presente y futuro del sectorEsta acción ha sido .pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creación de valor a futuro Comarca de la Vega BajaEsta acción ha sido desarrol.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creación de valor a futuro de AESEC_Esta acción ha sido desarrollada en colabo.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creación de valor a futuro en la Marina Alta_Esta acción ha sido desarrollada .pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de resultados proyecto Innoteams 2022.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe Empresas Tractoras 2020 Comunitat Valenciana.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe GEM 2018-19 sobre el ecosistema emprendedor en España.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Observatorio Económico-Empresarial de la ciudad de Elche.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Resultados fase entender HUB Innovación Colaborativa Territorial 2023- Nueva Ruralidad Regenerativa.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Resultados proyecto piloto HUB Innovación Colaborativa Territorial 2021 - 2022.pdf
+- data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Resumen HUB de Innovación Colaborativa.pdf
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio/Centro especializado en vehículos eléctricos.pdf
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio/Obrador de alimentos veganos o Plant-Based.pdf
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio/Servicio móvil de maquillaje y peluquería para eventos.pdf
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio/Taller de arreglos y confección personalizada sostenible.pdf
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio/Taller de impresión 3D  y prototipado rápido a partir de residuos vegetales.pdf
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Alquiler y reparación de embarcaciones.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Asesoramiento en Criptomonedas.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Asesoría Energética.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Asistencia a la infancia.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Asistencia a personas mayores.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Calefacción y fontanería con energías renovables.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Carpintería de madera.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Carpintería metálica.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Centro Deportivo Privado.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Clínica dental.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Clínica Veterinaria.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Despacho Profesional_ Servicios de Consultoría.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Distribución y asistencia técnica en impresión 3D.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Domótica e inmótica.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Ecommerce B2C.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Economía Circular.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Empresa de mantenimiento industrial.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Empresa de Reformas.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Empresa de Tiempo Libre.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Empresa Fintech.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Empresa Insurtech.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Empresa Proptech.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Estudio de fotografía y vídeo para empresas.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Formación y cultura.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Gestión Cultural.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Imprenta y artes gráficas.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Instalación Solar Fotovoltaica.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Long Tail.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Panadería - Cafetería.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Plataformas de Crowdfunding.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Plataformas Online.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Robot Corta-Césped.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Servicios Forestales.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Software as a Service _SAAS_.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Taller electromecánico del automóvil.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Tienda de Informática con Reparación y Mantenimiento.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Tienda de Muebles con Servicio de Diseño a Medida.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Tienda taller de composturas.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Turismo Activo.txt
+- data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Turismo Cultural.txt
 - data/raw/ceei_valencia/txt/1018_distribución_en_planta_19_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
 - data/raw/ceei_valencia/txt/1019_análisis_de_posición_competitiva_20_manual_emprenemjunts.txt
 - data/raw/ceei_valencia/txt/1020_estrategias_competitivas_básicas_21_manuales_emprenemjunts.txt
@@ -166,266 +426,6 @@ Rutas procesadas:
 - data/raw/ceei_valencia/txt/9098_planificación_control_y_seguimiento_de_proyectos_de_i_d_i_49.txt
 - data/raw/ceei_valencia/txt/9099_elaboración_propuestas_de_proyectos_de_i_d_i_50.txt
 - data/raw/ceei_valencia/txt/983_modelos_de_contratos_entre_empresas_18_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
-- documentos_ceei_elche/Facebook crea una comunidad interactúa y vende.pdf
-- documentos_ceei_elche/Guia de responsabilidad social de la empresaGuía d.pdf
-- documentos_ceei_elche/Guía básica para crear una app móvil de éxitoAlgun.pdf
-- documentos_ceei_elche/Guía Cómo obtener el Sello PYME InnovadoraQué es.pdf
-- documentos_ceei_elche/Guía de Apoyo Ayudas y Subvenciones.pdf
-- documentos_ceei_elche/Guía de Apoyo El miedo a hablar en públicoApuntes.pdf
-- documentos_ceei_elche/Guía de Apoyo Fuentes de Financiación.pdf
-- documentos_ceei_elche/Guía de Apoyo Fuentes de Información EmpresarialI.pdf
-- documentos_ceei_elche/Guía de apoyo Geolocalización y Redes Sociales d.pdf
-- documentos_ceei_elche/Guía de apoyo Listado de Guías de Actividades Emp.pdf
-- documentos_ceei_elche/Guía de Apoyo Métodos de Cálculo del Tamaño de Me.pdf
-- documentos_ceei_elche/Guía de Apoyo Premios para Emprendedores y Empres.pdf
-- documentos_ceei_elche/Guía de Apoyo Principios básicos de LOPD y LSSI.pdf
-- documentos_ceei_elche/Guía de Apoyo Trámites de constitución de empresa.pdf
-- documentos_ceei_elche/Guía Sello JEI y PYME Innovadora.pdf
-- documentos_ceei_elche/Mejoras en las deducciones fiscales por IDiGuía.pdf
-- documentos_ceei_elche/Patent Box y Deducciones Fiscales.pdf
-- documentos_ceei_elche/Recursos y Herramientas de Apoyo para la Creación.pdf
-- documentos_ceei_elche/Servicios Coworking CEEI Valencia.pdf
-- documentos_ceei_elche_PDF/Fichas/Academias.pdf
-- documentos_ceei_elche_PDF/Fichas/Actividades Naúticas.pdf
-- documentos_ceei_elche_PDF/Fichas/Agencia de Transporte Local.pdf
-- documentos_ceei_elche_PDF/Fichas/Agencia Inmobiliaria.pdf
-- documentos_ceei_elche_PDF/Fichas/Agencias de Exportación.pdf
-- documentos_ceei_elche_PDF/Fichas/Agencias de Viajes.pdf
-- documentos_ceei_elche_PDF/Fichas/Agricultura Ecológica.pdf
-- documentos_ceei_elche_PDF/Fichas/Ahorro y Eficiencia Energética.pdf
-- documentos_ceei_elche_PDF/Fichas/Arreglo de ropa y composturas.pdf
-- documentos_ceei_elche_PDF/Fichas/Atención Educativa al Niño.pdf
-- documentos_ceei_elche_PDF/Fichas/Ayuda a Domicilio a la Tercera Edad.pdf
-- documentos_ceei_elche_PDF/Fichas/Ayuda a Domicilio para la 3ª Edad.pdf
-- documentos_ceei_elche_PDF/Fichas/Ayuda a Domicilio.pdf
-- documentos_ceei_elche_PDF/Fichas/Bioenergía.pdf
-- documentos_ceei_elche_PDF/Fichas/Bodegas de vino.pdf
-- documentos_ceei_elche_PDF/Fichas/Calefacción y Fontanería con Energías Renovables.pdf
-- documentos_ceei_elche_PDF/Fichas/Carpintería de Muebles.pdf
-- documentos_ceei_elche_PDF/Fichas/Centro Comercial Virtual.pdf
-- documentos_ceei_elche_PDF/Fichas/Centro de Impresión Digital.pdf
-- documentos_ceei_elche_PDF/Fichas/Centro Deportivo Privado.pdf
-- documentos_ceei_elche_PDF/Fichas/Centros de Asistencia.pdf
-- documentos_ceei_elche_PDF/Fichas/Centros de Día.pdf
-- documentos_ceei_elche_PDF/Fichas/Centros de Estética.pdf
-- documentos_ceei_elche_PDF/Fichas/Clínica de Fisioterapia.pdf
-- documentos_ceei_elche_PDF/Fichas/Clínica y Tienda Veterinaria.pdf
-- documentos_ceei_elche_PDF/Fichas/Coaching.pdf
-- documentos_ceei_elche_PDF/Fichas/Comercio de Proximidad.pdf
-- documentos_ceei_elche_PDF/Fichas/Comercio Electrónico.pdf
-- documentos_ceei_elche_PDF/Fichas/Comercio Minorista de Confección y Complementos.pdf
-- documentos_ceei_elche_PDF/Fichas/Comida a Domicilio.pdf
-- documentos_ceei_elche_PDF/Fichas/Community Manager.pdf
-- documentos_ceei_elche_PDF/Fichas/Compras Colectivas y Outlets Online.pdf
-- documentos_ceei_elche_PDF/Fichas/Consulta de Nutricionista.pdf
-- documentos_ceei_elche_PDF/Fichas/Consultoría de Internacionalización.pdf
-- documentos_ceei_elche_PDF/Fichas/Consultoría de Prevención de Riesgos Laborales.pdf
-- documentos_ceei_elche_PDF/Fichas/Consultoría de Proyectos y Captación de Financiación.pdf
-- documentos_ceei_elche_PDF/Fichas/Consultoría Medioambiental.pdf
-- documentos_ceei_elche_PDF/Fichas/Desarrolladores de Ocio Interactivo.pdf
-- documentos_ceei_elche_PDF/Fichas/Desarrollo de Aplicaciones para Móviles y Tablets _APP_.pdf
-- documentos_ceei_elche_PDF/Fichas/Despachos Profesionales.pdf
-- documentos_ceei_elche_PDF/Fichas/Diseño de Contenidos Educativos para Tablets.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa de Catering.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa de Contenidos para Formación Online.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa de Domótica para Ahorro Energético.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa de e-Commerce para Comercio de Barrio.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa de Experiencias Turísticas Locales.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa de Fabricación de Productos de Limpieza Ecológicos a Granel.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa de I_D.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa de Jardinería.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa de Mecanizados de Precisión.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa de Producción Audiovisual y Multimedia.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa de Reciclaje y Recuperación de Residuos.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa de Reformas.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa de Servicio Móvil de Maquillaje y Peluquería para Eventos.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresa Instaladora de Energía Solar Foltovoltaica.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresas de Jardinería.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresas de Limpieza.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresas de seguridad.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresas de Servicios Sociales.pdf
-- documentos_ceei_elche_PDF/Fichas/Empresas de Vending.pdf
-- documentos_ceei_elche_PDF/Fichas/Energías Renovables.pdf
-- documentos_ceei_elche_PDF/Fichas/Entrenador Personal.pdf
-- documentos_ceei_elche_PDF/Fichas/Envío a Casa de Productos y Menú Semanal con Recetas.pdf
-- documentos_ceei_elche_PDF/Fichas/Escuela de Baile.pdf
-- documentos_ceei_elche_PDF/Fichas/Fabricación de Componentes Electrónicos.pdf
-- documentos_ceei_elche_PDF/Fichas/Fabricación de Envases y Embalajes.pdf
-- documentos_ceei_elche_PDF/Fichas/Food Truck.pdf
-- documentos_ceei_elche_PDF/Fichas/Fotografía para Empresa y eCommerce.pdf
-- documentos_ceei_elche_PDF/Fichas/Fotografía y Edición de Vídeo_Streaming.pdf
-- documentos_ceei_elche_PDF/Fichas/Franquicias.pdf
-- documentos_ceei_elche_PDF/Fichas/Fábrica Artesanal de Productos Agroalimentarios.pdf
-- documentos_ceei_elche_PDF/Fichas/Gabinete de Diseño Gráfico.pdf
-- documentos_ceei_elche_PDF/Fichas/Gabinete de Diseño Industrial.pdf
-- documentos_ceei_elche_PDF/Fichas/Gestión del Patrimonio Cultural.pdf
-- documentos_ceei_elche_PDF/Fichas/Gestoría Administrativa.pdf
-- documentos_ceei_elche_PDF/Fichas/Granja Escuela.pdf
-- documentos_ceei_elche_PDF/Fichas/Guarderías.pdf
-- documentos_ceei_elche_PDF/Fichas/Impresión 3D.pdf
-- documentos_ceei_elche_PDF/Fichas/Instalación de Calefacción y Fontanería con Energías Renovables.pdf
-- documentos_ceei_elche_PDF/Fichas/Instalación de Seguridad Electrónica y Domótica.pdf
-- documentos_ceei_elche_PDF/Fichas/Laboratorio agroalimentario y medioambiental.pdf
-- documentos_ceei_elche_PDF/Fichas/Logística y Transporte para Empresas de e-Commerce.pdf
-- documentos_ceei_elche_PDF/Fichas/Marketing Online y Posicionamiento SEM-SEO.pdf
-- documentos_ceei_elche_PDF/Fichas/Marketing y Estudios de Mercado.pdf
-- documentos_ceei_elche_PDF/Fichas/Obrador de Alimentos Veganos o Plant-Based.pdf
-- documentos_ceei_elche_PDF/Fichas/Oficina Técnica de Ingeniería.pdf
-- documentos_ceei_elche_PDF/Fichas/Organización de Conciertos_ Agencia de Conferenciantes y Programación de Contenidos.pdf
-- documentos_ceei_elche_PDF/Fichas/Organización de Conferencias_ Jornadas_ Encuentros_ Networking_ Bodas y Eventos.pdf
-- documentos_ceei_elche_PDF/Fichas/Organización de Reuniones.pdf
-- documentos_ceei_elche_PDF/Fichas/Panadería-Cafetería.pdf
-- documentos_ceei_elche_PDF/Fichas/Parafarmàcies.pdf
-- documentos_ceei_elche_PDF/Fichas/Personal Shopper.pdf
-- documentos_ceei_elche_PDF/Fichas/Portal Online de Trueque.pdf
-- documentos_ceei_elche_PDF/Fichas/Producción de Textiles Técnicos.pdf
-- documentos_ceei_elche_PDF/Fichas/Producción Hidropónica y Aeropónica de Bajo Consumo.pdf
-- documentos_ceei_elche_PDF/Fichas/Reforma de Interiores y Decoración.pdf
-- documentos_ceei_elche_PDF/Fichas/Reparaciones en el Hogar.pdf
-- documentos_ceei_elche_PDF/Fichas/Residencias de la Tercera Edad.pdf
-- documentos_ceei_elche_PDF/Fichas/Restaurantes.pdf
-- documentos_ceei_elche_PDF/Fichas/Sector de la Moda.pdf
-- documentos_ceei_elche_PDF/Fichas/Servicios de Asistencia Técnica _SAT_.pdf
-- documentos_ceei_elche_PDF/Fichas/Servicios de Fotografía y Vídeo para Empresas.pdf
-- documentos_ceei_elche_PDF/Fichas/Servicios Forestales.pdf
-- documentos_ceei_elche_PDF/Fichas/Servicios Médicos a la Tercera Edad.pdf
-- documentos_ceei_elche_PDF/Fichas/Software Especialitzat i Programació d_Ordinadors.pdf
-- documentos_ceei_elche_PDF/Fichas/Software Especializado y Programación de Ordenadores.pdf
-- documentos_ceei_elche_PDF/Fichas/Taller de Arreglos y Confección Personalizada.pdf
-- documentos_ceei_elche_PDF/Fichas/Taller de Impresión 3D y Prototipado Sostenible.pdf
-- documentos_ceei_elche_PDF/Fichas/Taller de Informática con Reparación y Mantenimiento.pdf
-- documentos_ceei_elche_PDF/Fichas/Tareas a terceros.pdf
-- documentos_ceei_elche_PDF/Fichas/Teletrabajo.pdf
-- documentos_ceei_elche_PDF/Fichas/Tienda de Calzado.pdf
-- documentos_ceei_elche_PDF/Fichas/Tienda de Decoración.pdf
-- documentos_ceei_elche_PDF/Fichas/Tienda de Iluminación.pdf
-- documentos_ceei_elche_PDF/Fichas/Tienda de Informática con Reparación y Mantenimiento.pdf
-- documentos_ceei_elche_PDF/Fichas/Tienda de Mascotas y Alimentación Animal.pdf
-- documentos_ceei_elche_PDF/Fichas/Tienda de Muebles.pdf
-- documentos_ceei_elche_PDF/Fichas/Tienda de Productos Ecológicos.pdf
-- documentos_ceei_elche_PDF/Fichas/Tratamiento de Residuos.pdf
-- documentos_ceei_elche_PDF/Fichas/Turismo Rural.pdf
-- documentos_ceei_elche_PDF/Fichas/Youtuber.pdf
-- documentos_ceei_elche_PDF/Infografias/10 Claves para lograr la efectividad de un proceso empresarial.pdf
-- documentos_ceei_elche_PDF/Infografias/10 errores comunes al lanzar una campaña de email marketing.pdf
-- documentos_ceei_elche_PDF/Infografias/10 herramientas digitales para mejorar tu negocio.pdf
-- documentos_ceei_elche_PDF/Infografias/10 tips para mejorar la usabilidad de tu web.pdf
-- documentos_ceei_elche_PDF/Infografias/3 Nuevas metodologías BIK para empresas y emprendedoresPara emprendedores_ startups y pymes.pdf
-- documentos_ceei_elche_PDF/Infografias/5 Claves para buscar financiaciónPara emprendedores_ startups y pymes.pdf
-- documentos_ceei_elche_PDF/Infografias/5 Tips para aumentar tu Inteligencia EmocionalINFOGRAFÍAS.pdf
-- documentos_ceei_elche_PDF/Infografias/5_1 claves para que tu web esté in love with GoogleINFOGRAFÍAS.pdf
-- documentos_ceei_elche_PDF/Infografias/6 pasos para gestionar tu tesorería.pdf
-- documentos_ceei_elche_PDF/Infografias/8 tendencias en el sector logístico para el 2022.pdf
-- documentos_ceei_elche_PDF/Infografias/_Cómo gestionar un _funnel_ de innovación_De ideación a implantación.pdf
-- documentos_ceei_elche_PDF/Infografias/_Cómo proteger la propiedad intelectual_.pdf
-- documentos_ceei_elche_PDF/Infografias/_Qué es OKR_.pdf
-- documentos_ceei_elche_PDF/Infografias/Claves del Mentoring en Desarrollo de NegocioPlan de Trabajo y Metodologías Aplicables.pdf
-- documentos_ceei_elche_PDF/Infografias/Claves para crear una cultura de innovación colaborativa en tu empresa.pdf
-- documentos_ceei_elche_PDF/Infografias/Cómo construir un funnel de ventas paso a pasoDe desconocido a cliente fiel_ guía para crear un funnel que convierta.pdf
-- documentos_ceei_elche_PDF/Infografias/Cómo convertir tu contenido en la fuente favorita de la IA.pdf
-- documentos_ceei_elche_PDF/Infografias/Cómo crear una estrategia de contenidos para RRSS.pdf
-- documentos_ceei_elche_PDF/Infografias/Cómo estructurar un plan de crisis en comunicaciónDe la prevención a la recuperación_ Pasos para proteger tu reputación.pdf
-- documentos_ceei_elche_PDF/Infografias/Cómo hacer un briefing completo para agencia o equipo creativo.pdf
-- documentos_ceei_elche_PDF/Infografias/Design Thinking - _Qué puede aportar a tu empresa_INFOGRAFÍA.pdf
-- documentos_ceei_elche_PDF/Infografias/Diagnóstico integral de Startups.pdf
-- documentos_ceei_elche_PDF/Infografias/Ecuación de Valor.pdf
-- documentos_ceei_elche_PDF/Infografias/El proceso de innovación de las empresas de éxitoEl modelo de las ETIs para asegurar la competitividad actual y la perma.pdf
-- documentos_ceei_elche_PDF/Infografias/Estrategias para reutilizar y reciclar contenido.pdf
-- documentos_ceei_elche_PDF/Infografias/Fases Ecosistema Emprendimiento de la Comunitat Valenciana.pdf
-- documentos_ceei_elche_PDF/Infografias/Gestión Ágil y StartupPara emprendedores  y startups.pdf
-- documentos_ceei_elche_PDF/Infografias/Incubadoras_ hackatones o aceleradoras.pdf
-- documentos_ceei_elche_PDF/Infografias/Infografia Innovacion abierta vs cerrada.pdf
-- documentos_ceei_elche_PDF/Infografias/Innovación abiertaINFOGRAFÍAS.pdf
-- documentos_ceei_elche_PDF/Infografias/KPIs_ Indicadores Clave de RendimientoINFOGRAFÍAS.pdf
-- documentos_ceei_elche_PDF/Infografias/Las tres coherencias del emprendedorCómo alinear pensamiento_ acción y emoción para avanzar con seguridad.pdf
-- documentos_ceei_elche_PDF/Infografias/Mentalidad disruptiva_ planificación o adaptabilidad.pdf
-- documentos_ceei_elche_PDF/Infografias/Mentorización a emprendedores potenciado por IAAcompañamiento con herramientas productivas de IA.pdf
-- documentos_ceei_elche_PDF/Infografias/Pasos para realizar el Plan Social Media de tu negocio.pdf
-- documentos_ceei_elche_PDF/Infografias/Producto Mínimo Viable y PrototipadoCerca de 600 recursos para emprendedores_ startups y pymes.pdf
-- documentos_ceei_elche_PDF/Infografias/Protocolo asesoramiento a personas emprendedoras y a empresas con BIK CEEI.pdf
-- documentos_ceei_elche_PDF/Infografias/Recursos Gratuitos_ Creación y Crecimiento de empresasCerca de 600 recursos para emprendedores_ startups y pymes.pdf
-- documentos_ceei_elche_PDF/Infografias/Recursos Gratuitos_ Creación y Crecimiento de empresasCerca de 600 recursos para personas emprendedoras_ startups y pyme.pdf
-- documentos_ceei_elche_PDF/Infografias/Reflexiones antes de enviar contenido a los medios de comunicación.pdf
-- documentos_ceei_elche_PDF/Infografias/Ruta de Financiación en I_D_i.pdf
-- documentos_ceei_elche_PDF/Infografias/Sello Pyme InnovadoraMinisterio de Economía y competitividad.pdf
-- documentos_ceei_elche_PDF/Infografias/Tecnologías habilitadoras que favorecen la innovación abierta.pdf
-- documentos_ceei_elche_PDF/Infografias/Teletrabajo_ Consejos y ventajas para afrontarlo con éxitoINFOGRAFÍA.pdf
-- documentos_ceei_elche_PDF/Infografias/Tips para elaborar una nota de prensa eficaz.pdf
-- documentos_ceei_elche_PDF/Infografias/Tips para romper el Techo de Cristal en las EmpresasINFOGRAFÍA.pdf
-- documentos_ceei_elche_PDF/Infografias/Ventajas de la innovación abierta.pdf
-- documentos_ceei_elche_PDF/Infografias/VERIFACTU_ que es_ a quien afecta y como prepararse.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Análisis de la capacidad tractora de las empresas de la Provincia de AlicanteIdentificación de las micro y pequeñas empr.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Análisis para la definición de las competencias del perfil profesional de un Agente de Desarrollo Local_.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Análisis sobre metodologías y herramientas de innovación del ecosistema emprendedor de CVInformes y estudios.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Business Innovation Kit-Bikceei 2020.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/EBC_s generadas en el entorno de los Parque Científicos de la Provincia de Alicante y su relación con RIS3-CVInformes y .pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Estudio integral sobre el sector marítimo_recreativo en la Comunidad Valenciana.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Estudio sobre creación de un Fondo de Garantía para la concesión de microcréditosInformes y estudios.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Guía sobre registro jornada laboralDesde el 12 de mayo las empresas deben realizar un registro de la jornada laboral de .pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe 2023_ Ecosistema local energético colaborativo_ autosuficiente_ eficiente y sostenible en Salinas_Resultados de .pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe 2025 - Hacia un ecosistema más verde_ digital e inclusivo_ Tendencias del emprendimiento en EspañaInforme del be.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe Benchmarking CEEI Elche 2018-2019_ Análisis sobre metodologías y herramientas de innovación_Informes y estudios.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe Benchmarking CEEI Elche 2020_ Impacto COVID19_ Claves para la Recuperación Económica 2021Informes y estudios.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe COTEC 2014.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de comercio exterior de Alicante por ICEX.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de la Pyme 2018_ Comunidad Valenciana_.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ HUB Nueva Ruralidad RegenerativaLo rural como punta de lanza de la transformación económica_.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ Retos de la industria auxiliar del calzado_ presente y futuro del sectorEsta acción ha sido .pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creación de valor a futuro Comarca de la Vega BajaEsta acción ha sido desarrol.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creación de valor a futuro de AESEC_Esta acción ha sido desarrollada en colabo.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creación de valor a futuro en la Marina Alta_Esta acción ha sido desarrollada .pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados proyecto Innoteams 2022.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe Empresas Tractoras 2020 Comunitat Valenciana.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe GEM 2018-19 sobre el ecosistema emprendedor en España.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Observatorio Económico-Empresarial de la ciudad de Elche.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Resultados fase entender HUB Innovación Colaborativa Territorial 2023- Nueva Ruralidad Regenerativa.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Resultados proyecto piloto HUB Innovación Colaborativa Territorial 2021 - 2022.pdf
-- documentos_ceei_elche_PDF/Informes_y_Publicaciones/Resumen HUB de Innovación Colaborativa.pdf
-- documentos_ceei_elche_PDF/Modelos_de_Negocio/Centro especializado en vehículos eléctricos.pdf
-- documentos_ceei_elche_PDF/Modelos_de_Negocio/Obrador de alimentos veganos o Plant-Based.pdf
-- documentos_ceei_elche_PDF/Modelos_de_Negocio/Servicio móvil de maquillaje y peluquería para eventos.pdf
-- documentos_ceei_elche_PDF/Modelos_de_Negocio/Taller de arreglos y confección personalizada sostenible.pdf
-- documentos_ceei_elche_PDF/Modelos_de_Negocio/Taller de impresión 3D  y prototipado rápido a partir de residuos vegetales.pdf
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Alquiler y reparación de embarcaciones.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Asesoramiento en Criptomonedas.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Asesoría Energética.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Asistencia a la infancia.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Asistencia a personas mayores.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Calefacción y fontanería con energías renovables.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Carpintería de madera.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Carpintería metálica.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Centro Deportivo Privado.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Clínica dental.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Clínica Veterinaria.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Despacho Profesional_ Servicios de Consultoría.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Distribución y asistencia técnica en impresión 3D.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Domótica e inmótica.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Ecommerce B2C.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Economía Circular.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa de mantenimiento industrial.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa de Reformas.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa de Tiempo Libre.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa Fintech.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa Insurtech.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa Proptech.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Estudio de fotografía y vídeo para empresas.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Formación y cultura.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Gestión Cultural.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Imprenta y artes gráficas.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Instalación Solar Fotovoltaica.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Long Tail.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Panadería - Cafetería.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Plataformas de Crowdfunding.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Plataformas Online.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Robot Corta-Césped.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Servicios Forestales.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Software as a Service _SAAS_.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Taller electromecánico del automóvil.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Tienda de Informática con Reparación y Mantenimiento.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Tienda de Muebles con Servicio de Diseño a Medida.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Tienda taller de composturas.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Turismo Activo.txt
-- documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Turismo Cultural.txt
 - documentos_ceei_valencia/20407_networking_mentoring_y_techscouting_tres_modelos_de_innovacion_abierta_para_tu_negocio.pdf
 - documentos_ceei_valencia/20408_flujos_entrantes_salientes_y_procesos_mixtos_que_formas_de_apertura_tiene_una_organizacion.pdf
 - documentos_ceei_valencia/20482_tecnologias_habilitadoras_que_favorecen_la_innovacion_abierta.pdf

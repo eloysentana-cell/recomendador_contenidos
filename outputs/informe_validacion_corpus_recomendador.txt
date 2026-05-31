@@ -1,7 +1,7 @@
 Informe de validacion del corpus recomendador
 ===============================================
 Archivo: data/processed/corpus_recomendador.csv
-Tamano bytes: 12097435
+Tamano bytes: 12097086
 Numero total de documentos: 423
 Documentos con texto util >= 300: 413
 
@@ -33,73 +33,73 @@ Sin texto extraido      9
 Texto insuficiente      1
 
 Documentos con num_caracteres == 0: 9
-id_documento                                                                                                                   titulo     fuente                                                                                                                                                         ruta_local
-    doc_0275                                                              10 errores comunes al lanzar una campaña de email marketing CEEI Elche                                                              documentos_ceei_elche_PDF/Infografias/10 errores comunes al lanzar una campaña de email marketing.pdf
-    doc_0289     Cómo construir un funnel de ventas paso a pasoDe desconocido a cliente fiel_ guía para crear un funnel que convierta CEEI Elche     documentos_ceei_elche_PDF/Infografias/Cómo construir un funnel de ventas paso a pasoDe desconocido a cliente fiel_ guía para crear un funnel que convierta.pdf
-    doc_0290                                                               Cómo convertir tu contenido en la fuente favorita de la IA CEEI Elche                                                               documentos_ceei_elche_PDF/Infografias/Cómo convertir tu contenido en la fuente favorita de la IA.pdf
-    doc_0291                                                                        Cómo crear una estrategia de contenidos para RRSS CEEI Elche                                                                        documentos_ceei_elche_PDF/Infografias/Cómo crear una estrategia de contenidos para RRSS.pdf
-    doc_0292  Cómo estructurar un plan de crisis en comunicaciónDe la prevención a la recuperación_ Pasos para proteger tu reputación CEEI Elche  documentos_ceei_elche_PDF/Infografias/Cómo estructurar un plan de crisis en comunicaciónDe la prevención a la recuperación_ Pasos para proteger tu reputación.pdf
-    doc_0293                                                           Cómo hacer un briefing completo para agencia o equipo creativo CEEI Elche                                                           documentos_ceei_elche_PDF/Infografias/Cómo hacer un briefing completo para agencia o equipo creativo.pdf
-    doc_0295                                                                                         Diagnóstico integral de Startups CEEI Elche                                                                                         documentos_ceei_elche_PDF/Infografias/Diagnóstico integral de Startups.pdf
-    doc_0298                                                                         Estrategias para reutilizar y reciclar contenido CEEI Elche                                                                         documentos_ceei_elche_PDF/Infografias/Estrategias para reutilizar y reciclar contenido.pdf
-    doc_0312 Recursos Gratuitos_ Creación y Crecimiento de empresasCerca de 600 recursos para personas emprendedoras_ startups y pyme CEEI Elche documentos_ceei_elche_PDF/Infografias/Recursos Gratuitos_ Creación y Crecimiento de empresasCerca de 600 recursos para personas emprendedoras_ startups y pyme.pdf
+id_documento                                                                                                                   titulo     fuente                                                                                                                                                       ruta_local
+    doc_0142                                                              10 errores comunes al lanzar una campaña de email marketing CEEI Elche                                                              data/raw/ceei_elche/pdf/Infografias/10 errores comunes al lanzar una campaña de email marketing.pdf
+    doc_0156     Cómo construir un funnel de ventas paso a pasoDe desconocido a cliente fiel_ guía para crear un funnel que convierta CEEI Elche     data/raw/ceei_elche/pdf/Infografias/Cómo construir un funnel de ventas paso a pasoDe desconocido a cliente fiel_ guía para crear un funnel que convierta.pdf
+    doc_0157                                                               Cómo convertir tu contenido en la fuente favorita de la IA CEEI Elche                                                               data/raw/ceei_elche/pdf/Infografias/Cómo convertir tu contenido en la fuente favorita de la IA.pdf
+    doc_0158                                                                        Cómo crear una estrategia de contenidos para RRSS CEEI Elche                                                                        data/raw/ceei_elche/pdf/Infografias/Cómo crear una estrategia de contenidos para RRSS.pdf
+    doc_0159  Cómo estructurar un plan de crisis en comunicaciónDe la prevención a la recuperación_ Pasos para proteger tu reputación CEEI Elche  data/raw/ceei_elche/pdf/Infografias/Cómo estructurar un plan de crisis en comunicaciónDe la prevención a la recuperación_ Pasos para proteger tu reputación.pdf
+    doc_0160                                                           Cómo hacer un briefing completo para agencia o equipo creativo CEEI Elche                                                           data/raw/ceei_elche/pdf/Infografias/Cómo hacer un briefing completo para agencia o equipo creativo.pdf
+    doc_0162                                                                                         Diagnóstico integral de Startups CEEI Elche                                                                                         data/raw/ceei_elche/pdf/Infografias/Diagnóstico integral de Startups.pdf
+    doc_0165                                                                         Estrategias para reutilizar y reciclar contenido CEEI Elche                                                                         data/raw/ceei_elche/pdf/Infografias/Estrategias para reutilizar y reciclar contenido.pdf
+    doc_0179 Recursos Gratuitos_ Creación y Crecimiento de empresasCerca de 600 recursos para personas emprendedoras_ startups y pyme CEEI Elche data/raw/ceei_elche/pdf/Infografias/Recursos Gratuitos_ Creación y Crecimiento de empresasCerca de 600 recursos para personas emprendedoras_ startups y pyme.pdf
 
 Documentos con num_caracteres < 300: 10
 id_documento                                                                                                                   titulo     fuente  num_caracteres
-    doc_0275                                                              10 errores comunes al lanzar una campaña de email marketing CEEI Elche               0
-    doc_0280                                                                5 Tips para aumentar tu Inteligencia EmocionalINFOGRAFÍAS CEEI Elche              46
-    doc_0289     Cómo construir un funnel de ventas paso a pasoDe desconocido a cliente fiel_ guía para crear un funnel que convierta CEEI Elche               0
-    doc_0290                                                               Cómo convertir tu contenido en la fuente favorita de la IA CEEI Elche               0
-    doc_0291                                                                        Cómo crear una estrategia de contenidos para RRSS CEEI Elche               0
-    doc_0292  Cómo estructurar un plan de crisis en comunicaciónDe la prevención a la recuperación_ Pasos para proteger tu reputación CEEI Elche               0
-    doc_0293                                                           Cómo hacer un briefing completo para agencia o equipo creativo CEEI Elche               0
-    doc_0295                                                                                         Diagnóstico integral de Startups CEEI Elche               0
-    doc_0298                                                                         Estrategias para reutilizar y reciclar contenido CEEI Elche               0
-    doc_0312 Recursos Gratuitos_ Creación y Crecimiento de empresasCerca de 600 recursos para personas emprendedoras_ startups y pyme CEEI Elche               0
+    doc_0142                                                              10 errores comunes al lanzar una campaña de email marketing CEEI Elche               0
+    doc_0147                                                                5 Tips para aumentar tu Inteligencia EmocionalINFOGRAFÍAS CEEI Elche              46
+    doc_0156     Cómo construir un funnel de ventas paso a pasoDe desconocido a cliente fiel_ guía para crear un funnel que convierta CEEI Elche               0
+    doc_0157                                                               Cómo convertir tu contenido en la fuente favorita de la IA CEEI Elche               0
+    doc_0158                                                                        Cómo crear una estrategia de contenidos para RRSS CEEI Elche               0
+    doc_0159  Cómo estructurar un plan de crisis en comunicaciónDe la prevención a la recuperación_ Pasos para proteger tu reputación CEEI Elche               0
+    doc_0160                                                           Cómo hacer un briefing completo para agencia o equipo creativo CEEI Elche               0
+    doc_0162                                                                                         Diagnóstico integral de Startups CEEI Elche               0
+    doc_0165                                                                         Estrategias para reutilizar y reciclar contenido CEEI Elche               0
+    doc_0179 Recursos Gratuitos_ Creación y Crecimiento de empresasCerca de 600 recursos para personas emprendedoras_ startups y pyme CEEI Elche               0
 
 Duplicados por ruta_local: 0
 Ninguno
 
 Duplicados por titulo: 52
 id_documento                                                                     titulo        fuente                  seccion
-    doc_0043                                              Asistencia a personas mayores CEEI Valencia               Ficha_HTML
-    doc_0047                                                        Domótica e inmótica CEEI Valencia               Ficha_HTML
-    doc_0057                                             Instalación Solar Fotovoltaica CEEI Valencia               Ficha_HTML
-    doc_0059                                                 Gabinete de Diseño Gráfico CEEI Valencia               Ficha_HTML
-    doc_0069                                                        Empresa de Reformas CEEI Valencia               Ficha_HTML
-    doc_0070                            Comercio Minorista de Confección y Complementos CEEI Valencia               Ficha_HTML
-    doc_0071                                                          Sector de la Moda CEEI Valencia               Ficha_HTML
-    doc_0080                                                           Gestión Cultural CEEI Valencia               Ficha_HTML
-    doc_0090                                Estudio de fotografía y vídeo para empresas CEEI Valencia               Ficha_HTML
-    doc_0169                                                     Carpintería de Muebles    CEEI Elche                   Fichas
-    doc_0171                                                Centro de Impresión Digital    CEEI Elche                   Fichas
-    doc_0172                                                   Centro Deportivo Privado    CEEI Elche                   Fichas
-    doc_0181                            Comercio Minorista de Confección y Complementos    CEEI Elche                   Fichas
-    doc_0196                                 Empresa de Domótica para Ahorro Energético    CEEI Elche                   Fichas
-    doc_0198                                 Empresa de Experiencias Turísticas Locales    CEEI Elche                   Fichas
-    doc_0205                                                        Empresa de Reformas    CEEI Elche                   Fichas
-    doc_0224                                                 Gabinete de Diseño Gráfico    CEEI Elche                   Fichas
-    doc_0246                                            Producción de Textiles Técnicos    CEEI Elche                   Fichas
-    doc_0252                                                          Sector de la Moda    CEEI Elche                   Fichas
-    doc_0254                              Servicios de Fotografía y Vídeo para Empresas    CEEI Elche                   Fichas
-    doc_0255                                                       Servicios Forestales    CEEI Elche                   Fichas
-    doc_0259                              Taller de Arreglos y Confección Personalizada    CEEI Elche                   Fichas
-    doc_0267                       Tienda de Informática con Reparación y Mantenimiento    CEEI Elche                   Fichas
-    doc_0316              Tecnologías habilitadoras que favorecen la innovación abierta    CEEI Elche              Infografias
-    doc_0349                               Centro especializado en vehículos eléctricos    CEEI Elche       Modelos_de_Negocio
-    doc_0350                                 Obrador de alimentos veganos o Plant-Based    CEEI Elche       Modelos_de_Negocio
-    doc_0351                     Servicio móvil de maquillaje y peluquería para eventos    CEEI Elche       Modelos_de_Negocio
-    doc_0352                   Taller de arreglos y confección personalizada sostenible    CEEI Elche       Modelos_de_Negocio
-    doc_0353 Taller de impresión 3D y prototipado rápido a partir de residuos vegetales    CEEI Elche       Modelos_de_Negocio
-    doc_0358                                              Asistencia a personas mayores    CEEI Elche Modelos_de_Negocio_texto
-    doc_0362                                                   Centro Deportivo Privado    CEEI Elche Modelos_de_Negocio_texto
-    doc_0367                                                        Domótica e inmótica    CEEI Elche Modelos_de_Negocio_texto
-    doc_0371                                                        Empresa de Reformas    CEEI Elche Modelos_de_Negocio_texto
-    doc_0376                                Estudio de fotografía y vídeo para empresas    CEEI Elche Modelos_de_Negocio_texto
-    doc_0378                                                           Gestión Cultural    CEEI Elche Modelos_de_Negocio_texto
-    doc_0380                                             Instalación Solar Fotovoltaica    CEEI Elche Modelos_de_Negocio_texto
-    doc_0386                                                       Servicios Forestales    CEEI Elche Modelos_de_Negocio_texto
-    doc_0389                       Tienda de Informática con Reparación y Mantenimiento    CEEI Elche Modelos_de_Negocio_texto
+    doc_0036                                                     Carpintería de Muebles    CEEI Elche                   Fichas
+    doc_0038                                                Centro de Impresión Digital    CEEI Elche                   Fichas
+    doc_0039                                                   Centro Deportivo Privado    CEEI Elche                   Fichas
+    doc_0048                            Comercio Minorista de Confección y Complementos    CEEI Elche                   Fichas
+    doc_0063                                 Empresa de Domótica para Ahorro Energético    CEEI Elche                   Fichas
+    doc_0065                                 Empresa de Experiencias Turísticas Locales    CEEI Elche                   Fichas
+    doc_0072                                                        Empresa de Reformas    CEEI Elche                   Fichas
+    doc_0091                                                 Gabinete de Diseño Gráfico    CEEI Elche                   Fichas
+    doc_0113                                            Producción de Textiles Técnicos    CEEI Elche                   Fichas
+    doc_0119                                                          Sector de la Moda    CEEI Elche                   Fichas
+    doc_0121                              Servicios de Fotografía y Vídeo para Empresas    CEEI Elche                   Fichas
+    doc_0122                                                       Servicios Forestales    CEEI Elche                   Fichas
+    doc_0126                              Taller de Arreglos y Confección Personalizada    CEEI Elche                   Fichas
+    doc_0134                       Tienda de Informática con Reparación y Mantenimiento    CEEI Elche                   Fichas
+    doc_0183              Tecnologías habilitadoras que favorecen la innovación abierta    CEEI Elche              Infografias
+    doc_0216                               Centro especializado en vehículos eléctricos    CEEI Elche       Modelos_de_Negocio
+    doc_0217                                 Obrador de alimentos veganos o Plant-Based    CEEI Elche       Modelos_de_Negocio
+    doc_0218                     Servicio móvil de maquillaje y peluquería para eventos    CEEI Elche       Modelos_de_Negocio
+    doc_0219                   Taller de arreglos y confección personalizada sostenible    CEEI Elche       Modelos_de_Negocio
+    doc_0220 Taller de impresión 3D y prototipado rápido a partir de residuos vegetales    CEEI Elche       Modelos_de_Negocio
+    doc_0225                                              Asistencia a personas mayores    CEEI Elche Modelos_de_Negocio_texto
+    doc_0229                                                   Centro Deportivo Privado    CEEI Elche Modelos_de_Negocio_texto
+    doc_0234                                                        Domótica e inmótica    CEEI Elche Modelos_de_Negocio_texto
+    doc_0238                                                        Empresa de Reformas    CEEI Elche Modelos_de_Negocio_texto
+    doc_0243                                Estudio de fotografía y vídeo para empresas    CEEI Elche Modelos_de_Negocio_texto
+    doc_0245                                                           Gestión Cultural    CEEI Elche Modelos_de_Negocio_texto
+    doc_0247                                             Instalación Solar Fotovoltaica    CEEI Elche Modelos_de_Negocio_texto
+    doc_0253                                                       Servicios Forestales    CEEI Elche Modelos_de_Negocio_texto
+    doc_0256                       Tienda de Informática con Reparación y Mantenimiento    CEEI Elche Modelos_de_Negocio_texto
+    doc_0303                                              Asistencia a personas mayores CEEI Valencia               Ficha_HTML
+    doc_0307                                                        Domótica e inmótica CEEI Valencia               Ficha_HTML
+    doc_0317                                             Instalación Solar Fotovoltaica CEEI Valencia               Ficha_HTML
+    doc_0319                                                 Gabinete de Diseño Gráfico CEEI Valencia               Ficha_HTML
+    doc_0329                                                        Empresa de Reformas CEEI Valencia               Ficha_HTML
+    doc_0330                            Comercio Minorista de Confección y Complementos CEEI Valencia               Ficha_HTML
+    doc_0331                                                          Sector de la Moda CEEI Valencia               Ficha_HTML
+    doc_0340                                                           Gestión Cultural CEEI Valencia               Ficha_HTML
+    doc_0350                                Estudio de fotografía y vídeo para empresas CEEI Valencia               Ficha_HTML
     doc_0396              Tecnologías habilitadoras que favorecen la innovación abierta CEEI Valencia            Documento_PDF
     doc_0406                     Servicio móvil de maquillaje y peluquería para eventos CEEI Valencia            Documento_PDF
     doc_0407                   Taller de arreglos y confección personalizada sostenible CEEI Valencia            Documento_PDF
@@ -116,14 +116,14 @@ id_documento                                                                    
     doc_0422                              Taller de Arreglos y Confección Personalizada CEEI Valencia            Documento_PDF
 
 Primeras 10 filas:
-id_documento                                                                                      titulo        fuente    seccion tipo_archivo  num_caracteres
-    doc_0001               Distribución en planta (19) Manuales emprenemjunts para emprendedores y pymes CEEI Valencia Ficha_HTML          txt            1757
-    doc_0002                                  Análisis de posición competitiva (20) Manual emprenemjunts CEEI Valencia Ficha_HTML          txt            1167
-    doc_0003                                Estrategias competitivas básicas (21) Manuales emprenemjunts CEEI Valencia Ficha_HTML          txt            1638
-    doc_0004                                          Proceso de elaboración de un plan estratégico (22) CEEI Valencia Ficha_HTML          txt             822
-    doc_0005                                         Cooperación empresarial (23) Manuales emprenemjunts CEEI Valencia Ficha_HTML          txt            1061
-    doc_0006         Metodología de la innovación (24) Manuales emprenemjunts para emprendedores y pymes CEEI Valencia Ficha_HTML          txt            1409
-    doc_0007                         Presentación de proyectos empresariales a posibles inversores ( 25) CEEI Valencia Ficha_HTML          txt             889
-    doc_0008                                             Dirigir eficazmente (26) Manuales emprenemjunts CEEI Valencia Ficha_HTML          txt            1088
-    doc_0009 Fidelización de los recursos humanos (27) Manuales emprenemjunts para emprendedores y pymes CEEI Valencia Ficha_HTML          txt            1461
-    doc_0010                                                     Propiedad industrial e intelectual (28) CEEI Valencia Ficha_HTML          txt            1095
+id_documento                                             titulo     fuente seccion tipo_archivo  num_caracteres
+    doc_0001     Facebook crea una comunidad interactúa y vende CEEI Elche General          pdf            2910
+    doc_0002 Guia de responsabilidad social de la empresaGuía d CEEI Elche General          pdf           34869
+    doc_0003 Guía básica para crear una app móvil de éxitoAlgun CEEI Elche General          pdf           23703
+    doc_0004   Guía Cómo obtener el Sello PYME InnovadoraQué es CEEI Elche General          pdf            6361
+    doc_0005                Guía de Apoyo Ayudas y Subvenciones CEEI Elche General          pdf           13411
+    doc_0006  Guía de Apoyo El miedo a hablar en públicoApuntes CEEI Elche General          pdf           17527
+    doc_0007              Guía de Apoyo Fuentes de Financiación CEEI Elche General          pdf           19799
+    doc_0008  Guía de Apoyo Fuentes de Información EmpresarialI CEEI Elche General          pdf            4459
+    doc_0009   Guía de apoyo Geolocalización y Redes Sociales d CEEI Elche General          pdf            8405
+    doc_0010  Guía de apoyo Listado de Guías de Actividades Emp CEEI Elche General          pdf            3697

@@ -2,7 +2,8 @@ Informe de diagnostico del proyecto
 =====================================
 
 Archivos y carpetas existentes:
-- documentos_ceei_elche_PDF: carpeta
+- data/raw/ceei_elche/pdf: carpeta
+- data/raw/ceei_elche/original: carpeta
 - documentos_ceei_valencia: carpeta
 - data/raw/ceei_valencia/txt: carpeta
 - data/processed/documentos_ceei_valencia.json: archivo
@@ -13,11 +14,12 @@ Archivos y carpetas existentes:
 - outputs/informe_corpus_recomendador.txt: archivo
 
 Tamano de archivos CSV:
-- data/processed/corpus_recomendador.csv: 12097435 bytes
-- data/processed/corpus_documental.csv: 9268796 bytes
+- data/processed/corpus_recomendador.csv: 12097086 bytes
+- data/processed/corpus_documental.csv: 9268314 bytes
 
 Conteo PDF/TXT por carpeta:
-- documentos_ceei_elche_PDF: PDF=201, TXT=40
+- data/raw/ceei_elche/pdf: PDF=201, TXT=40
+- data/raw/ceei_elche/original: PDF=19, TXT=0
 - documentos_ceei_valencia: PDF=30, TXT=0
 - data/raw/ceei_valencia/txt: PDF=0, TXT=133
 
@@ -31,151 +33,353 @@ documentos_ceei_valencia.json:
 - conteo por tipo_archivo: {'pdf': 163}
 
 Estado Git:
-M README.md
+M "2 intento scrapping CEEI import requests.py"
+ M 2_intento_scrapping_CEEI_import_requests.py
+ M 2_scraper_ceei_seguro.py
+ M README.md
+ M build_corpus.py
  M build_corpus_recomendador.py
+ M data/embeddings/document_embeddings.csv
+ M data/embeddings/document_embeddings.parquet
+ M data/processed/corpus_documental.csv
  M data/processed/corpus_recomendador.csv
- M "data/raw/ceei_valencia/txt/1018_distribuci\303\263n_en_planta_19_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
- M "data/raw/ceei_valencia/txt/1019_an\303\241lisis_de_posici\303\263n_competitiva_20_manual_emprenemjunts.txt"
- M "data/raw/ceei_valencia/txt/1020_estrategias_competitivas_b\303\241sicas_21_manuales_emprenemjunts.txt"
- M "data/raw/ceei_valencia/txt/1021_proceso_de_elaboraci\303\263n_de_un_plan_estrat\303\251gico_22.txt"
- M "data/raw/ceei_valencia/txt/1022_cooperaci\303\263n_empresarial_23_manuales_emprenemjunts.txt"
- M "data/raw/ceei_valencia/txt/1023_metodolog\303\255a_de_la_innovaci\303\263n_24_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
- M "data/raw/ceei_valencia/txt/1100_presentaci\303\263n_de_proyectos_empresariales_a_posibles_inversores_25.txt"
- M data/raw/ceei_valencia/txt/1101_dirigir_eficazmente_26_manuales_emprenemjunts.txt
- M "data/raw/ceei_valencia/txt/1102_fidelizaci\303\263n_de_los_recursos_humanos_27_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
- M data/raw/ceei_valencia/txt/1103_propiedad_industrial_e_intelectual_28.txt
- M "data/raw/ceei_valencia/txt/1104_lanzamiento_y_promoci\303\263n_de_productos_innovadores_29_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
- M "data/raw/ceei_valencia/txt/1183_dise\303\261ar_red_comercial_y_fijar_objetivos_de_ventas_17_manuales_emprenemjunts.txt"
- M "data/raw/ceei_valencia/txt/11900_producto_m\303\255nimo_viable_51_autor_roberto_touza.txt"
- M data/raw/ceei_valencia/txt/11901_agile_development_52_autor_aday_guerra_nestor_co.txt
- M "data/raw/ceei_valencia/txt/11902_customer_validation_53_autora_luc\303\255a_ruiz_montiel_de_nestor_co.txt"
- M "data/raw/ceei_valencia/txt/11903_business_design_customer_discovery_54_autora_consuelo_verd\303\272_de_nestor_co.txt"
- M data/raw/ceei_valencia/txt/13789_marketing_sensorial_55.txt
- M "data/raw/ceei_valencia/txt/14184_escalado_\303\241gil_c\303\263mo_descubrir_y_usar_palancas_exponenciales_de_un_modelo_de_negocio_autor_jos\303\251_antonio_de_miguel_presiden.txt"
- M "data/raw/ceei_valencia/txt/14624_escalabilidad_startups_57_manual_de_gesti\303\263n_empresarial_elaborado_por_roberto_touza.txt"
- M data/raw/ceei_valencia/txt/14625_lean_startup_para_el_escalado_de_startups.txt
- M "data/raw/ceei_valencia/txt/14626_estrategias_m\303\251tricas_y_an\303\241lisis_para_la_escalabilidad_de_startups.txt"
- M data/raw/ceei_valencia/txt/14641_comercio_de_proximidad_modelo_de_negocio_de_actividades_empresariales.txt
- M data/raw/ceei_valencia/txt/14642_servicios_a_particulares_modelo_de_negocio_de_actividades_empresariales.txt
- M data/raw/ceei_valencia/txt/14643_empresas_fabricantes_modelo_de_negocio_de_actividades_empresariales.txt
- M data/raw/ceei_valencia/txt/14644_servicios_profesionales_empresariales_modelo_de_negocio_de_actividades_empresariales.txt
- M data/raw/ceei_valencia/txt/14649_ecommerce_b2c_model_de_negoci.txt
- M data/raw/ceei_valencia/txt/14704_plataformas_online_modelo_de_negocio.txt
- M "data/raw/ceei_valencia/txt/14744_formaci\303\263n_y_cultura_modelo_de_negocio_de_actividades_empresariales.txt"
- M data/raw/ceei_valencia/txt/14757_long_tail_modelo_de_negocio.txt
- M data/raw/ceei_valencia/txt/14766_plataformas_de_crowdfunding_modelo_de_negocio.txt
- M "data/raw/ceei_valencia/txt/14801_m\303\251tricas_para_startups_58_manual_de_gesti\303\263n_empresarial_elaborado_por_roberto_touza.txt"
- M "data/raw/ceei_valencia/txt/14822_econom\303\255a_circular_modelo_de_negocio.txt"
- M data/raw/ceei_valencia/txt/14837_software_as_a_service_saas_modelo_de_negocio.txt
- M "data/raw/ceei_valencia/txt/15825_teletrabajo_59_manual_de_gesti\303\263n_empresarial_elaborado_por_david_blay.txt"
- M "data/raw/ceei_valencia/txt/15935_metodolog\303\255a_scrum_60_manual_elaborado_por_roberto_touza.txt"
- M "data/raw/ceei_valencia/txt/16264_alquiler_y_reparaci\303\263n_de_embarcaciones_modelo_de_negocio_de_actividades_empresariales.txt"
- M "data/raw/ceei_valencia/txt/16265_distribuci\303\263n_y_asistencia_t\303\251cnica_en_impresi\303\263n_3d_modelo_de_negocio_de_actividades_empresariales.txt"
- M "data/raw/ceei_valencia/txt/16266_robot_corta-c\303\251sped_modelo_de_negocio_de_actividades_empresariales.txt"
- M data/raw/ceei_valencia/txt/16267_tienda_taller_de_composturas_modelo_de_negocio_de_actividades_empresariales.txt
- M "data/raw/ceei_valencia/txt/18162_la_sostenibilidad_en_la_empresa._aplicaci\303\263n_pr\303\241ctica_a_las_pymes_61_manual_elaborado_por_joan_ramon_sanchis_palacio_vane.txt"
- M "data/raw/ceei_valencia/txt/18259_asesor\303\255a_energ\303\251tica_modelo_de_negocio.txt"
- M data/raw/ceei_valencia/txt/18260_asistencia_a_la_infancia_modelo_de_negocio.txt
- M data/raw/ceei_valencia/txt/18261_asistencia_a_personas_mayores.txt
- M "data/raw/ceei_valencia/txt/18262_carpinter\303\255a_de_madera_modelo_de_negocio.txt"
- M "data/raw/ceei_valencia/txt/18263_carpinter\303\255a_met\303\241lica_modelo_de_negocio.txt"
- M "data/raw/ceei_valencia/txt/18271_cl\303\255nica_dental_modelo_de_negocio.txt"
- M "data/raw/ceei_valencia/txt/18272_dom\303\263tica_e_inm\303\263tica.txt"
- M "data/raw/ceei_valencia/txt/18273_imprenta_y_artes_gr\303\241ficas_modelo_de_negocio.txt"
- M data/raw/ceei_valencia/txt/18274_empresa_de_mantenimiento_industrial_modelo_de_negocio.txt
- M "data/raw/ceei_valencia/txt/18275_taller_electromec\303\241nico_del_autom\303\263vil_modelo_de_negocio.txt"
- M "data/raw/ceei_valencia/txt/18339_gu\303\255a_de_digitalizaci\303\263n_para_pymes_manual_de_gesti\303\263n_empresarial_elaborado_por_leonard_pera.txt"
- M "data/raw/ceei_valencia/txt/18340_claves_para_elaborar_un_plan_de_igualdad_manual_de_gesti\303\263n_empresarial_elaborado_por_sandra_merch\303\241n.txt"
- M "data/raw/ceei_valencia/txt/19312_calefacci\303\263n_y_fontaner\303\255a_con_energ\303\255as_renovables_modelo_de_negocio.txt"
- M "data/raw/ceei_valencia/txt/19323_okr._objetivos_y_resultados_claves_manual_gesti\303\263n_empresarial_realizado_por_francisco_javier_rivero.txt"
- M "data/raw/ceei_valencia/txt/19325_cl\303\255nica_veterinaria_modelo_de_negocio.txt"
- M data/raw/ceei_valencia/txt/19327_empresa_de_reformas_modelo_de_negocio.txt
- M "data/raw/ceei_valencia/txt/19329_instalaci\303\263n_solar_fotovoltaica.txt"
- M "data/raw/ceei_valencia/txt/19331_tienda_de_inform\303\241tica_con_reparaci\303\263n_y_mantenimiento_modelo_de_negocio.txt"
- M "data/raw/ceei_valencia/txt/2029_gabinete_de_dise\303\261o_gr\303\241fico.txt"
- M "data/raw/ceei_valencia/txt/2038_tienda_inform\303\241tica_con_reparaci\303\263n_y_mantenimiento.txt"
- M "data/raw/ceei_valencia/txt/20496_manual_de_inversi\303\263n_en_startups.txt"
- M data/raw/ceei_valencia/txt/20510_empresa_proptech_modelo_de_negocio.txt
- M data/raw/ceei_valencia/txt/20511_empresa_fintech_modelo_de_negocio.txt
- M data/raw/ceei_valencia/txt/20512_empresa_insurtech_modelo_de_negocio.txt
- M data/raw/ceei_valencia/txt/20513_asesoramiento_en_criptomonedas_modelo_de_negocio.txt
- M "data/raw/ceei_valencia/txt/2055_centro_de_est\303\251tica.txt"
- M data/raw/ceei_valencia/txt/20564_manual_de_inbound_marketing.txt
- M "data/raw/ceei_valencia/txt/2072_mecanizados_de_precisi\303\263n.txt"
- M data/raw/ceei_valencia/txt/2091_empresa_de_reformas.txt
- M "data/raw/ceei_valencia/txt/2094_comercio_minorista_de_confecci\303\263n_y_complementos.txt"
- M data/raw/ceei_valencia/txt/2109_sector_de_la_moda.txt
- M data/raw/ceei_valencia/txt/2123_restaurante_vegetariano.txt
- M "data/raw/ceei_valencia/txt/21498_manual_de_comunicaci\303\263n_efectiva.txt"
- M data/raw/ceei_valencia/txt/21499_manual_de_salud_mental_para_personas_emprendedoras.txt
- M "data/raw/ceei_valencia/txt/21500_manual_de_creaci\303\263n_de_valor_compartido.txt"
- M data/raw/ceei_valencia/txt/21518_centro_deportivo_privado_modelo_de_negocio.txt
- M "data/raw/ceei_valencia/txt/21519_despacho_profesional_servicios_de_consultor\303\255a_modelo_de_negocio.txt"
- M "data/raw/ceei_valencia/txt/21520_panader\303\255a_-_cafeter\303\255a_modelo_de_negocio.txt"
- M "data/raw/ceei_valencia/txt/21521_tienda_de_muebles_con_servicio_de_dise\303\261o_a_medida_modelo_de_negocio.txt"
- M "data/raw/ceei_valencia/txt/22444_gesti\303\263n_cultural.txt"
- M data/raw/ceei_valencia/txt/22445_turismo_cultural_modelo_de_negocio_de_actividades_empresariales.txt
- M data/raw/ceei_valencia/txt/22446_turismo_activo_modelo_de_negocio_de_actividades_empresariales.txt
- M data/raw/ceei_valencia/txt/22447_servicios_forestales_modelo_de_negocio_de_actividades_empresariales.txt
- M data/raw/ceei_valencia/txt/22448_empresa_de_tiempo_libre_modelo_de_negocio_de_actividades_empresariales.txt
- M "data/raw/ceei_valencia/txt/22545_como_gestionar_un_funnel_de_innovaci\303\263n_de_idea_a_implantaci\303\263n.txt"
- M "data/raw/ceei_valencia/txt/22546_como_dise\303\261ar_un_programa_de_colaboraci\303\263n_empresa-startup.txt"
- M "data/raw/ceei_valencia/txt/22547_financiaci\303\263n_i_d_i.txt"
- M data/raw/ceei_valencia/txt/22548_propiedad_intelectual.txt
- M data/raw/ceei_valencia/txt/22915_manual_de_ciberseguridad_para_pymes.txt
- M "data/raw/ceei_valencia/txt/22995_estudio_de_fotograf\303\255a_y_v\303\255deo_para_empresas.txt"
- M "data/raw/ceei_valencia/txt/23047_gesti\303\263n_\303\241gil_de_equipos_claves_pr\303\241cticas_para_organizar_mejor_el_trabajo_adaptarse_al_cambio_y_mejorar_la_coordinaci\303\263n_d.txt"
- M "data/raw/ceei_valencia/txt/23048_evaluaci\303\263n_del_desempe\303\261o_claves_pr\303\241cticas_para_convertir_la_evaluaci\303\263n_en_una_conversaci\303\263n_\303\272til_sobre_resultados_crecimi.txt"
- M "data/raw/ceei_valencia/txt/23076_fabricaci\303\263n_de_productos_de_limpieza_ecol\303\263gicos_a_granel_modelo_de_negocio.txt"
- M "data/raw/ceei_valencia/txt/23077_producci\303\263n_hidrop\303\263nica_y_aerop\303\263nica_de_bajo_consumo_modelo_de_negocio.txt"
- M "data/raw/ceei_valencia/txt/23078_consultor\303\255a_en_gesti\303\263n_del_agua_y_reciclaje_modelo_de_negocio.txt"
- M data/raw/ceei_valencia/txt/237_estudios_de_mercado_1.txt
- M data/raw/ceei_valencia/txt/238_reclutar_y_seleccionar_personas_2.txt
- M "data/raw/ceei_valencia/txt/239_alternativas_de_financiaci\303\263n_y_sus_costes_3.txt"
- M "data/raw/ceei_valencia/txt/240_an\303\241lisis_financiero_b\303\241sico_4.txt"
- M data/raw/ceei_valencia/txt/241_marketing_online_y_posicionamiento_en_internet_5.txt
- M "data/raw/ceei_valencia/txt/244_plan_y_presupuesto_de_comunicaci\303\263n_6_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
- M "data/raw/ceei_valencia/txt/245_an\303\241lisis_de_satisfacci\303\263n_del_cliente_7_manuales_emprenemjunts.txt"
- M "data/raw/ceei_valencia/txt/297_valoraci\303\263n_de_empresas_8.txt"
- M "data/raw/ceei_valencia/txt/298_log\303\255stica_y_distribuci\303\263n_9_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
- M data/raw/ceei_valencia/txt/299_definir_funciones_y_estructuras_organizativas_10_manuales_emprenemjunts.txt
- M "data/raw/ceei_valencia/txt/324_fiscalidad_y_formas_jur\303\255dicas_11_manuales_emprenemjunts.txt"
- M "data/raw/ceei_valencia/txt/325_organizaci\303\263n_de_la_producci\303\263n_12_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
- M "data/raw/ceei_valencia/txt/326_reingenier\303\255a_de_procesos_13.txt"
- M "data/raw/ceei_valencia/txt/328_fijaci\303\263n_de_precios_14_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
- M "data/raw/ceei_valencia/txt/330_plan_de_internacionalizaci\303\263n_de_empresas_16_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
- M "data/raw/ceei_valencia/txt/4388_gesti\303\263n_de_procesos_de_innovaci\303\263n_en_la_empresa_31_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
- M "data/raw/ceei_valencia/txt/4389_el_presupuesto_de_tesorer\303\255a_en_la_empresa_32_manuales_emprenemjunts.txt"
- M "data/raw/ceei_valencia/txt/4390_utilizaci\303\263n_de_las_redes_sociales_para_posicionar_la_empresa_y_vender_33.txt"
- M data/raw/ceei_valencia/txt/4391_internacionalizarse_desde_el_origen_30_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
- M data/raw/ceei_valencia/txt/4589_marca_y_posicionamiento_15_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
- M data/raw/ceei_valencia/txt/5604_cultura_economica_para_emprendedores_34_manuales_para_emprendedores.txt
- M "data/raw/ceei_valencia/txt/5606_c\303\263mo_crear_una_tienda_online_35_colecci\303\263n_manuales_para_el_emprendedor.txt"
- M "data/raw/ceei_valencia/txt/5627_c\303\263mo_solicita_financiaci\303\263n_un_joven_emprendedor_a_la_banca_37_manuales_emprenemjunts.txt"
- M data/raw/ceei_valencia/txt/5628_marca_personal_36_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
- M data/raw/ceei_valencia/txt/6878_herramientas_de_creatividad_aplicada_a_la_empresa_38_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
- M "data/raw/ceei_valencia/txt/6879_c\303\263mo_gestionar_el_crecimiento_de_tu_empresa_39.txt"
- M "data/raw/ceei_valencia/txt/6880_c\303\263mo_dise\303\261ar_tu_modelo_de_negocio._modelo_canvas_40.txt"
- M "data/raw/ceei_valencia/txt/6891_metodolog\303\255a_lean_startup_41_manuales_emprenemjunts_para_emprendedores_y_pymes.txt"
- M "data/raw/ceei_valencia/txt/7749_c\303\263mo_vender_en_el_exterior_42_manuales_emprenemjunts.txt"
- M "data/raw/ceei_valencia/txt/7750_t\303\251cnicas_de_venta_para_emprendedores_43.txt"
- M data/raw/ceei_valencia/txt/7751_estrategias_low_cost_para_emprendedores_44.txt
- M "data/raw/ceei_valencia/txt/7752_t\303\251cnicas_de_negociaci\303\263n_para_emprendedores_45.txt"
- M "data/raw/ceei_valencia/txt/8916_la_innovaci\303\263n_como_factor_clave_de_competitividad_46.txt"
- M "data/raw/ceei_valencia/txt/8917_instrumentos_de_planificaci\303\263n_estrat\303\251gica_47_manuales_emprenemjunts.txt"
- M "data/raw/ceei_valencia/txt/9083_gesti\303\263n_administrativa_y_econ\303\263mica_de_proyectos_de_i_d_i_48.txt"
- M "data/raw/ceei_valencia/txt/9098_planificaci\303\263n_control_y_seguimiento_de_proyectos_de_i_d_i_49.txt"
- M "data/raw/ceei_valencia/txt/9099_elaboraci\303\263n_propuestas_de_proyectos_de_i_d_i_50.txt"
- M data/raw/ceei_valencia/txt/983_modelos_de_contratos_entre_empresas_18_manuales_emprenemjunts_para_emprendedores_y_pymes.txt
+R  "documentos_ceei_elche/Facebook crea una comunidad interact\303\272a y vende.pdf" -> "data/raw/ceei_elche/original/Facebook crea una comunidad interact\303\272a y vende.pdf"
+R  "documentos_ceei_elche/Fichas/Ayuda a Domicilio para la 3\302\252 Edad.docx" -> "data/raw/ceei_elche/original/Fichas/Ayuda a Domicilio para la 3\302\252 Edad.docx"
+R  "documentos_ceei_elche/Fichas/Bioenerg\303\255a.docx" -> "data/raw/ceei_elche/original/Fichas/Bioenerg\303\255a.docx"
+R  "documentos_ceei_elche/Fichas/Carpinter\303\255a de Muebles.docx" -> "data/raw/ceei_elche/original/Fichas/Carpinter\303\255a de Muebles.docx"
+R  "documentos_ceei_elche/Fichas/Centro de Impresi\303\263n Digital.docx" -> "data/raw/ceei_elche/original/Fichas/Centro de Impresi\303\263n Digital.docx"
+R  "documentos_ceei_elche/Fichas/Cl\303\255nica de Fisioterapia.docx" -> "data/raw/ceei_elche/original/Fichas/Cl\303\255nica de Fisioterapia.docx"
+R  "documentos_ceei_elche/Fichas/Consultor\303\255a de Prevenci\303\263n de Riesgos Laborales.docx" -> "data/raw/ceei_elche/original/Fichas/Consultor\303\255a de Prevenci\303\263n de Riesgos Laborales.docx"
+R  "documentos_ceei_elche/Fichas/Despachos Profesionales.docx" -> "data/raw/ceei_elche/original/Fichas/Despachos Profesionales.docx"
+R  "documentos_ceei_elche/Fichas/Empresa de Dom\303\263tica para Ahorro Energ\303\251tico.docx" -> "data/raw/ceei_elche/original/Fichas/Empresa de Dom\303\263tica para Ahorro Energ\303\251tico.docx"
+R  "documentos_ceei_elche/Fichas/Empresa de Experiencias Tur\303\255sticas Locales.docx" -> "data/raw/ceei_elche/original/Fichas/Empresa de Experiencias Tur\303\255sticas Locales.docx"
+R  "documentos_ceei_elche/Fichas/Empresa de Fabricaci\303\263n de Productos de Limpieza Ecol\303\263gicos a Granel.docx" -> "data/raw/ceei_elche/original/Fichas/Empresa de Fabricaci\303\263n de Productos de Limpieza Ecol\303\263gicos a Granel.docx"
+R  "documentos_ceei_elche/Fichas/Empresa de Jardiner\303\255a.docx" -> "data/raw/ceei_elche/original/Fichas/Empresa de Jardiner\303\255a.docx"
+R  "documentos_ceei_elche/Fichas/Empresa de Mecanizados de Precisi\303\263n.docx" -> "data/raw/ceei_elche/original/Fichas/Empresa de Mecanizados de Precisi\303\263n.docx"
+R  "documentos_ceei_elche/Fichas/Empresa de Reformas.docx" -> "data/raw/ceei_elche/original/Fichas/Empresa de Reformas.docx"
+R  "documentos_ceei_elche/Fichas/Empresa de Servicio M\303\263vil de Maquillaje y Peluquer\303\255a para Eventos.docx" -> "data/raw/ceei_elche/original/Fichas/Empresa de Servicio M\303\263vil de Maquillaje y Peluquer\303\255a para Eventos.docx"
+R  "documentos_ceei_elche/Fichas/Empresas de Limpieza.docx" -> "data/raw/ceei_elche/original/Fichas/Empresas de Limpieza.docx"
+R  "documentos_ceei_elche/Fichas/Empresas de Vending.docx" -> "data/raw/ceei_elche/original/Fichas/Empresas de Vending.docx"
+R  "documentos_ceei_elche/Fichas/Fabricaci\303\263n de Componentes Electr\303\263nicos.docx" -> "data/raw/ceei_elche/original/Fichas/Fabricaci\303\263n de Componentes Electr\303\263nicos.docx"
+R  "documentos_ceei_elche/Fichas/Gabinete de Dise\303\261o Industrial.docx" -> "data/raw/ceei_elche/original/Fichas/Gabinete de Dise\303\261o Industrial.docx"
+R  "documentos_ceei_elche/Fichas/Instalaci\303\263n de Calefacci\303\263n y Fontaner\303\255a con Energ\303\255as Renovables.docx" -> "data/raw/ceei_elche/original/Fichas/Instalaci\303\263n de Calefacci\303\263n y Fontaner\303\255a con Energ\303\255as Renovables.docx"
+R  "documentos_ceei_elche/Fichas/Laboratorio agroalimentario y medioambiental.docx" -> "data/raw/ceei_elche/original/Fichas/Laboratorio agroalimentario y medioambiental.docx"
+R  "documentos_ceei_elche/Fichas/Obrador de Alimentos Veganos o Plant-Based.docx" -> "data/raw/ceei_elche/original/Fichas/Obrador de Alimentos Veganos o Plant-Based.docx"
+R  "documentos_ceei_elche/Fichas/Panader\303\255a-Cafeter\303\255a.docx" -> "data/raw/ceei_elche/original/Fichas/Panader\303\255a-Cafeter\303\255a.docx"
+R  "documentos_ceei_elche/Fichas/Producci\303\263n Hidrop\303\263nica y Aerop\303\263nica de Bajo Consumo.docx" -> "data/raw/ceei_elche/original/Fichas/Producci\303\263n Hidrop\303\263nica y Aerop\303\263nica de Bajo Consumo.docx"
+R  "documentos_ceei_elche/Fichas/Producci\303\263n de Textiles T\303\251cnicos.docx" -> "data/raw/ceei_elche/original/Fichas/Producci\303\263n de Textiles T\303\251cnicos.docx"
+R  "documentos_ceei_elche/Fichas/Servicios Forestales.docx" -> "data/raw/ceei_elche/original/Fichas/Servicios Forestales.docx"
+R  "documentos_ceei_elche/Fichas/Servicios de Fotograf\303\255a y V\303\255deo para Empresas.docx" -> "data/raw/ceei_elche/original/Fichas/Servicios de Fotograf\303\255a y V\303\255deo para Empresas.docx"
+R  "documentos_ceei_elche/Fichas/Taller de Arreglos y Confecci\303\263n Personalizada.docx" -> "data/raw/ceei_elche/original/Fichas/Taller de Arreglos y Confecci\303\263n Personalizada.docx"
+R  "documentos_ceei_elche/Fichas/Taller de Impresi\303\263n 3D y Prototipado Sostenible.docx" -> "data/raw/ceei_elche/original/Fichas/Taller de Impresi\303\263n 3D y Prototipado Sostenible.docx"
+R  "documentos_ceei_elche/Fichas/Taller de Inform\303\241tica con Reparaci\303\263n y Mantenimiento.docx" -> "data/raw/ceei_elche/original/Fichas/Taller de Inform\303\241tica con Reparaci\303\263n y Mantenimiento.docx"
+R  "documentos_ceei_elche/Fichas/Tienda de Inform\303\241tica con Reparaci\303\263n y Mantenimiento.docx" -> "data/raw/ceei_elche/original/Fichas/Tienda de Inform\303\241tica con Reparaci\303\263n y Mantenimiento.docx"
+R  "documentos_ceei_elche/Fichas/Tienda de Muebles.docx" -> "data/raw/ceei_elche/original/Fichas/Tienda de Muebles.docx"
+R  "documentos_ceei_elche/Guia de responsabilidad social de la empresaGu\303\255a d.pdf" -> "data/raw/ceei_elche/original/Guia de responsabilidad social de la empresaGu\303\255a d.pdf"
+R  "documentos_ceei_elche/Gu\303\255a C\303\263mo obtener el Sello PYME InnovadoraQu\303\251 es.pdf" -> "data/raw/ceei_elche/original/Gu\303\255a C\303\263mo obtener el Sello PYME InnovadoraQu\303\251 es.pdf"
+R  "documentos_ceei_elche/Gu\303\255a Sello JEI y PYME Innovadora.pdf" -> "data/raw/ceei_elche/original/Gu\303\255a Sello JEI y PYME Innovadora.pdf"
+R  "documentos_ceei_elche/Gu\303\255a b\303\241sica para crear una app m\303\263vil de \303\251xitoAlgun.pdf" -> "data/raw/ceei_elche/original/Gu\303\255a b\303\241sica para crear una app m\303\263vil de \303\251xitoAlgun.pdf"
+R  "documentos_ceei_elche/Gu\303\255a de Apoyo Ayudas y Subvenciones.pdf" -> "data/raw/ceei_elche/original/Gu\303\255a de Apoyo Ayudas y Subvenciones.pdf"
+R  "documentos_ceei_elche/Gu\303\255a de Apoyo El miedo a hablar en p\303\272blicoApuntes.pdf" -> "data/raw/ceei_elche/original/Gu\303\255a de Apoyo El miedo a hablar en p\303\272blicoApuntes.pdf"
+R  "documentos_ceei_elche/Gu\303\255a de Apoyo Fuentes de Financiaci\303\263n.pdf" -> "data/raw/ceei_elche/original/Gu\303\255a de Apoyo Fuentes de Financiaci\303\263n.pdf"
+R  "documentos_ceei_elche/Gu\303\255a de Apoyo Fuentes de Informaci\303\263n EmpresarialI.pdf" -> "data/raw/ceei_elche/original/Gu\303\255a de Apoyo Fuentes de Informaci\303\263n EmpresarialI.pdf"
+R  "documentos_ceei_elche/Gu\303\255a de Apoyo M\303\251todos de C\303\241lculo del Tama\303\261o de Me.pdf" -> "data/raw/ceei_elche/original/Gu\303\255a de Apoyo M\303\251todos de C\303\241lculo del Tama\303\261o de Me.pdf"
+R  "documentos_ceei_elche/Gu\303\255a de Apoyo Premios para Emprendedores y Empres.pdf" -> "data/raw/ceei_elche/original/Gu\303\255a de Apoyo Premios para Emprendedores y Empres.pdf"
+R  "documentos_ceei_elche/Gu\303\255a de Apoyo Principios b\303\241sicos de LOPD y LSSI.pdf" -> "data/raw/ceei_elche/original/Gu\303\255a de Apoyo Principios b\303\241sicos de LOPD y LSSI.pdf"
+R  "documentos_ceei_elche/Gu\303\255a de Apoyo Tr\303\241mites de constituci\303\263n de empresa.pdf" -> "data/raw/ceei_elche/original/Gu\303\255a de Apoyo Tr\303\241mites de constituci\303\263n de empresa.pdf"
+R  "documentos_ceei_elche/Gu\303\255a de apoyo Geolocalizaci\303\263n y Redes Sociales d.pdf" -> "data/raw/ceei_elche/original/Gu\303\255a de apoyo Geolocalizaci\303\263n y Redes Sociales d.pdf"
+R  "documentos_ceei_elche/Gu\303\255a de apoyo Listado de Gu\303\255as de Actividades Emp.pdf" -> "data/raw/ceei_elche/original/Gu\303\255a de apoyo Listado de Gu\303\255as de Actividades Emp.pdf"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Facebook_ crea una comunidad_ interact\303\272a y vende.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Facebook_ crea una comunidad_ interact\303\272a y vende.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Guia de responsabilidad social de la empresaGu\303\255a de Responsabilidad Social Corporativa.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Guia de responsabilidad social de la empresaGu\303\255a de Responsabilidad Social Corporativa.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Gu\303\255a C\303\263mo obtener el Sello PYME InnovadoraQu\303\251 es_ qui\303\251n lo otorga_ c\303\263mo acceder y sus ventajas_.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Gu\303\255a C\303\263mo obtener el Sello PYME InnovadoraQu\303\251 es_ qui\303\251n lo otorga_ c\303\263mo acceder y sus ventajas_.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Gu\303\255a Sello JEI y PYME Innovadora.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Gu\303\255a Sello JEI y PYME Innovadora.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Gu\303\255a b\303\241sica para crear una app m\303\263vil de \303\251xitoAlgunas cuestiones b\303\241sicas que cabe afrontar antes de e.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Gu\303\255a b\303\241sica para crear una app m\303\263vil de \303\251xitoAlgunas cuestiones b\303\241sicas que cabe afrontar antes de e.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ Ayudas y Subvenciones.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ Ayudas y Subvenciones.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ El miedo a hablar en p\303\272blicoApuntes de la Jornada realizada en el CEEI Valencia el 30.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ El miedo a hablar en p\303\272blicoApuntes de la Jornada realizada en el CEEI Valencia el 30.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ Fuentes de Financiaci\303\263n.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ Fuentes de Financiaci\303\263n.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ Fuentes de Informaci\303\263n EmpresarialInformaci\303\263n para realizar tu business plan.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ Fuentes de Informaci\303\263n EmpresarialInformaci\303\263n para realizar tu business plan.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ M\303\251todos de C\303\241lculo del Tama\303\261o de Mercado.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ M\303\251todos de C\303\241lculo del Tama\303\261o de Mercado.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ Premios para Emprendedores y EmpresasInformaci\303\263n de las \303\272ltimas convocatorias.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ Premios para Emprendedores y EmpresasInformaci\303\263n de las \303\272ltimas convocatorias.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ Principios b\303\241sicos de LOPD y LSSI.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ Principios b\303\241sicos de LOPD y LSSI.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ Tr\303\241mites de constituci\303\263n de empresas.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Gu\303\255a de Apoyo_ Tr\303\241mites de constituci\303\263n de empresas.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Gu\303\255a de apoyo_ Geolocalizaci\303\263n y Redes Sociales_ dos caras de la misma moneda.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Gu\303\255a de apoyo_ Geolocalizaci\303\263n y Redes Sociales_ dos caras de la misma moneda.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Gu\303\255a de apoyo_ Listado de Gu\303\255as de Actividades Empresariales98 Gu\303\255as que te ayudar\303\241n a poner en marc.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Gu\303\255a de apoyo_ Listado de Gu\303\255as de Actividades Empresariales98 Gu\303\255as que te ayudar\303\241n a poner en marc.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Mejoras en las deducciones fiscales por I_D_iGu\303\255a elaborada por Proyecta Innovaci\303\263n.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Mejoras en las deducciones fiscales por I_D_iGu\303\255a elaborada por Proyecta Innovaci\303\263n.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Patent Box y Deducciones Fiscales.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Patent Box y Deducciones Fiscales.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Recursos y Herramientas de Apoyo para la Creaci\303\263n y el Crecimiento de Empresas.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Recursos y Herramientas de Apoyo para la Creaci\303\263n y el Crecimiento de Empresas.docx"
+R  "documentos_ceei_elche/Gu\303\255as_de_Apoyo/Servicios Coworking CEEI Valencia.docx" -> "data/raw/ceei_elche/original/Gu\303\255as_de_Apoyo/Servicios Coworking CEEI Valencia.docx"
+R  documentos_ceei_elche/INDEX_DOCUMENTOS.csv -> data/raw/ceei_elche/original/INDEX_DOCUMENTOS.csv
+R  "documentos_ceei_elche/Mejoras en las deducciones fiscales por IDiGu\303\255a.pdf" -> "data/raw/ceei_elche/original/Mejoras en las deducciones fiscales por IDiGu\303\255a.pdf"
+R  "documentos_ceei_elche/Modelos_de_Negocio/Centro especializado en veh\303\255culos el\303\251ctricos.docx" -> "data/raw/ceei_elche/original/Modelos_de_Negocio/Centro especializado en veh\303\255culos el\303\251ctricos.docx"
+R  "documentos_ceei_elche/Modelos_de_Negocio/Obrador de alimentos veganos o Plant-Based.docx" -> "data/raw/ceei_elche/original/Modelos_de_Negocio/Obrador de alimentos veganos o Plant-Based.docx"
+R  "documentos_ceei_elche/Modelos_de_Negocio/Servicio m\303\263vil de maquillaje y peluquer\303\255a para eventos.docx" -> "data/raw/ceei_elche/original/Modelos_de_Negocio/Servicio m\303\263vil de maquillaje y peluquer\303\255a para eventos.docx"
+R  "documentos_ceei_elche/Modelos_de_Negocio/Taller de arreglos y confecci\303\263n personalizada sostenible.docx" -> "data/raw/ceei_elche/original/Modelos_de_Negocio/Taller de arreglos y confecci\303\263n personalizada sostenible.docx"
+R  "documentos_ceei_elche/Modelos_de_Negocio/Taller de impresi\303\263n 3D  y prototipado r\303\241pido a partir de residuos vegetales.docx" -> "data/raw/ceei_elche/original/Modelos_de_Negocio/Taller de impresi\303\263n 3D  y prototipado r\303\241pido a partir de residuos vegetales.docx"
+R  "documentos_ceei_elche/Patent Box y Deducciones Fiscales.pdf" -> "data/raw/ceei_elche/original/Patent Box y Deducciones Fiscales.pdf"
+R  "documentos_ceei_elche/Recursos y Herramientas de Apoyo para la Creaci\303\263n.pdf" -> "data/raw/ceei_elche/original/Recursos y Herramientas de Apoyo para la Creaci\303\263n.pdf"
+R  "documentos_ceei_elche/Servicios Coworking CEEI Valencia.pdf" -> "data/raw/ceei_elche/original/Servicios Coworking CEEI Valencia.pdf"
+R  documentos_ceei_elche_PDF/Fichas/Academias.pdf -> data/raw/ceei_elche/pdf/Fichas/Academias.pdf
+R  "documentos_ceei_elche_PDF/Fichas/Actividades Na\303\272ticas.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Actividades Na\303\272ticas.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Agencia Inmobiliaria.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Agencia Inmobiliaria.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Agencia de Transporte Local.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Agencia de Transporte Local.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Agencias de Exportaci\303\263n.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Agencias de Exportaci\303\263n.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Agencias de Viajes.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Agencias de Viajes.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Agricultura Ecol\303\263gica.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Agricultura Ecol\303\263gica.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Ahorro y Eficiencia Energ\303\251tica.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Ahorro y Eficiencia Energ\303\251tica.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Arreglo de ropa y composturas.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Arreglo de ropa y composturas.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Atenci\303\263n Educativa al Ni\303\261o.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Atenci\303\263n Educativa al Ni\303\261o.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Ayuda a Domicilio a la Tercera Edad.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Ayuda a Domicilio a la Tercera Edad.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Ayuda a Domicilio para la 3\302\252 Edad.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Ayuda a Domicilio para la 3\302\252 Edad.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Ayuda a Domicilio.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Ayuda a Domicilio.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Bioenerg\303\255a.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Bioenerg\303\255a.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Bodegas de vino.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Bodegas de vino.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Calefacci\303\263n y Fontaner\303\255a con Energ\303\255as Renovables.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Calefacci\303\263n y Fontaner\303\255a con Energ\303\255as Renovables.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Carpinter\303\255a de Muebles.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Carpinter\303\255a de Muebles.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Centro Comercial Virtual.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Centro Comercial Virtual.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Centro Deportivo Privado.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Centro Deportivo Privado.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Centro de Impresi\303\263n Digital.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Centro de Impresi\303\263n Digital.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Centros de Asistencia.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Centros de Asistencia.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Centros de D\303\255a.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Centros de D\303\255a.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Centros de Est\303\251tica.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Centros de Est\303\251tica.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Cl\303\255nica de Fisioterapia.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Cl\303\255nica de Fisioterapia.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Cl\303\255nica y Tienda Veterinaria.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Cl\303\255nica y Tienda Veterinaria.pdf"
+R  documentos_ceei_elche_PDF/Fichas/Coaching.pdf -> data/raw/ceei_elche/pdf/Fichas/Coaching.pdf
+R  "documentos_ceei_elche_PDF/Fichas/Comercio Electr\303\263nico.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Comercio Electr\303\263nico.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Comercio Minorista de Confecci\303\263n y Complementos.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Comercio Minorista de Confecci\303\263n y Complementos.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Comercio de Proximidad.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Comercio de Proximidad.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Comida a Domicilio.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Comida a Domicilio.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Community Manager.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Community Manager.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Compras Colectivas y Outlets Online.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Compras Colectivas y Outlets Online.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Consulta de Nutricionista.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Consulta de Nutricionista.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Consultor\303\255a Medioambiental.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Consultor\303\255a Medioambiental.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Consultor\303\255a de Internacionalizaci\303\263n.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Consultor\303\255a de Internacionalizaci\303\263n.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Consultor\303\255a de Prevenci\303\263n de Riesgos Laborales.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Consultor\303\255a de Prevenci\303\263n de Riesgos Laborales.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Consultor\303\255a de Proyectos y Captaci\303\263n de Financiaci\303\263n.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Consultor\303\255a de Proyectos y Captaci\303\263n de Financiaci\303\263n.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Desarrolladores de Ocio Interactivo.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Desarrolladores de Ocio Interactivo.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Desarrollo de Aplicaciones para M\303\263viles y Tablets _APP_.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Desarrollo de Aplicaciones para M\303\263viles y Tablets _APP_.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Despachos Profesionales.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Despachos Profesionales.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Dise\303\261o de Contenidos Educativos para Tablets.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Dise\303\261o de Contenidos Educativos para Tablets.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa Instaladora de Energ\303\255a Solar Foltovoltaica.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa Instaladora de Energ\303\255a Solar Foltovoltaica.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa de Catering.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa de Catering.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa de Contenidos para Formaci\303\263n Online.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa de Contenidos para Formaci\303\263n Online.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa de Dom\303\263tica para Ahorro Energ\303\251tico.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa de Dom\303\263tica para Ahorro Energ\303\251tico.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa de Experiencias Tur\303\255sticas Locales.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa de Experiencias Tur\303\255sticas Locales.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa de Fabricaci\303\263n de Productos de Limpieza Ecol\303\263gicos a Granel.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa de Fabricaci\303\263n de Productos de Limpieza Ecol\303\263gicos a Granel.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa de I_D.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa de I_D.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa de Jardiner\303\255a.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa de Jardiner\303\255a.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa de Mecanizados de Precisi\303\263n.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa de Mecanizados de Precisi\303\263n.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa de Producci\303\263n Audiovisual y Multimedia.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa de Producci\303\263n Audiovisual y Multimedia.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa de Reciclaje y Recuperaci\303\263n de Residuos.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa de Reciclaje y Recuperaci\303\263n de Residuos.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa de Reformas.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa de Reformas.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa de Servicio M\303\263vil de Maquillaje y Peluquer\303\255a para Eventos.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa de Servicio M\303\263vil de Maquillaje y Peluquer\303\255a para Eventos.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresa de e-Commerce para Comercio de Barrio.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresa de e-Commerce para Comercio de Barrio.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresas de Jardiner\303\255a.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresas de Jardiner\303\255a.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresas de Limpieza.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresas de Limpieza.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresas de Servicios Sociales.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresas de Servicios Sociales.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresas de Vending.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresas de Vending.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Empresas de seguridad.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Empresas de seguridad.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Energ\303\255as Renovables.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Energ\303\255as Renovables.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Entrenador Personal.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Entrenador Personal.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Env\303\255o a Casa de Productos y Men\303\272 Semanal con Recetas.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Env\303\255o a Casa de Productos y Men\303\272 Semanal con Recetas.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Escuela de Baile.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Escuela de Baile.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Fabricaci\303\263n de Componentes Electr\303\263nicos.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Fabricaci\303\263n de Componentes Electr\303\263nicos.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Fabricaci\303\263n de Envases y Embalajes.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Fabricaci\303\263n de Envases y Embalajes.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Food Truck.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Food Truck.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Fotograf\303\255a para Empresa y eCommerce.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Fotograf\303\255a para Empresa y eCommerce.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Fotograf\303\255a y Edici\303\263n de V\303\255deo_Streaming.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Fotograf\303\255a y Edici\303\263n de V\303\255deo_Streaming.pdf"
+R  documentos_ceei_elche_PDF/Fichas/Franquicias.pdf -> data/raw/ceei_elche/pdf/Fichas/Franquicias.pdf
+R  "documentos_ceei_elche_PDF/Fichas/F\303\241brica Artesanal de Productos Agroalimentarios.pdf" -> "data/raw/ceei_elche/pdf/Fichas/F\303\241brica Artesanal de Productos Agroalimentarios.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Gabinete de Dise\303\261o Gr\303\241fico.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Gabinete de Dise\303\261o Gr\303\241fico.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Gabinete de Dise\303\261o Industrial.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Gabinete de Dise\303\261o Industrial.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Gesti\303\263n del Patrimonio Cultural.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Gesti\303\263n del Patrimonio Cultural.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Gestor\303\255a Administrativa.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Gestor\303\255a Administrativa.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Granja Escuela.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Granja Escuela.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Guarder\303\255as.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Guarder\303\255as.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Impresi\303\263n 3D.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Impresi\303\263n 3D.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Instalaci\303\263n de Calefacci\303\263n y Fontaner\303\255a con Energ\303\255as Renovables.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Instalaci\303\263n de Calefacci\303\263n y Fontaner\303\255a con Energ\303\255as Renovables.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Instalaci\303\263n de Seguridad Electr\303\263nica y Dom\303\263tica.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Instalaci\303\263n de Seguridad Electr\303\263nica y Dom\303\263tica.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Laboratorio agroalimentario y medioambiental.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Laboratorio agroalimentario y medioambiental.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Log\303\255stica y Transporte para Empresas de e-Commerce.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Log\303\255stica y Transporte para Empresas de e-Commerce.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Marketing Online y Posicionamiento SEM-SEO.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Marketing Online y Posicionamiento SEM-SEO.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Marketing y Estudios de Mercado.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Marketing y Estudios de Mercado.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Obrador de Alimentos Veganos o Plant-Based.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Obrador de Alimentos Veganos o Plant-Based.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Oficina T\303\251cnica de Ingenier\303\255a.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Oficina T\303\251cnica de Ingenier\303\255a.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Organizaci\303\263n de Conciertos_ Agencia de Conferenciantes y Programaci\303\263n de Contenidos.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Organizaci\303\263n de Conciertos_ Agencia de Conferenciantes y Programaci\303\263n de Contenidos.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Organizaci\303\263n de Conferencias_ Jornadas_ Encuentros_ Networking_ Bodas y Eventos.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Organizaci\303\263n de Conferencias_ Jornadas_ Encuentros_ Networking_ Bodas y Eventos.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Organizaci\303\263n de Reuniones.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Organizaci\303\263n de Reuniones.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Panader\303\255a-Cafeter\303\255a.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Panader\303\255a-Cafeter\303\255a.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Parafarm\303\240cies.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Parafarm\303\240cies.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Personal Shopper.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Personal Shopper.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Portal Online de Trueque.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Portal Online de Trueque.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Producci\303\263n Hidrop\303\263nica y Aerop\303\263nica de Bajo Consumo.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Producci\303\263n Hidrop\303\263nica y Aerop\303\263nica de Bajo Consumo.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Producci\303\263n de Textiles T\303\251cnicos.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Producci\303\263n de Textiles T\303\251cnicos.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Reforma de Interiores y Decoraci\303\263n.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Reforma de Interiores y Decoraci\303\263n.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Reparaciones en el Hogar.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Reparaciones en el Hogar.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Residencias de la Tercera Edad.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Residencias de la Tercera Edad.pdf"
+R  documentos_ceei_elche_PDF/Fichas/Restaurantes.pdf -> data/raw/ceei_elche/pdf/Fichas/Restaurantes.pdf
+R  "documentos_ceei_elche_PDF/Fichas/Sector de la Moda.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Sector de la Moda.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Servicios Forestales.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Servicios Forestales.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Servicios M\303\251dicos a la Tercera Edad.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Servicios M\303\251dicos a la Tercera Edad.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Servicios de Asistencia T\303\251cnica _SAT_.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Servicios de Asistencia T\303\251cnica _SAT_.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Servicios de Fotograf\303\255a y V\303\255deo para Empresas.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Servicios de Fotograf\303\255a y V\303\255deo para Empresas.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Software Especialitzat i Programaci\303\263 d_Ordinadors.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Software Especialitzat i Programaci\303\263 d_Ordinadors.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Software Especializado y Programaci\303\263n de Ordenadores.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Software Especializado y Programaci\303\263n de Ordenadores.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Taller de Arreglos y Confecci\303\263n Personalizada.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Taller de Arreglos y Confecci\303\263n Personalizada.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Taller de Impresi\303\263n 3D y Prototipado Sostenible.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Taller de Impresi\303\263n 3D y Prototipado Sostenible.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Taller de Inform\303\241tica con Reparaci\303\263n y Mantenimiento.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Taller de Inform\303\241tica con Reparaci\303\263n y Mantenimiento.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Tareas a terceros.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Tareas a terceros.pdf"
+R  documentos_ceei_elche_PDF/Fichas/Teletrabajo.pdf -> data/raw/ceei_elche/pdf/Fichas/Teletrabajo.pdf
+R  "documentos_ceei_elche_PDF/Fichas/Tienda de Calzado.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Tienda de Calzado.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Tienda de Decoraci\303\263n.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Tienda de Decoraci\303\263n.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Tienda de Iluminaci\303\263n.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Tienda de Iluminaci\303\263n.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Tienda de Inform\303\241tica con Reparaci\303\263n y Mantenimiento.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Tienda de Inform\303\241tica con Reparaci\303\263n y Mantenimiento.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Tienda de Mascotas y Alimentaci\303\263n Animal.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Tienda de Mascotas y Alimentaci\303\263n Animal.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Tienda de Muebles.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Tienda de Muebles.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Tienda de Productos Ecol\303\263gicos.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Tienda de Productos Ecol\303\263gicos.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Tratamiento de Residuos.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Tratamiento de Residuos.pdf"
+R  "documentos_ceei_elche_PDF/Fichas/Turismo Rural.pdf" -> "data/raw/ceei_elche/pdf/Fichas/Turismo Rural.pdf"
+R  documentos_ceei_elche_PDF/Fichas/Youtuber.pdf -> data/raw/ceei_elche/pdf/Fichas/Youtuber.pdf
+R  documentos_ceei_elche_PDF/INDEX_DOCUMENTOS.csv -> data/raw/ceei_elche/pdf/INDEX_DOCUMENTOS.csv
+R  "documentos_ceei_elche_PDF/Infografias/10 Claves para lograr la efectividad de un proceso empresarial.pdf" -> "data/raw/ceei_elche/pdf/Infografias/10 Claves para lograr la efectividad de un proceso empresarial.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/10 errores comunes al lanzar una campa\303\261a de email marketing.pdf" -> "data/raw/ceei_elche/pdf/Infografias/10 errores comunes al lanzar una campa\303\261a de email marketing.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/10 herramientas digitales para mejorar tu negocio.pdf" -> "data/raw/ceei_elche/pdf/Infografias/10 herramientas digitales para mejorar tu negocio.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/10 tips para mejorar la usabilidad de tu web.pdf" -> "data/raw/ceei_elche/pdf/Infografias/10 tips para mejorar la usabilidad de tu web.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/3 Nuevas metodolog\303\255as BIK para empresas y emprendedoresPara emprendedores_ startups y pymes.pdf" -> "data/raw/ceei_elche/pdf/Infografias/3 Nuevas metodolog\303\255as BIK para empresas y emprendedoresPara emprendedores_ startups y pymes.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/5 Claves para buscar financiaci\303\263nPara emprendedores_ startups y pymes.pdf" -> "data/raw/ceei_elche/pdf/Infografias/5 Claves para buscar financiaci\303\263nPara emprendedores_ startups y pymes.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/5 Tips para aumentar tu Inteligencia EmocionalINFOGRAF\303\215AS.pdf" -> "data/raw/ceei_elche/pdf/Infografias/5 Tips para aumentar tu Inteligencia EmocionalINFOGRAF\303\215AS.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/5_1 claves para que tu web est\303\251 in love with GoogleINFOGRAF\303\215AS.pdf" -> "data/raw/ceei_elche/pdf/Infografias/5_1 claves para que tu web est\303\251 in love with GoogleINFOGRAF\303\215AS.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/6 pasos para gestionar tu tesorer\303\255a.pdf" -> "data/raw/ceei_elche/pdf/Infografias/6 pasos para gestionar tu tesorer\303\255a.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/8 tendencias en el sector log\303\255stico para el 2022.pdf" -> "data/raw/ceei_elche/pdf/Infografias/8 tendencias en el sector log\303\255stico para el 2022.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Claves del Mentoring en Desarrollo de NegocioPlan de Trabajo y Metodolog\303\255as Aplicables.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Claves del Mentoring en Desarrollo de NegocioPlan de Trabajo y Metodolog\303\255as Aplicables.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Claves para crear una cultura de innovaci\303\263n colaborativa en tu empresa.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Claves para crear una cultura de innovaci\303\263n colaborativa en tu empresa.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/C\303\263mo construir un funnel de ventas paso a pasoDe desconocido a cliente fiel_ gu\303\255a para crear un funnel que convierta.pdf" -> "data/raw/ceei_elche/pdf/Infografias/C\303\263mo construir un funnel de ventas paso a pasoDe desconocido a cliente fiel_ gu\303\255a para crear un funnel que convierta.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/C\303\263mo convertir tu contenido en la fuente favorita de la IA.pdf" -> "data/raw/ceei_elche/pdf/Infografias/C\303\263mo convertir tu contenido en la fuente favorita de la IA.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/C\303\263mo crear una estrategia de contenidos para RRSS.pdf" -> "data/raw/ceei_elche/pdf/Infografias/C\303\263mo crear una estrategia de contenidos para RRSS.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/C\303\263mo estructurar un plan de crisis en comunicaci\303\263nDe la prevenci\303\263n a la recuperaci\303\263n_ Pasos para proteger tu reputaci\303\263n.pdf" -> "data/raw/ceei_elche/pdf/Infografias/C\303\263mo estructurar un plan de crisis en comunicaci\303\263nDe la prevenci\303\263n a la recuperaci\303\263n_ Pasos para proteger tu reputaci\303\263n.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/C\303\263mo hacer un briefing completo para agencia o equipo creativo.pdf" -> "data/raw/ceei_elche/pdf/Infografias/C\303\263mo hacer un briefing completo para agencia o equipo creativo.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Design Thinking - _Qu\303\251 puede aportar a tu empresa_INFOGRAF\303\215A.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Design Thinking - _Qu\303\251 puede aportar a tu empresa_INFOGRAF\303\215A.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Diagn\303\263stico integral de Startups.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Diagn\303\263stico integral de Startups.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Ecuaci\303\263n de Valor.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Ecuaci\303\263n de Valor.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/El proceso de innovaci\303\263n de las empresas de \303\251xitoEl modelo de las ETIs para asegurar la competitividad actual y la perma.pdf" -> "data/raw/ceei_elche/pdf/Infografias/El proceso de innovaci\303\263n de las empresas de \303\251xitoEl modelo de las ETIs para asegurar la competitividad actual y la perma.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Estrategias para reutilizar y reciclar contenido.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Estrategias para reutilizar y reciclar contenido.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Fases Ecosistema Emprendimiento de la Comunitat Valenciana.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Fases Ecosistema Emprendimiento de la Comunitat Valenciana.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Gesti\303\263n \303\201gil y StartupPara emprendedores  y startups.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Gesti\303\263n \303\201gil y StartupPara emprendedores  y startups.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Incubadoras_ hackatones o aceleradoras.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Incubadoras_ hackatones o aceleradoras.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Infografia Innovacion abierta vs cerrada.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Infografia Innovacion abierta vs cerrada.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Innovaci\303\263n abiertaINFOGRAF\303\215AS.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Innovaci\303\263n abiertaINFOGRAF\303\215AS.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/KPIs_ Indicadores Clave de RendimientoINFOGRAF\303\215AS.pdf" -> "data/raw/ceei_elche/pdf/Infografias/KPIs_ Indicadores Clave de RendimientoINFOGRAF\303\215AS.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Las tres coherencias del emprendedorC\303\263mo alinear pensamiento_ acci\303\263n y emoci\303\263n para avanzar con seguridad.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Las tres coherencias del emprendedorC\303\263mo alinear pensamiento_ acci\303\263n y emoci\303\263n para avanzar con seguridad.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Mentalidad disruptiva_ planificaci\303\263n o adaptabilidad.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Mentalidad disruptiva_ planificaci\303\263n o adaptabilidad.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Mentorizaci\303\263n a emprendedores potenciado por IAAcompa\303\261amiento con herramientas productivas de IA.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Mentorizaci\303\263n a emprendedores potenciado por IAAcompa\303\261amiento con herramientas productivas de IA.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Pasos para realizar el Plan Social Media de tu negocio.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Pasos para realizar el Plan Social Media de tu negocio.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Producto M\303\255nimo Viable y PrototipadoCerca de 600 recursos para emprendedores_ startups y pymes.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Producto M\303\255nimo Viable y PrototipadoCerca de 600 recursos para emprendedores_ startups y pymes.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Protocolo asesoramiento a personas emprendedoras y a empresas con BIK CEEI.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Protocolo asesoramiento a personas emprendedoras y a empresas con BIK CEEI.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Recursos Gratuitos_ Creaci\303\263n y Crecimiento de empresasCerca de 600 recursos para emprendedores_ startups y pymes.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Recursos Gratuitos_ Creaci\303\263n y Crecimiento de empresasCerca de 600 recursos para emprendedores_ startups y pymes.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Recursos Gratuitos_ Creaci\303\263n y Crecimiento de empresasCerca de 600 recursos para personas emprendedoras_ startups y pyme.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Recursos Gratuitos_ Creaci\303\263n y Crecimiento de empresasCerca de 600 recursos para personas emprendedoras_ startups y pyme.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Reflexiones antes de enviar contenido a los medios de comunicaci\303\263n.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Reflexiones antes de enviar contenido a los medios de comunicaci\303\263n.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Ruta de Financiaci\303\263n en I_D_i.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Ruta de Financiaci\303\263n en I_D_i.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Sello Pyme InnovadoraMinisterio de Econom\303\255a y competitividad.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Sello Pyme InnovadoraMinisterio de Econom\303\255a y competitividad.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Tecnolog\303\255as habilitadoras que favorecen la innovaci\303\263n abierta.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Tecnolog\303\255as habilitadoras que favorecen la innovaci\303\263n abierta.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Teletrabajo_ Consejos y ventajas para afrontarlo con \303\251xitoINFOGRAF\303\215A.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Teletrabajo_ Consejos y ventajas para afrontarlo con \303\251xitoINFOGRAF\303\215A.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Tips para elaborar una nota de prensa eficaz.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Tips para elaborar una nota de prensa eficaz.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Tips para romper el Techo de Cristal en las EmpresasINFOGRAF\303\215A.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Tips para romper el Techo de Cristal en las EmpresasINFOGRAF\303\215A.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/VERIFACTU_ que es_ a quien afecta y como prepararse.pdf" -> "data/raw/ceei_elche/pdf/Infografias/VERIFACTU_ que es_ a quien afecta y como prepararse.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/Ventajas de la innovaci\303\263n abierta.pdf" -> "data/raw/ceei_elche/pdf/Infografias/Ventajas de la innovaci\303\263n abierta.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/_C\303\263mo gestionar un _funnel_ de innovaci\303\263n_De ideaci\303\263n a implantaci\303\263n.pdf" -> "data/raw/ceei_elche/pdf/Infografias/_C\303\263mo gestionar un _funnel_ de innovaci\303\263n_De ideaci\303\263n a implantaci\303\263n.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/_C\303\263mo proteger la propiedad intelectual_.pdf" -> "data/raw/ceei_elche/pdf/Infografias/_C\303\263mo proteger la propiedad intelectual_.pdf"
+R  "documentos_ceei_elche_PDF/Infografias/_Qu\303\251 es OKR_.pdf" -> "data/raw/ceei_elche/pdf/Infografias/_Qu\303\251 es OKR_.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/An\303\241lisis de la capacidad tractora de las empresas de la Provincia de AlicanteIdentificaci\303\263n de las micro y peque\303\261as empr.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/An\303\241lisis de la capacidad tractora de las empresas de la Provincia de AlicanteIdentificaci\303\263n de las micro y peque\303\261as empr.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/An\303\241lisis para la definici\303\263n de las competencias del perfil profesional de un Agente de Desarrollo Local_.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/An\303\241lisis para la definici\303\263n de las competencias del perfil profesional de un Agente de Desarrollo Local_.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/An\303\241lisis sobre metodolog\303\255as y herramientas de innovaci\303\263n del ecosistema emprendedor de CVInformes y estudios.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/An\303\241lisis sobre metodolog\303\255as y herramientas de innovaci\303\263n del ecosistema emprendedor de CVInformes y estudios.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Business Innovation Kit-Bikceei 2020.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Business Innovation Kit-Bikceei 2020.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/EBC_s generadas en el entorno de los Parque Cient\303\255ficos de la Provincia de Alicante y su relaci\303\263n con RIS3-CVInformes y .pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/EBC_s generadas en el entorno de los Parque Cient\303\255ficos de la Provincia de Alicante y su relaci\303\263n con RIS3-CVInformes y .pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Estudio integral sobre el sector mar\303\255timo_recreativo en la Comunidad Valenciana.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Estudio integral sobre el sector mar\303\255timo_recreativo en la Comunidad Valenciana.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Estudio sobre creaci\303\263n de un Fondo de Garant\303\255a para la concesi\303\263n de microcr\303\251ditosInformes y estudios.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Estudio sobre creaci\303\263n de un Fondo de Garant\303\255a para la concesi\303\263n de microcr\303\251ditosInformes y estudios.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Gu\303\255a sobre registro jornada laboralDesde el 12 de mayo las empresas deben realizar un registro de la jornada laboral de .pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Gu\303\255a sobre registro jornada laboralDesde el 12 de mayo las empresas deben realizar un registro de la jornada laboral de .pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe 2023_ Ecosistema local energ\303\251tico colaborativo_ autosuficiente_ eficiente y sostenible en Salinas_Resultados de .pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe 2023_ Ecosistema local energ\303\251tico colaborativo_ autosuficiente_ eficiente y sostenible en Salinas_Resultados de .pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe 2025 - Hacia un ecosistema m\303\241s verde_ digital e inclusivo_ Tendencias del emprendimiento en Espa\303\261aInforme del be.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe 2025 - Hacia un ecosistema m\303\241s verde_ digital e inclusivo_ Tendencias del emprendimiento en Espa\303\261aInforme del be.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe Benchmarking CEEI Elche 2018-2019_ An\303\241lisis sobre metodolog\303\255as y herramientas de innovaci\303\263n_Informes y estudios.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe Benchmarking CEEI Elche 2018-2019_ An\303\241lisis sobre metodolog\303\255as y herramientas de innovaci\303\263n_Informes y estudios.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe Benchmarking CEEI Elche 2020_ Impacto COVID19_ Claves para la Recuperaci\303\263n Econ\303\263mica 2021Informes y estudios.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe Benchmarking CEEI Elche 2020_ Impacto COVID19_ Claves para la Recuperaci\303\263n Econ\303\263mica 2021Informes y estudios.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe COTEC 2014.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe COTEC 2014.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe Empresas Tractoras 2020 Comunitat Valenciana.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe Empresas Tractoras 2020 Comunitat Valenciana.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe GEM 2018-19 sobre el ecosistema emprendedor en Espa\303\261a.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe GEM 2018-19 sobre el ecosistema emprendedor en Espa\303\261a.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de comercio exterior de Alicante por ICEX.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de comercio exterior de Alicante por ICEX.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de la Pyme 2018_ Comunidad Valenciana_.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de la Pyme 2018_ Comunidad Valenciana_.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ HUB Nueva Ruralidad RegenerativaLo rural como punta de lanza de la transformaci\303\263n econ\303\263mica_.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de resultados 2023_ HUB Nueva Ruralidad RegenerativaLo rural como punta de lanza de la transformaci\303\263n econ\303\263mica_.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ Retos de la industria auxiliar del calzado_ presente y futuro del sectorEsta acci\303\263n ha sido .pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de resultados 2023_ Retos de la industria auxiliar del calzado_ presente y futuro del sectorEsta acci\303\263n ha sido .pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creaci\303\263n de valor a futuro Comarca de la Vega BajaEsta acci\303\263n ha sido desarrol.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creaci\303\263n de valor a futuro Comarca de la Vega BajaEsta acci\303\263n ha sido desarrol.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creaci\303\263n de valor a futuro de AESEC_Esta acci\303\263n ha sido desarrollada en colabo.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creaci\303\263n de valor a futuro de AESEC_Esta acci\303\263n ha sido desarrollada en colabo.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creaci\303\263n de valor a futuro en la Marina Alta_Esta acci\303\263n ha sido desarrollada .pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de resultados 2023_ Retos para la creaci\303\263n de valor a futuro en la Marina Alta_Esta acci\303\263n ha sido desarrollada .pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Informe de resultados proyecto Innoteams 2022.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Informe de resultados proyecto Innoteams 2022.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Observatorio Econ\303\263mico-Empresarial de la ciudad de Elche.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Observatorio Econ\303\263mico-Empresarial de la ciudad de Elche.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Resultados fase entender HUB Innovaci\303\263n Colaborativa Territorial 2023- Nueva Ruralidad Regenerativa.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Resultados fase entender HUB Innovaci\303\263n Colaborativa Territorial 2023- Nueva Ruralidad Regenerativa.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Resultados proyecto piloto HUB Innovaci\303\263n Colaborativa Territorial 2021 - 2022.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Resultados proyecto piloto HUB Innovaci\303\263n Colaborativa Territorial 2021 - 2022.pdf"
+R  "documentos_ceei_elche_PDF/Informes_y_Publicaciones/Resumen HUB de Innovaci\303\263n Colaborativa.pdf" -> "data/raw/ceei_elche/pdf/Informes_y_Publicaciones/Resumen HUB de Innovaci\303\263n Colaborativa.pdf"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio/Centro especializado en veh\303\255culos el\303\251ctricos.pdf" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio/Centro especializado en veh\303\255culos el\303\251ctricos.pdf"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio/Obrador de alimentos veganos o Plant-Based.pdf" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio/Obrador de alimentos veganos o Plant-Based.pdf"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio/Servicio m\303\263vil de maquillaje y peluquer\303\255a para eventos.pdf" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio/Servicio m\303\263vil de maquillaje y peluquer\303\255a para eventos.pdf"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio/Taller de arreglos y confecci\303\263n personalizada sostenible.pdf" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio/Taller de arreglos y confecci\303\263n personalizada sostenible.pdf"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio/Taller de impresi\303\263n 3D  y prototipado r\303\241pido a partir de residuos vegetales.pdf" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio/Taller de impresi\303\263n 3D  y prototipado r\303\241pido a partir de residuos vegetales.pdf"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Alquiler y reparaci\303\263n de embarcaciones.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Alquiler y reparaci\303\263n de embarcaciones.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Asesoramiento en Criptomonedas.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Asesoramiento en Criptomonedas.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Asesor\303\255a Energ\303\251tica.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Asesor\303\255a Energ\303\251tica.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Asistencia a la infancia.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Asistencia a la infancia.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Asistencia a personas mayores.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Asistencia a personas mayores.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Calefacci\303\263n y fontaner\303\255a con energ\303\255as renovables.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Calefacci\303\263n y fontaner\303\255a con energ\303\255as renovables.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Carpinter\303\255a de madera.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Carpinter\303\255a de madera.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Carpinter\303\255a met\303\241lica.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Carpinter\303\255a met\303\241lica.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Centro Deportivo Privado.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Centro Deportivo Privado.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Cl\303\255nica Veterinaria.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Cl\303\255nica Veterinaria.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Cl\303\255nica dental.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Cl\303\255nica dental.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Despacho Profesional_ Servicios de Consultor\303\255a.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Despacho Profesional_ Servicios de Consultor\303\255a.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Distribuci\303\263n y asistencia t\303\251cnica en impresi\303\263n 3D.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Distribuci\303\263n y asistencia t\303\251cnica en impresi\303\263n 3D.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Dom\303\263tica e inm\303\263tica.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Dom\303\263tica e inm\303\263tica.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Ecommerce B2C.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Ecommerce B2C.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Econom\303\255a Circular.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Econom\303\255a Circular.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa Fintech.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Empresa Fintech.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa Insurtech.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Empresa Insurtech.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa Proptech.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Empresa Proptech.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa de Reformas.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Empresa de Reformas.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa de Tiempo Libre.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Empresa de Tiempo Libre.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Empresa de mantenimiento industrial.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Empresa de mantenimiento industrial.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Estudio de fotograf\303\255a y v\303\255deo para empresas.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Estudio de fotograf\303\255a y v\303\255deo para empresas.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Formaci\303\263n y cultura.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Formaci\303\263n y cultura.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Gesti\303\263n Cultural.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Gesti\303\263n Cultural.txt"
+R  documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/INDEX_MODELOS_TEXTO.csv -> data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/INDEX_MODELOS_TEXTO.csv
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Imprenta y artes gr\303\241ficas.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Imprenta y artes gr\303\241ficas.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Instalaci\303\263n Solar Fotovoltaica.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Instalaci\303\263n Solar Fotovoltaica.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Long Tail.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Long Tail.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Panader\303\255a - Cafeter\303\255a.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Panader\303\255a - Cafeter\303\255a.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Plataformas Online.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Plataformas Online.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Plataformas de Crowdfunding.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Plataformas de Crowdfunding.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Robot Corta-C\303\251sped.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Robot Corta-C\303\251sped.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Servicios Forestales.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Servicios Forestales.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Software as a Service _SAAS_.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Software as a Service _SAAS_.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Taller electromec\303\241nico del autom\303\263vil.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Taller electromec\303\241nico del autom\303\263vil.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Tienda de Inform\303\241tica con Reparaci\303\263n y Mantenimiento.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Tienda de Inform\303\241tica con Reparaci\303\263n y Mantenimiento.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Tienda de Muebles con Servicio de Dise\303\261o a Medida.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Tienda de Muebles con Servicio de Dise\303\261o a Medida.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Tienda taller de composturas.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Tienda taller de composturas.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Turismo Activo.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Turismo Activo.txt"
+R  "documentos_ceei_elche_PDF/Modelos_de_Negocio_texto/Turismo Cultural.txt" -> "data/raw/ceei_elche/pdf/Modelos_de_Negocio_texto/Turismo Cultural.txt"
+ M diagnostico_proyecto.py
+ M extraer_modelos_negocio_texto.py
+ M outputs/corpus_documental.xlsx
  M outputs/corpus_recomendador.xlsx
-?? build_characterization_tables.py
-?? diagnostico_proyecto.py
-?? outputs/documentos_caracterizados_muestra.csv
-?? outputs/documentos_caracterizados_muestra.xlsx
-?? outputs/informe_caracterizacion.txt
-?? outputs/informe_corpus_recomendador.txt
-?? outputs/informe_diagnostico_proyecto.txt
-?? outputs/informe_validacion_corpus_recomendador.txt
-?? outputs/perfiles_caracterizados.csv
-?? outputs/perfiles_caracterizados.xlsx
-?? validate_corpus_recomendador.py
+ M outputs/document_embeddings_muestra.csv
+ M outputs/document_embeddings_muestra.xlsx
+ M outputs/document_embeddings_resumen_por_fuente.xlsx
+ M outputs/documentos_caracterizados_muestra.csv
+ M outputs/documentos_caracterizados_muestra.xlsx
+ M outputs/evaluacion_tfidf.csv
+ M outputs/evaluacion_tfidf.xlsx
+ M outputs/informe_corpus_recomendador.txt
+ M outputs/informe_diagnostico_proyecto.txt
+ M outputs/informe_document_embeddings.txt
+ M outputs/informe_evaluacion_tfidf.txt
+ M outputs/informe_validacion_corpus.txt
+ M outputs/informe_validacion_corpus_recomendador.txt
+ M outputs/perfiles_caracterizados.xlsx
+ M outputs/recomendaciones_tfidf.csv
+ M outputs/recomendaciones_tfidf.xlsx
+ M outputs/recomendaciones_tfidf_explicadas.csv
+ M outputs/recomendaciones_tfidf_explicadas.xlsx

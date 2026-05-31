@@ -1,6 +1,6 @@
 # Recomendador de contenidos para emprendedores
 
-Repositorio del proyecto para el trabajo final del curso ANBAN 2026 para construir un recomendador documental orientado a perfiles emprendedores. El sistema trabaja con documentos publicos de CEEI Elche y CEEI Valencia, crea un corpus consolidado, caracteriza perfiles de usuarios y genera recomendaciones mediante enfoques content-based.
+Repositorio del trabajo final del curso de ANBAN 2026 para construir un recomendador documental orientado a perfiles emprendedores. El sistema trabaja con documentos publicos de CEEI Elche y CEEI Valencia, crea un corpus consolidado, caracteriza perfiles de usuarios y genera recomendaciones mediante enfoques content-based.
 
 El proyecto esta pensado para avanzar por fases reproducibles:
 
@@ -19,7 +19,7 @@ Estado funcional del repositorio:
 
 | Bloque | Estado | Salidas principales |
 |---|---|---|
-| Scraping CEEI Elche | Completado | `documentos_ceei_elche_PDF/`, `documentos_ceei_elche/` |
+| Scraping CEEI Elche | Completado | `data/raw/ceei_elche/pdf/`, `data/raw/ceei_elche/original/` |
 | Scraping CEEI Valencia | Completado | `documentos_ceei_valencia/`, `data/processed/documentos_ceei_valencia.json` |
 | Fichas HTML Valencia a TXT | Completado | `data/raw/ceei_valencia/txt/`, `data/processed/documentos_ceei_valencia_texto.json` |
 | Corpus recomendador | Completado | `data/processed/corpus_recomendador.csv`, `outputs/corpus_recomendador.xlsx` |
@@ -73,8 +73,9 @@ La estructura actual se mantiene deliberadamente simple para que los scripts sig
 |   `-- embeddings/
 |       |-- document_embeddings.csv
 |       `-- document_embeddings.parquet
-|-- documentos_ceei_elche/
-|-- documentos_ceei_elche_PDF/
+|-- data/raw/ceei_elche/
+|   |-- pdf/
+|   `-- original/
 |-- documentos_ceei_valencia/
 |-- scraping_valencia/
 `-- outputs/
@@ -339,7 +340,7 @@ perfil_008_autoempleo_necesidad
 Documentos principales:
 
 ```text
-documentos_ceei_elche_PDF/
+data/raw/ceei_elche/pdf/
 |-- Fichas/
 |-- Infografias/
 |-- Informes_y_Publicaciones/
@@ -396,7 +397,7 @@ documento -> texto_recomendador -> vector TF-IDF
 comparacion -> similitud coseno
 ```
 
-Se evita collaborative filtering porque no hay historico real de usuarios, clics, valoraciones o interacciones. Simular ese historico reduciria la solidez metodologica del TFM.
+Se evita collaborative filtering porque no hay historico real de usuarios, clics, valoraciones o interacciones. Simular ese historico reduciria la solidez metodologica del trabajo final del curso de ANBAN 2026.
 
 Los embeddings locales se usan como segunda representacion semantica de documentos. La comparacion futura puede valorar si los embeddings mejoran la linea base TF-IDF.
 

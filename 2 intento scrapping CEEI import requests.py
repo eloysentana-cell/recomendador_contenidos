@@ -6,7 +6,7 @@ from urllib.parse import urljoin
 
 BASE_URL = "https://ceeielche.emprenemjunts.es"
 START_URL = "https://ceeielche.emprenemjunts.es/?op=130&id=107"
-CARPETA = "documentos_ceei_elche"
+CARPETA = os.path.join("data", "raw", "ceei_elche", "original")
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
 

@@ -12,7 +12,7 @@ Objetivo:
 - Crear una columna texto_recomendador para que todos los documentos puedan usarse en el recomendador.
 
 Entrada:
-- documentos_ceei_elche_PDF/
+- data/raw/ceei_elche/pdf/
 
 Salida:
 - data/processed/corpus_documental.csv
@@ -31,7 +31,7 @@ from pypdf import PdfReader
 # ------------------------------------------------------------
 
 # Carpeta donde están los PDFs y TXT descargados
-CARPETA_DOCUMENTOS = "documentos_ceei_elche_PDF"
+CARPETA_DOCUMENTOS = os.path.join("data", "raw", "ceei_elche", "pdf")
 
 # Archivos de salida
 OUTPUT_CSV = "data/processed/corpus_documental.csv"
@@ -187,7 +187,7 @@ def detectar_seccion(ruta_archivo):
     Detecta la sección del documento a partir de la carpeta donde está guardado.
 
     Ejemplo:
-    documentos_ceei_elche_PDF/Infografias/documento.pdf
+    data/raw/ceei_elche/pdf/Infografias/documento.pdf
 
     Sección detectada:
     Infografias

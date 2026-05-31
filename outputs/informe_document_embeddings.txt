@@ -1,5 +1,5 @@
 Informe de embeddings de documentos
-Fecha: 2026-05-31T21:26:24
+Fecha: 2026-05-31T23:53:54
 
 Entrada:
 - Corpus: C:\tmp\recomendador_contenidos\data\processed\corpus_recomendador.csv

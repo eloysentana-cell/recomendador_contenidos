@@ -11,7 +11,8 @@ ROOT = Path(__file__).resolve().parent
 OUTPUT_PATH = ROOT / "outputs" / "informe_diagnostico_proyecto.txt"
 
 PATHS_TO_CHECK = [
-    "documentos_ceei_elche_PDF",
+    "data/raw/ceei_elche/pdf",
+    "data/raw/ceei_elche/original",
     "documentos_ceei_valencia",
     "data/raw/ceei_valencia/txt",
     "data/processed/documentos_ceei_valencia.json",
@@ -28,7 +29,8 @@ SIZE_PATHS = [
 ]
 
 COUNT_DIRS = [
-    "documentos_ceei_elche_PDF",
+    "data/raw/ceei_elche/pdf",
+    "data/raw/ceei_elche/original",
     "documentos_ceei_valencia",
     "data/raw/ceei_valencia/txt",
 ]

@@ -23,8 +23,8 @@ REPORT_PATH = OUTPUTS / "informe_corpus_recomendador.txt"
 EXCEL_CELL_LIMIT = 32767
 
 DOCUMENT_DIRS = [
-    ROOT / "documentos_ceei_elche_PDF",
-    ROOT / "documentos_ceei_elche",
+    ROOT / "data" / "raw" / "ceei_elche" / "pdf",
+    ROOT / "data" / "raw" / "ceei_elche" / "original",
     ROOT / "documentos_ceei_valencia",
     ROOT / "data" / "raw" / "ceei_valencia" / "pdf",
     ROOT / "data" / "raw" / "ceei_valencia" / "txt",
@@ -170,8 +170,8 @@ def load_metadata() -> tuple[dict[str, dict], dict[str, dict]]:
             print(f"Aviso: no se pudo leer {relative_path(valencia_texto_json)}: {exc}")
 
     for index_path in [
-        ROOT / "documentos_ceei_elche_PDF" / "INDEX_DOCUMENTOS.csv",
-        ROOT / "documentos_ceei_elche" / "INDEX_DOCUMENTOS.csv",
+        ROOT / "data" / "raw" / "ceei_elche" / "pdf" / "INDEX_DOCUMENTOS.csv",
+        ROOT / "data" / "raw" / "ceei_elche" / "original" / "INDEX_DOCUMENTOS.csv",
     ]:
         if not index_path.exists():
             continue

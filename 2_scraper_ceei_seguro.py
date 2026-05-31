@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 # El indice CSV permite reanudar ejecuciones sin registrar dos veces el mismo
 # documento dentro de una misma seccion.
 BASE_URL = "https://ceeielche.emprenemjunts.es"
-CARPETA_RAIZ = "documentos_ceei_elche_PDF"
+CARPETA_RAIZ = os.path.join("data", "raw", "ceei_elche", "pdf")
 INDEX_PATH = os.path.join(CARPETA_RAIZ, "INDEX_DOCUMENTOS.csv")
 
 MAX_NUEVOS = 40
