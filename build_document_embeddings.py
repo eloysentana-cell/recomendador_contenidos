@@ -1,5 +1,5 @@
 """
-Genera la tabla de embeddings de documentos a partir del corpus consolidado.
+Genera embeddings locales de documentos a partir del corpus consolidado.
 
 Entrada:
 - data/processed/corpus_recomendador.csv
@@ -8,8 +8,12 @@ Salidas:
 - data/embeddings/document_embeddings.csv
 - data/embeddings/document_embeddings.parquet
 - outputs/informe_document_embeddings.txt
+- outputs/document_embeddings_resumen_por_fuente.csv
+- outputs/document_embeddings_resumen_por_fuente.xlsx
+- outputs/document_embeddings_muestra.csv
+- outputs/document_embeddings_muestra.xlsx
 
-No usa APIs externas. Usa Sentence Transformers en local.
+No usa OpenAI ni APIs externas. Usa Sentence Transformers en local.
 """
 
 from __future__ import annotations
@@ -27,17 +31,37 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 
 INPUT_CORPUS = PROJECT_ROOT / "data" / "processed" / "corpus_recomendador.csv"
 
-OUTPUT_DIR = PROJECT_ROOT / "data" / "embeddings"
-OUTPUT_CSV = OUTPUT_DIR / "document_embeddings.csv"
-OUTPUT_PARQUET = OUTPUT_DIR / "document_embeddings.parquet"
+EMBEDDINGS_DIR = PROJECT_ROOT / "data" / "embeddings"
+OUTPUT_CSV = EMBEDDINGS_DIR / "document_embeddings.csv"
+OUTPUT_PARQUET = EMBEDDINGS_DIR / "document_embeddings.parquet"
 
-OUTPUT_REPORT = PROJECT_ROOT / "outputs" / "informe_document_embeddings.txt"
+OUTPUTS_DIR = PROJECT_ROOT / "outputs"
+OUTPUT_REPORT = OUTPUTS_DIR / "informe_document_embeddings.txt"
+OUTPUT_SUMMARY_CSV = OUTPUTS_DIR / "document_embeddings_resumen_por_fuente.csv"
+OUTPUT_SUMMARY_XLSX = OUTPUTS_DIR / "document_embeddings_resumen_por_fuente.xlsx"
+OUTPUT_SAMPLE_CSV = OUTPUTS_DIR / "document_embeddings_muestra.csv"
+OUTPUT_SAMPLE_XLSX = OUTPUTS_DIR / "document_embeddings_muestra.xlsx"
 
 MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
 MAX_TEXT_CHARS = 5000
+SAMPLE_TEXT_CHARS = 500
 BATCH_SIZE = 32
 MIN_CHARS = 300
+
+BASE_COLUMNS = [
+    "id_documento",
+    "titulo",
+    "fuente",
+    "seccion",
+    "tipo_archivo",
+    "ruta_local",
+    "url_origen",
+    "texto",
+    "num_caracteres",
+    "estado_extraccion",
+    "texto_recomendador",
+]
 
 
 def safe_str(value: Any) -> str:
@@ -47,113 +71,103 @@ def safe_str(value: Any) -> str:
     return str(value).strip()
 
 
+def ensure_output_dirs() -> None:
+    """Crea las carpetas de salida necesarias."""
+    EMBEDDINGS_DIR.mkdir(parents=True, exist_ok=True)
+    OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
+
+
 def load_corpus(path: Path) -> pd.DataFrame:
-    """Carga y valida el corpus consolidado."""
+    """Carga el corpus consolidado y comprueba que exista y tenga filas."""
     if not path.exists():
         raise FileNotFoundError(f"No existe el corpus: {path}")
 
     if path.stat().st_size == 0:
-        raise ValueError(
-            f"El corpus existe pero esta vacio: {path}. "
-            "Ejecuta primero build_corpus_recomendador.py."
-        )
+        raise ValueError(f"El corpus existe pero esta vacio: {path}")
 
     df = pd.read_csv(path)
 
     if df.empty:
-        raise ValueError(
-            f"El corpus no contiene filas: {path}. "
-            "Ejecuta primero build_corpus_recomendador.py."
-        )
+        raise ValueError(f"El corpus no contiene filas: {path}")
 
     return df
 
 
 def ensure_columns(df: pd.DataFrame) -> pd.DataFrame:
-    """Asegura columnas minimas, adaptandose a nombres alternativos."""
+    """Asegura columnas minimas y adapta nombres alternativos sin romper."""
     df = df.copy()
 
     if "id_documento" not in df.columns:
         if "id" in df.columns:
             df["id_documento"] = df["id"].apply(
-                lambda x: f"doc_{int(x):06d}" if str(x).isdigit() else str(x)
+                lambda x: f"doc_{int(x):06d}" if str(x).isdigit() else safe_str(x)
             )
         else:
             df["id_documento"] = [f"doc_{i:06d}" for i in range(1, len(df) + 1)]
 
     if "ruta_local" not in df.columns:
-        if "ruta_archivo" in df.columns:
-            df["ruta_local"] = df["ruta_archivo"]
-        else:
-            df["ruta_local"] = ""
+        df["ruta_local"] = df["ruta_archivo"] if "ruta_archivo" in df.columns else ""
 
-    for col in ["titulo", "fuente", "seccion", "tipo_archivo", "url_origen", "estado_extraccion"]:
-        if col not in df.columns:
-            df[col] = ""
-
-    if "texto_recomendador" not in df.columns:
-        df["texto_recomendador"] = ""
+    for column in ["titulo", "fuente", "seccion", "tipo_archivo", "url_origen", "estado_extraccion"]:
+        if column not in df.columns:
+            df[column] = ""
 
     if "texto" not in df.columns:
         df["texto"] = ""
 
+    if "texto_recomendador" not in df.columns:
+        df["texto_recomendador"] = df["texto"]
+
     if "num_caracteres" not in df.columns:
-        base_text = df["texto"].fillna("").astype(str)
-        df["num_caracteres"] = base_text.str.len()
+        df["num_caracteres"] = df["texto"].fillna("").astype(str).str.len()
+
+    df["num_caracteres"] = pd.to_numeric(df["num_caracteres"], errors="coerce").fillna(0).astype(int)
 
     return df
 
 
 def infer_source(row: pd.Series) -> str:
-    """Infiere fuente si no esta informada."""
+    """Infiere la fuente cuando no esta informada."""
     fuente = safe_str(row.get("fuente", ""))
     if fuente:
         return fuente
 
     ruta = safe_str(row.get("ruta_local", "")).lower()
-
     if "ceei_elche" in ruta or "documentos_ceei_elche" in ruta:
         return "CEEI Elche"
-
     if "ceei_valencia" in ruta or "documentos_ceei_valencia" in ruta:
         return "CEEI Valencia"
-
     return "Desconocida"
 
 
 def build_text_embedding(row: pd.Series) -> str:
-    """Construye el texto que se vectorizara."""
+    """Construye el texto que se enviara al modelo local."""
+    texto_base = safe_str(row.get("texto_recomendador", ""))
+    if not texto_base:
+        texto_base = safe_str(row.get("texto", ""))
+
     parts = [
         safe_str(row.get("titulo", "")),
         safe_str(row.get("fuente", "")),
         safe_str(row.get("seccion", "")),
         safe_str(row.get("tipo_archivo", "")),
         safe_str(row.get("url_origen", "")),
-        safe_str(row.get("texto_recomendador", "")),
+        texto_base,
     ]
 
-    if not safe_str(row.get("texto_recomendador", "")):
-        parts.append(safe_str(row.get("texto", "")))
-
-    text = " | ".join([p for p in parts if p])
+    text = " | ".join([part for part in parts if part])
     text = " ".join(text.split())
-
     return text[:MAX_TEXT_CHARS]
 
 
 def prepare_documents(df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
-    """Prepara los documentos para embeddings y descarta textos insuficientes."""
+    """Filtra documentos con texto suficiente y prepara campos auxiliares."""
     df = ensure_columns(df)
-
     df["fuente"] = df.apply(infer_source, axis=1)
-    df["texto_embedding"] = df.apply(build_text_embedding, axis=1)
-    df["num_caracteres_embedding"] = df["texto_embedding"].fillna("").astype(str).str.len()
 
-    before = len(df)
-
-    df = df[df["num_caracteres_embedding"] >= MIN_CHARS].copy()
-
-    discarded = before - len(df)
+    total = len(df)
+    df = df[df["num_caracteres"] >= MIN_CHARS].copy()
+    discarded = total - len(df)
 
     if df.empty:
         raise ValueError(
@@ -161,13 +175,15 @@ def prepare_documents(df: pd.DataFrame) -> tuple[pd.DataFrame, int]:
             f"Umbral actual: {MIN_CHARS} caracteres."
         )
 
+    df["texto_embedding"] = df.apply(build_text_embedding, axis=1)
+    df["texto_embedding_muestra"] = df["texto_embedding"].str[:SAMPLE_TEXT_CHARS]
+
     return df, discarded
 
 
 def generate_embeddings(texts: list[str]) -> tuple[list[list[float]], int]:
-    """Genera embeddings normalizados."""
+    """Genera embeddings normalizados con Sentence Transformers."""
     model = SentenceTransformer(MODEL_NAME)
-
     vectors = model.encode(
         texts,
         batch_size=BATCH_SIZE,
@@ -177,26 +193,22 @@ def generate_embeddings(texts: list[str]) -> tuple[list[list[float]], int]:
 
     vectors_list = vectors.tolist()
     dimension = len(vectors_list[0]) if vectors_list else 0
-
     return vectors_list, dimension
 
 
 def vector_to_json(vector: list[float]) -> str:
     """Serializa el vector completo como JSON string."""
-    return json.dumps([round(float(x), 8) for x in vector], ensure_ascii=False)
+    return json.dumps([round(float(value), 8) for value in vector], ensure_ascii=False)
 
 
 def vector_preview(vector: list[float], n: int = 8) -> str:
-    """Devuelve una vista corta del vector para inspeccion humana."""
-    return json.dumps([round(float(x), 4) for x in vector[:n]], ensure_ascii=False)
+    """Serializa una vista corta del vector para inspeccion humana."""
+    return json.dumps([round(float(value), 4) for value in vector[:n]], ensure_ascii=False)
 
 
-def save_outputs(df: pd.DataFrame, vectors: list[list[float]], dimension: int) -> pd.DataFrame:
-    """Guarda CSV y Parquet."""
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    OUTPUT_REPORT.parent.mkdir(parents=True, exist_ok=True)
-
-    out = pd.DataFrame(
+def build_embeddings_table(df: pd.DataFrame, vectors: list[list[float]], dimension: int) -> pd.DataFrame:
+    """Crea la tabla principal de embeddings."""
+    return pd.DataFrame(
         {
             "id_documento": df["id_documento"].astype(str),
             "titulo": df["titulo"].astype(str),
@@ -205,31 +217,118 @@ def save_outputs(df: pd.DataFrame, vectors: list[list[float]], dimension: int) -
             "tipo_archivo": df["tipo_archivo"].astype(str),
             "ruta_local": df["ruta_local"].astype(str),
             "url_origen": df["url_origen"].astype(str),
-            "num_caracteres": df["num_caracteres"],
-            "num_caracteres_embedding": df["num_caracteres_embedding"],
+            "num_caracteres": df["num_caracteres"].astype(int),
             "estado_extraccion": df["estado_extraccion"].astype(str),
-            "texto_embedding": df["texto_embedding"].astype(str),
+            "texto_embedding_muestra": df["texto_embedding_muestra"].astype(str),
             "modelo_embedding": MODEL_NAME,
             "dimension_embedding": dimension,
-            "embedding": [vector_to_json(v) for v in vectors],
-            "embedding_preview": [vector_preview(v) for v in vectors],
+            "embedding_preview": [vector_preview(vector) for vector in vectors],
+            "embedding": [vector_to_json(vector) for vector in vectors],
         }
     )
 
-    out.to_csv(OUTPUT_CSV, index=False, encoding="utf-8-sig")
-    out.to_parquet(OUTPUT_PARQUET, index=False)
 
-    return out
+def build_summary_table(embeddings_df: pd.DataFrame) -> pd.DataFrame:
+    """Agrupa documentos vectorizados por fuente, seccion y tipo."""
+    grouped = (
+        embeddings_df.groupby(["fuente", "seccion", "tipo_archivo"], dropna=False)
+        .agg(
+            documentos=("id_documento", "count"),
+            caracteres_medios=("num_caracteres", "mean"),
+            caracteres_minimos=("num_caracteres", "min"),
+            caracteres_maximos=("num_caracteres", "max"),
+            dimension_embedding=("dimension_embedding", "first"),
+            modelo_embedding=("modelo_embedding", "first"),
+        )
+        .reset_index()
+    )
+    grouped["caracteres_medios"] = grouped["caracteres_medios"].round(2)
+    return grouped
 
 
-def write_report(total_input: int, total_output: int, discarded: int, dimension: int) -> None:
-    """Escribe informe de generacion."""
+def build_sample_table(embeddings_df: pd.DataFrame) -> pd.DataFrame:
+    """Crea una muestra de hasta 10 documentos por fuente principal."""
+    samples = []
+    for fuente in ["CEEI Elche", "CEEI Valencia"]:
+        sample = (
+            embeddings_df[embeddings_df["fuente"] == fuente]
+            .sort_values("num_caracteres", ascending=False)
+            .head(10)
+        )
+        samples.append(sample)
+
+    if not samples:
+        return pd.DataFrame()
+
+    sample_df = pd.concat(samples, ignore_index=True)
+    return sample_df[
+        [
+            "id_documento",
+            "titulo",
+            "fuente",
+            "seccion",
+            "tipo_archivo",
+            "ruta_local",
+            "url_origen",
+            "num_caracteres",
+            "estado_extraccion",
+            "texto_embedding_muestra",
+            "modelo_embedding",
+            "dimension_embedding",
+            "embedding_preview",
+        ]
+    ]
+
+
+def save_outputs(embeddings_df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Guarda la tabla principal, resumen agrupado y muestra."""
+    ensure_output_dirs()
+
+    embeddings_df.to_csv(OUTPUT_CSV, index=False, encoding="utf-8-sig")
+    embeddings_df.to_parquet(OUTPUT_PARQUET, index=False)
+
+    summary = build_summary_table(embeddings_df)
+    summary.to_csv(OUTPUT_SUMMARY_CSV, index=False, encoding="utf-8-sig")
+    summary.to_excel(OUTPUT_SUMMARY_XLSX, index=False)
+
+    sample = build_sample_table(embeddings_df)
+    sample.to_csv(OUTPUT_SAMPLE_CSV, index=False, encoding="utf-8-sig")
+    sample.to_excel(OUTPUT_SAMPLE_XLSX, index=False)
+
+    return summary, sample
+
+
+def format_counter(series: pd.Series) -> str:
+    """Formatea conteos para el informe."""
+    if series.empty:
+        return "- Sin datos"
+
+    counts = series.fillna("").astype(str).value_counts()
+    return "\n".join([f"- {name}: {count}" for name, count in counts.items()])
+
+
+def write_report(
+    corpus_df: pd.DataFrame,
+    embeddings_df: pd.DataFrame,
+    discarded: int,
+    dimension: int,
+) -> None:
+    """Escribe el informe legible del proceso."""
+    files = [
+        OUTPUT_CSV,
+        OUTPUT_PARQUET,
+        OUTPUT_REPORT,
+        OUTPUT_SUMMARY_CSV,
+        OUTPUT_SUMMARY_XLSX,
+        OUTPUT_SAMPLE_CSV,
+        OUTPUT_SAMPLE_XLSX,
+    ]
+
     report = f"""Informe de embeddings de documentos
 Fecha: {datetime.now().isoformat(timespec="seconds")}
 
 Entrada:
 - Corpus: {INPUT_CORPUS}
-- Documentos en corpus original: {total_input}
 
 Modelo:
 - {MODEL_NAME}
@@ -238,47 +337,52 @@ Modelo:
 - Batch size: {BATCH_SIZE}
 
 Preparacion:
-- Longitud maxima por documento: {MAX_TEXT_CHARS} caracteres
+- Documentos totales en corpus: {len(corpus_df)}
 - Umbral minimo de texto: {MIN_CHARS} caracteres
+- Longitud maxima por documento: {MAX_TEXT_CHARS} caracteres
+- Documentos vectorizados: {len(embeddings_df)}
 - Documentos descartados por texto insuficiente: {discarded}
-- Documentos vectorizados: {total_output}
 
-Salidas:
-- {OUTPUT_CSV}
-- {OUTPUT_PARQUET}
+Numero de documentos por fuente:
+{format_counter(embeddings_df["fuente"])}
+
+Numero de documentos por seccion:
+{format_counter(embeddings_df["seccion"])}
+
+Archivos generados:
+{chr(10).join([f"- {path}" for path in files])}
 """
 
     OUTPUT_REPORT.write_text(report, encoding="utf-8")
 
 
 def main() -> None:
+    ensure_output_dirs()
+
     print("Cargando corpus consolidado...")
-    df = load_corpus(INPUT_CORPUS)
+    corpus_df = load_corpus(INPUT_CORPUS)
+    print(f"Documentos en corpus: {len(corpus_df)}")
 
-    print(f"Documentos en corpus: {len(df)}")
+    print("Preparando textos para embeddings...")
+    prepared_df, discarded = prepare_documents(corpus_df)
+    print(f"Documentos preparados para embeddings: {len(prepared_df)}")
+    print(f"Documentos descartados por texto insuficiente: {discarded}")
 
-    print("Preparando textos de documentos...")
-    prepared, discarded = prepare_documents(df)
-
-    print(f"Documentos preparados para embeddings: {len(prepared)}")
-    print(f"Documentos descartados: {discarded}")
-
-    print(f"Cargando modelo: {MODEL_NAME}")
-    vectors, dimension = generate_embeddings(prepared["texto_embedding"].tolist())
-
+    print(f"Cargando modelo local: {MODEL_NAME}")
+    vectors, dimension = generate_embeddings(prepared_df["texto_embedding"].tolist())
     print(f"Dimension del embedding: {dimension}")
 
-    print("Guardando tabla de embeddings...")
-    out = save_outputs(prepared, vectors, dimension)
+    print("Construyendo tabla principal...")
+    embeddings_df = build_embeddings_table(prepared_df, vectors, dimension)
 
-    write_report(
-        total_input=len(df),
-        total_output=len(out),
-        discarded=discarded,
-        dimension=dimension,
-    )
+    print("Guardando salidas...")
+    summary_df, sample_df = save_outputs(embeddings_df)
+    write_report(corpus_df, embeddings_df, discarded, dimension)
 
     print("\nProceso terminado.")
+    print(f"Documentos vectorizados: {len(embeddings_df)}")
+    print(f"Resumen agrupado: {len(summary_df)} filas")
+    print(f"Muestra: {len(sample_df)} filas")
     print(f"CSV: {OUTPUT_CSV}")
     print(f"Parquet: {OUTPUT_PARQUET}")
     print(f"Informe: {OUTPUT_REPORT}")

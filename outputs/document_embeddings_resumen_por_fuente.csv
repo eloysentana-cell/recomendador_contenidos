@@ -1,0 +1,9 @@
+﻿fuente,seccion,tipo_archivo,documentos,caracteres_medios,caracteres_minimos,caracteres_maximos,dimension_embedding,modelo_embedding
+CEEI Elche,Fichas,pdf,121,5958.93,4321,8141,384,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+CEEI Elche,General,pdf,19,11665.53,2592,34869,384,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+CEEI Elche,Infografias,pdf,38,1960.47,609,6271,384,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+CEEI Elche,Informes_y_Publicaciones,pdf,27,116812.52,5623,611982,384,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+CEEI Elche,Modelos_de_Negocio,pdf,5,94903.4,83167,112940,384,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+CEEI Elche,Modelos_de_Negocio_texto,txt,40,1295.62,768,2216,384,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+CEEI Valencia,Documento_PDF,pdf,30,31487.43,1570,134063,384,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+CEEI Valencia,Ficha_HTML,txt,133,1600.16,822,3475,384,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2

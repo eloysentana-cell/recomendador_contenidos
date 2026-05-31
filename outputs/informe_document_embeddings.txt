@@ -1,9 +1,8 @@
 Informe de embeddings de documentos
-Fecha: 2026-05-31T20:57:26
+Fecha: 2026-05-31T21:26:24
 
 Entrada:
 - Corpus: C:\tmp\recomendador_contenidos\data\processed\corpus_recomendador.csv
-- Documentos en corpus original: 423
 
 Modelo:
 - sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
@@ -12,11 +11,31 @@ Modelo:
 - Batch size: 32
 
 Preparacion:
-- Longitud maxima por documento: 5000 caracteres
+- Documentos totales en corpus: 423
 - Umbral minimo de texto: 300 caracteres
-- Documentos descartados por texto insuficiente: 8
-- Documentos vectorizados: 415
+- Longitud maxima por documento: 5000 caracteres
+- Documentos vectorizados: 413
+- Documentos descartados por texto insuficiente: 10
 
-Salidas:
+Numero de documentos por fuente:
+- CEEI Elche: 250
+- CEEI Valencia: 163
+
+Numero de documentos por seccion:
+- Ficha_HTML: 133
+- Fichas: 121
+- Modelos_de_Negocio_texto: 40
+- Infografias: 38
+- Documento_PDF: 30
+- Informes_y_Publicaciones: 27
+- General: 19
+- Modelos_de_Negocio: 5
+
+Archivos generados:
 - C:\tmp\recomendador_contenidos\data\embeddings\document_embeddings.csv
 - C:\tmp\recomendador_contenidos\data\embeddings\document_embeddings.parquet
+- C:\tmp\recomendador_contenidos\outputs\informe_document_embeddings.txt
+- C:\tmp\recomendador_contenidos\outputs\document_embeddings_resumen_por_fuente.csv
+- C:\tmp\recomendador_contenidos\outputs\document_embeddings_resumen_por_fuente.xlsx
+- C:\tmp\recomendador_contenidos\outputs\document_embeddings_muestra.csv
+- C:\tmp\recomendador_contenidos\outputs\document_embeddings_muestra.xlsx
