@@ -5,7 +5,8 @@ from __future__ import annotations
 import io
 import json
 import os
-from contextlib import redirect_stderr, redirect_stdout
+import sys
+from contextlib import contextmanager
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -34,6 +35,43 @@ _DOCS: pd.DataFrame | None = None
 _PROFILES: pd.DataFrame | None = None
 _DOC_VECTORS: np.ndarray | None = None
 _PROFILE_VECTORS: np.ndarray | None = None
+
+
+class SafeTextIO(io.StringIO):
+    """Salida en memoria cuyo flush nunca rompe Streamlit en Windows."""
+
+    def flush(self) -> None:
+        try:
+            super().flush()
+        except OSError:
+            pass
+
+    def isatty(self) -> bool:
+        return False
+
+
+@contextmanager
+def safe_model_io():
+    """Evita que tqdm/transformers escriban en streams problematicos."""
+    safe_stdout = SafeTextIO()
+    safe_stderr = SafeTextIO()
+    old_stdout, old_stderr = sys.stdout, sys.stderr
+    old_dunder_stdout = getattr(sys, "__stdout__", None)
+    old_dunder_stderr = getattr(sys, "__stderr__", None)
+
+    sys.stdout = safe_stdout
+    sys.stderr = safe_stderr
+    sys.__stdout__ = safe_stdout
+    sys.__stderr__ = safe_stderr
+    try:
+        yield
+    finally:
+        sys.stdout = old_stdout
+        sys.stderr = old_stderr
+        if old_dunder_stdout is not None:
+            sys.__stdout__ = old_dunder_stdout
+        if old_dunder_stderr is not None:
+            sys.__stderr__ = old_dunder_stderr
 
 
 def rel(path: Path) -> str:
@@ -83,8 +121,10 @@ def load_embedding_table(parquet_path: Path, csv_path: Path) -> pd.DataFrame:
 @lru_cache(maxsize=1)
 def load_model():
     """Carga el modelo local con cache y sin barras de progreso en Streamlit."""
-    with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
+    with safe_model_io():
         from transformers.utils import logging as transformers_logging
+        import tqdm.auto
+        import tqdm.asyncio
         import tqdm.std
 
         def silent_status_printer(_file):
@@ -92,6 +132,8 @@ def load_model():
 
         transformers_logging.disable_progress_bar()
         transformers_logging.set_verbosity_error()
+        tqdm.auto.tqdm.status_printer = staticmethod(silent_status_printer)
+        tqdm.asyncio.tqdm.status_printer = staticmethod(silent_status_printer)
         tqdm.std.tqdm.status_printer = staticmethod(silent_status_printer)
 
         from sentence_transformers import SentenceTransformer
@@ -121,11 +163,12 @@ def encode_query(query_text: str) -> np.ndarray | None:
         return None
 
     model = load_model()
-    vector = model.encode(
-        [query_text],
-        normalize_embeddings=True,
-        show_progress_bar=False,
-    )[0]
+    with safe_model_io():
+        vector = model.encode(
+            [query_text],
+            normalize_embeddings=True,
+            show_progress_bar=False,
+        )[0]
     return np.array(vector, dtype=np.float32)
 
 
