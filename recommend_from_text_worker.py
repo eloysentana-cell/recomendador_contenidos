@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import unicodedata
 
 from recommend_from_text import MODEL_NAME, recommend_documents, recommend_profiles
 
@@ -14,6 +15,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--query", required=True, help="Texto libre de consulta.")
     parser.add_argument("--top-k", type=int, default=10, help="Numero de documentos.")
     return parser.parse_args()
+
+
+def normalize_for_json(value):
+    """Normaliza textos para visualizacion web sin cambiar los embeddings."""
+    if isinstance(value, str):
+        return unicodedata.normalize("NFKC", value)
+    if isinstance(value, list):
+        return [normalize_for_json(item) for item in value]
+    if isinstance(value, dict):
+        return {key: normalize_for_json(item) for key, item in value.items()}
+    return value
 
 
 def main() -> None:
@@ -26,7 +38,7 @@ def main() -> None:
             "documents": [],
             "error": "",
         }
-        print(json.dumps(payload, ensure_ascii=False))
+        print(json.dumps(normalize_for_json(payload), ensure_ascii=True))
         return
 
     profiles_df = recommend_profiles(query, top_k=3)
@@ -37,7 +49,7 @@ def main() -> None:
         "documents": documents_df.to_dict(orient="records"),
         "error": "",
     }
-    print(json.dumps(payload, ensure_ascii=False))
+    print(json.dumps(normalize_for_json(payload), ensure_ascii=True))
 
 
 if __name__ == "__main__":
@@ -50,5 +62,5 @@ if __name__ == "__main__":
             "documents": [],
             "error": str(exc),
         }
-        print(json.dumps(payload, ensure_ascii=False))
+        print(json.dumps(normalize_for_json(payload), ensure_ascii=True))
         sys.exit(1)

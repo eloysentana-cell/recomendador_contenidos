@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -27,6 +28,7 @@ DEFAULT_QUERY = (
     "Soy una emprendedora rural que quiere montar una pequena empresa "
     "agroalimentaria con impacto territorial y necesito ayudas publicas"
 )
+WORKER_CACHE_VERSION = "utf8_v2"
 
 
 @st.cache_data(show_spinner=False)
@@ -62,8 +64,13 @@ def show_table(df: pd.DataFrame, columns: list[str]) -> None:
 
 
 @st.cache_data(show_spinner=False)
-def run_recommendation_worker(query_text: str, top_k: int) -> tuple[pd.DataFrame, pd.DataFrame, str]:
+def run_recommendation_worker(
+    query_text: str,
+    top_k: int,
+    cache_version: str = WORKER_CACHE_VERSION,
+) -> tuple[pd.DataFrame, pd.DataFrame, str]:
     """Ejecuta la recomendacion fuera del proceso Streamlit."""
+    _ = cache_version
     command = [
         sys.executable,
         str(ROOT / "recommend_from_text_worker.py"),
@@ -72,9 +79,13 @@ def run_recommendation_worker(query_text: str, top_k: int) -> tuple[pd.DataFrame
         "--top-k",
         str(top_k),
     ]
+    env = os.environ.copy()
+    env["PYTHONIOENCODING"] = "utf-8"
+    env["PYTHONUTF8"] = "1"
     result = subprocess.run(
         command,
         cwd=ROOT,
+        env=env,
         capture_output=True,
         text=True,
         encoding="utf-8",
