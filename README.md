@@ -56,6 +56,7 @@ La estructura actual se mantiene deliberadamente simple para que los scripts sig
 |-- recommend_embeddings_by_profile.py
 |-- compare_tfidf_vs_embeddings.py
 |-- recommend_from_text.py
+|-- recommend_from_text_worker.py
 |-- build_profile_queries.py
 |-- recommender_tfidf.py
 |-- explain_tfidf_recommendations.py
@@ -366,10 +367,10 @@ Instalar dependencia web:
 Ejecutar:
 
 ```powershell
-streamlit run web_app/app.py
+.\.venv\Scripts\python.exe -m streamlit run web_app/app.py --server.port 8501 --server.fileWatcherType none --browser.gatherUsageStats false
 ```
 
-La web permite escribir una necesidad emprendedora en lenguaje natural, comparar ese texto contra perfiles predefinidos y recomendar documentos del corpus usando embeddings locales.
+La web permite escribir una necesidad emprendedora en lenguaje natural, comparar ese texto contra perfiles predefinidos y recomendar documentos del corpus usando embeddings locales. En Windows, la interfaz Streamlit delega el calculo en `recommend_from_text_worker.py` para evitar problemas de salida de consola durante la carga del modelo `SentenceTransformer` y preservar correctamente la codificacion UTF-8.
 
 ## Perfiles Emprendedores
 
@@ -699,6 +700,7 @@ La web local esta en:
 
 ```text
 web_app/app.py
+recommend_from_text_worker.py
 ```
 
 Instalacion de dependencia web:
@@ -710,10 +712,18 @@ Instalacion de dependencia web:
 Ejecucion:
 
 ```powershell
-streamlit run web_app/app.py
+.\.venv\Scripts\python.exe -m streamlit run web_app/app.py --server.port 8501 --server.fileWatcherType none --browser.gatherUsageStats false
 ```
 
 La interfaz permite introducir una descripcion libre del perfil o necesidad emprendedora, seleccionar el numero de documentos, ver perfiles similares, recomendaciones documentales, scores de similitud y previews de embeddings. Por legibilidad no muestra los vectores completos salvo indicacion explicita; los embeddings completos estan almacenados en `data/embeddings/`.
+
+Arquitectura de ejecucion:
+
+```text
+web_app/app.py -> recommend_from_text_worker.py -> recommend_from_text.py -> embeddings locales
+```
+
+Esta separacion evita que Streamlit cargue directamente el modelo de Sentence Transformers. El worker devuelve JSON normalizado para que los textos con tildes se muestren correctamente en Windows.
 
 ### Comandos De La Fase Semantica
 
@@ -724,5 +734,5 @@ La interfaz permite introducir una descripcion libre del perfil o necesidad empr
 .\.venv\Scripts\python.exe recommend_embeddings_by_profile.py
 .\.venv\Scripts\python.exe compare_tfidf_vs_embeddings.py
 .\.venv\Scripts\python.exe recommend_from_text.py
-streamlit run web_app/app.py
+.\.venv\Scripts\python.exe -m streamlit run web_app/app.py --server.port 8501 --server.fileWatcherType none --browser.gatherUsageStats false
 ```
