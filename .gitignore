@@ -25,3 +25,6 @@ venv/
 *.log
 .DS_Store
 Thumbs.db
+
+# Artefactos locales de la interfaz y pruebas manuales
+data/feedback/
